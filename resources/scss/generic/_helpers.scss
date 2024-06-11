@@ -1,0 +1,242 @@
+/* ------------------------------------------------------------ *\
+	Helpers
+\* ------------------------------------------------------------ */
+
+/*  Clear  */
+
+.clear:after {
+	content: "";
+	line-height: 0;
+	display: table;
+	clear: both;
+}
+
+/* sr-only */
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.icon-wrap {
+    display: block;
+    line-height: 0;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+
+        g {
+            opacity: 1;
+        }
+
+        path,
+        circle {
+            &[fill] {
+                fill: currentColor;
+                fill-opacity: 1;
+                transition: opacity $transition-default;
+            }
+
+            &[stroke] {
+                stroke: currentColor;
+                stroke-opacity: 1;
+                transition: opacity $transition-default;
+            }
+        }
+    }
+}
+
+/*  Notext  */
+
+.notext {
+	white-space: nowrap;
+	text-indent: 100%;
+	text-shadow: none;
+	overflow: hidden;
+}
+
+.notext-old {
+	font-size: 0;
+	line-height: 0;
+	text-indent: -4000px;
+}
+
+/*  Hidden  */
+
+[hidden],
+.hidden {
+	display: none;
+}
+
+/*  Disabled  */
+
+[disabled],
+.disabled {
+	cursor: default;
+}
+
+/*  Responsive Helpers  */
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+	display: none !important;
+}
+
+@include breakpoint-down(mobile) {
+	.hidden-xs {
+		display: none !important;
+	}
+	.visible-xs-block {
+		display: block !important;
+	}
+	.visible-xs-inline {
+		display: inline !important;
+	}
+	.visible-xs-inline-block {
+		display: inline-block !important;
+	}
+}
+
+@include breakpoint-between(mobile, tablet) {
+	.hidden-sm {
+		display: none !important;
+	}
+	.visible-sm-block {
+		display: block !important;
+	}
+	.visible-sm-inline {
+		display: inline !important;
+	}
+	.visible-sm-inline-block {
+		display: inline-block !important;
+	}
+}
+
+@include breakpoint-between(tablet, small-desktop) {
+	.hidden-md {
+		display: none !important;
+	}
+	.visible-md-block {
+		display: block !important;
+	}
+	.visible-md-inline {
+		display: inline !important;
+	}
+	.visible-md-inline-block {
+		display: inline-block !important;
+	}
+}
+
+@include breakpoint-up(small-desktop) {
+	.hidden-lg {
+		display: none !important;
+	}
+	.visible-lg-block {
+		display: block !important;
+	}
+	.visible-lg-inline {
+		display: inline !important;
+	}
+	.visible-lg-inline-block {
+		display: inline-block !important;
+	}
+}
+
+.link {
+	text-decoration: none;
+}
+
+
+
+.button {
+	border: none;
+	border-radius: 2px;
+	transition: all 0.6s;
+	cursor: pointer;
+}
+
+.consulting-button {
+	padding: 18px 40px;
+	border: 2px solid $main-pink-color;
+	background: $main-pink-color;
+	color: $white;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.no-fill {
+	background: none;
+}
+
+.like-button {
+	display: flex;
+	padding: 10px;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid $main-pink-color;
+	border-radius: 2px;
+	color: $white;
+	transition: all 0.6s;
+	cursor: pointer;
+}
+
+.blocked {
+	pointer-events: none;
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+	.button:hover {
+		background: $main-pink-color-hover;
+	}
+	
+	.like-button:hover {
+		background-color: $main-pink-color-hover;
+		border-color: $main-pink-color-hover;
+	}
+	
+	.link:hover {
+		text-decoration: underline;
+	}
+
+	.consulting-button:hover {
+		border: 2px solid $main-pink-color-hover;
+	}
+}
+
+.section__title {
+	font-size: 60px;
+	font-weight: 900;
+	line-height: 72px;
+	text-transform:uppercase;
+	text-align: center;
+	color: $title;
+}
+
+.section__subtitle {
+	margin: 20px 0;
+	font-size: 24px;
+	line-height: 24px;
+	text-align: center;
+	color: $title;
+}

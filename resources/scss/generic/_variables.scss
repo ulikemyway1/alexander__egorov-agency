@@ -1,0 +1,38 @@
+@import "../generic/functions";
+@import "../generic/mixins";
+
+$white: #ffffff;
+$white-semi: rgba(255, 255, 255, .5);
+$black: #000000;
+$main-pink-color: #FF368A;
+$main-pink-color-hover: #FAB7D8;
+$title: #135978;
+
+
+
+$responsive-ios: 812px;
+
+$font-main:  "Montserrat", sans-serif;
+
+// Transitions
+$transition-duration-default: 0.3s;
+$transition-delay-default: 0.3s;
+$transition-default: 0.3s ease-in-out;
+
+$breakpoints: (
+	mobile-small: 575px,
+	mobile: 767px,
+	admin-bar: 782px,
+	tablet: 1023px,
+	small-desktop: 1279px,
+	desktop: 1439px,
+	large-desktop: 1719px,
+);
+
+// Other
+
+
+// Admin panel
+$adminbarHeightDesktop: 32px;
+$adminbarHeightMobile: 46px;
+

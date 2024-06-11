@@ -1,0 +1,161 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Header
+\* ------------------------------------------------------------ */
+
+.header {
+	position: absolute;
+	padding: 12px 0;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+
+	&__wrapper {
+		width: 100%;
+	}
+
+	&__menu-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 60px;
+	}
+
+	&__menu-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		background: none;
+		border: none;
+		color: $white;
+		font-size: 22px;
+		font-weight: 900;
+
+		&_icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 60px;
+			height: 56px;
+			border-radius: 2px;
+			background: $main-pink-color;
+		}
+
+	}
+
+	&__tel-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		color: $white;
+		font-size: 22px;
+		font-weight: 900;
+		text-decoration: none;
+
+		.like-button {
+			width: 44px;
+			color: $main-pink-color;
+			border: none;
+			&:hover {
+				background: none;
+				color: $main-pink-color-hover;
+			}
+		}
+	}
+
+	&__inner-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+
+	}
+
+	&__logo {
+		width: 150px;
+		color: $main-pink-color;
+		transition: all 0.6s;
+	}
+
+	&__profile-link,
+	&__money-link {
+		width: 60px;
+		height: 56px;
+	}
+}
+
+@media (max-width: 1280px) {
+
+	.header {
+
+		&__menu-wrapper {
+			gap: 10px;
+		}
+
+		&__tel-link {
+			font-size: 18px;
+
+			.like-button {
+				color: $white;
+				border: 2px solid $main-pink-color;
+				&:hover {
+					color: $white;
+					background: $main-pink-color-hover;
+					border: 2px solid $main-pink-color-hover;
+				}
+			}
+		}
+
+		&__logo {
+			width: 65px;
+		}
+
+		&__menu-button {
+
+			&_icon {
+				width: 44px;
+				height: 44px;
+			}
+
+			&_text {
+				display: none;
+			}
+		}
+	
+	}
+
+	.button,
+	.like-button {
+		height: 44px;
+		width: 44px;
+	}
+
+	.header .consulting-button {
+		padding: 15px 20px;
+		font-size: 14px;
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header .consulting-button, 
+	.header__tel-link_text {
+		display: none;
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.header__logo:hover {
+		color: $main-pink-color-hover;
+	}
+}

@@ -1,0 +1,17 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Footer
+\* ------------------------------------------------------------ */
+
+.footer {
+	position: relative;
+	overflow: hidden;
+	background: #94b30a;
+}
