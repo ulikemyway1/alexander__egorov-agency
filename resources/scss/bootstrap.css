@@ -5491,7 +5491,21 @@ textarea.form-control-lg {
   overflow-y: auto;
   outline: 0;
 }
+@media (max-width: 1280px) {
+  .modal {
+    --bs-modal-padding: 50px;
+    --bs-modal-header-padding: 50px;
+  }
 
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    --bs-modal-padding: 20px;
+    --bs-modal-header-padding: 20px;
+    --bs-modal-border-width: 0;
+  }
+}
 .modal-dialog {
   position: relative;
   width: auto;
