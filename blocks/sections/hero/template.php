@@ -46,7 +46,8 @@ if (isset($block['data']['block_preview_images'])) {
 				<h2 class="hero__subtitle">Macon’s Premiere Boutuque Personal Training Studio</h2>
 
 				<div class="hero__buttons-wrapper">
-					<button class="button consulting-button" id="book_consulting">Book Consultation</button>
+					<button class="button consulting-button" data-toggle="modal" data-target="#consulting-modal"
+						id="book_consulting">Book Consultation</button>
 					<button class="button consulting-button no-fill">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
 							<g clip-path="url(#a)">
@@ -157,20 +158,98 @@ if (isset($block['data']['block_preview_images'])) {
 <div id="gallery__popup" class="hidden"></div>
 
 <div class="swiper">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
-			<!-- Slides -->
-			<div class="swiper-slide">Slide 1</div>
-			<div class="swiper-slide">Slide 2</div>
-			<div class="swiper-slide">Slide 3</div>
-		</div>
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
-
-		<!-- If we need navigation buttons -->
-		<div class="swiper-button-prev">prev</div>
-		<div class="swiper-button-next">next</div>
-
-		<!-- If we need scrollbar -->
-		<div class="swiper-scrollbar"></div>
+	<!-- Additional required wrapper -->
+	<div class="swiper-wrapper">
+		<!-- Slides -->
+		<div class="swiper-slide">Slide 1</div>
+		<div class="swiper-slide">Slide 2</div>
+		<div class="swiper-slide">Slide 3</div>
 	</div>
+	<!-- If we need pagination -->
+	<div class="swiper-pagination"></div>
+
+	<!-- If we need navigation buttons -->
+	<div class="swiper-button-prev">prev</div>
+	<div class="swiper-button-next">next</div>
+
+	<!-- If we need scrollbar -->
+	<div class="swiper-scrollbar"></div>
+</div>
+
+<!-- <div class="modal" tabindex="-1" id="consulting-modal">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title">Modal title</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	  </div>
+	  <div class="modal-body">
+		<p>Modal body text goes here.ddd</p>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Save changes</button>
+	  </div>
+	</div>
+  </div>
+</div> -->
+
+
+<div class="modal" id="consulting-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal__content">
+
+			<h2 class="modal__title">Book<br>Consultation</h2>
+
+			<div class="modal__descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nullam pretium
+				lectus est non arcu diam in varius.</div>
+
+
+			<button type="button" class="modal__close-btn  no-fill" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+
+
+			<div class="modal__body">
+				<form action="#" id="consulting-modal-form">
+					<fieldset>
+						<legend class="form__legend">Your first and last names</legend>
+						<div class="form__inputs-wrapper">
+							<label class="modal__label" for="first-name">First name</label>
+							<input class="modal__input" id='first-name' type="text" placeholder="First Name" required>
+							<label class="modal__label" for="last-name'">Last name</label>
+							<input class="modal__input" id='last-name' type="text" placeholder="Last Name">
+
+						</div>
+
+					</fieldset>
+
+					<fieldset>
+						<legend class="form__legend">Your contacts</legend>
+
+						<div class="form__inputs-wrapper">
+							<label class="modal__label" for="email">Email</label>
+							<input class="modal__input" id='email' type="email" placeholder="Email" required>
+
+							<label class="modal__label" for="phone">Phone number</label>
+							<input class="modal__input" id='phone' type="tel" placeholder="Phone number">
+						</div>
+
+					</fieldset>
+
+
+					<label class="modal__label" for="message">Your message</label>
+					<input class="modal__input" id='message' type="text" placeholder="Message" required>
+
+
+					<button type="submit" class="button">Submit</button>
+				</form>
+			</div>
+
+
+
+
+		</div>
+	</div>
+</div>

@@ -462,3 +462,93 @@
 	width: 600px;
 	height: 300px;
   }
+
+
+
+  //consulting-modal
+
+  #consulting-modal {
+	margin: 0 auto;
+	position: relative;
+	max-width: 825px;
+	border: 1px solid black;
+	padding: 70px;
+	background: $white;
+	color: $title;
+	font-size: 60px;
+	font-weight: 900;
+	line-height: 60px;
+	border-radius: 2px;
+	
+	.modal {
+
+		&__descr {
+			margin-top: 20px;
+			font-family: BankGothic;;
+			font-size: 18px;
+			line-height: 22px;
+		}
+
+		&__close-btn {
+			padding: 0 16px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			border: none;
+		}
+
+		&__label {
+			visibility: hidden;
+			height: 0;
+			position: absolute;
+			top: 0;
+		}
+
+	}
+
+	#consulting-modal-form {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		font-size: 16px;
+		font-weight: 700;
+		gap: 30px;
+
+		fieldset {
+			border: none;
+		}
+
+		.modal__input {
+			border: 1px solid $title;
+			border-radius: 2px;
+			padding: 20px;
+			width: 100%;
+			font-weight: 700;
+		}
+
+		.form__legend {
+			visibility: hidden;
+			height: 0;
+		}
+
+		.form__inputs-wrapper {
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			gap: 20px;
+			border: none;
+		}
+		button[type='submit'] {
+			gap: 20px 40px;
+			width: 140px;
+			height: 56px;
+			background: $main-pink-color;
+			font-size: 16px;
+			color:$white;
+			font-weight: 700;
+			justify-self: flex-end;
+			margin-left: auto;
+		}
+	}
+  }
