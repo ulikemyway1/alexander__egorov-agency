@@ -426,11 +426,12 @@ tbody.collapse.show {
 }
 
 .preloader {
-	height: 100dvh;
+	margin:auto;
+	width: 100dvh;
 	padding: 100px;
 	transition: opacity 0.2s;
 	opacity: 1;
-
+	
 	&.is-visually-hidden {
 		opacity: 0;
 	}
