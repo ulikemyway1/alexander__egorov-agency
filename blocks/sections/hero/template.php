@@ -46,7 +46,7 @@ if (isset($block['data']['block_preview_images'])) {
 				<h2 class="hero__subtitle">Macon’s Premiere Boutuque Personal Training Studio</h2>
 
 				<div class="hero__buttons-wrapper">
-					<button class="button consulting-button" data-toggle="modal" data-target="#consulting-modal"
+					<button class="button consulting-button" data-bs-toggle="modal" data-bs-target="#consulting-modal"
 						id="book_consulting">Book Consultation</button>
 					<button class="button consulting-button no-fill">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
@@ -152,66 +152,30 @@ if (isset($block['data']['block_preview_images'])) {
 
 	</div>
 
-
 </section>
 
-<div id="gallery__popup" class="hidden"></div>
-
-<div class="swiper">
-	<!-- Additional required wrapper -->
-	<div class="swiper-wrapper">
-		<!-- Slides -->
-		<div class="swiper-slide">Slide 1</div>
-		<div class="swiper-slide">Slide 2</div>
-		<div class="swiper-slide">Slide 3</div>
-	</div>
-	<!-- If we need pagination -->
-	<div class="swiper-pagination"></div>
-
-	<!-- If we need navigation buttons -->
-	<div class="swiper-button-prev">prev</div>
-	<div class="swiper-button-next">next</div>
-
-	<!-- If we need scrollbar -->
-	<div class="swiper-scrollbar"></div>
-</div>
-
-<!-- <div class="modal" tabindex="-1" id="consulting-modal">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<h5 class="modal-title">Modal title</h5>
-		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	  </div>
-	  <div class="modal-body">
-		<p>Modal body text goes here.ddd</p>
-	  </div>
-	  <div class="modal-footer">
-		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		<button type="button" class="btn btn-primary">Save changes</button>
-	  </div>
-	</div>
-  </div>
-</div> -->
-
-
-<div class="modal" id="consulting-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="consulting-modal" tabindex="-1" aria-labelledby="Book consulting modal with"
 	aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal__content">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal__title">Book<br>Consultation</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
-			<h2 class="modal__title">Book<br>Consultation</h2>
+					<svg width="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M13.3259 12.001L23.7254 1.60144C24.0916 1.2353 24.0916 0.641675 23.7254 0.275582C23.3593 -0.0905116 22.7657 -0.0905585 22.3996 0.275582L12 10.6752L1.60046 0.275582C1.23432 -0.0905585 0.640698 -0.0905585 0.274605 0.275582C-0.0914881 0.641722 -0.091535 1.23535 0.274605 1.60144L10.6741 12.001L0.274605 22.4005C-0.091535 22.7667 -0.091535 23.3603 0.274605 23.7264C0.457651 23.9095 0.697604 24.001 0.937557 24.001C1.17751 24.001 1.41742 23.9095 1.60051 23.7264L12 13.3269L22.3995 23.7264C22.5826 23.9095 22.8225 24.001 23.0625 24.001C23.3024 24.001 23.5423 23.9095 23.7254 23.7264C24.0916 23.3603 24.0916 22.7666 23.7254 22.4005L13.3259 12.001Z"
+							fill="#currenColor" />
+					</svg>
 
-			<div class="modal__descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nullam pretium
-				lectus est non arcu diam in varius.</div>
+				</button>
+			</div>
 
-
-			<button type="button" class="modal__close-btn  no-fill" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-
-
-			<div class="modal__body">
+			<div class="modal-body">
+				<div class="modal-descr">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nullam pretium lectus est non
+					arcu diam in varius.
+				</div>
 				<form action="#" id="consulting-modal-form">
 					<fieldset>
 						<legend class="form__legend">Your first and last names</legend>
@@ -240,16 +204,18 @@ if (isset($block['data']['block_preview_images'])) {
 
 
 					<label class="modal__label" for="message">Your message</label>
-					<input class="modal__input" id='message' type="text" placeholder="Message" required>
+					<textarea class="modal__input modal__textarea" id='message' placeholder="Message" required></textarea>
 
 
 					<button type="submit" class="button">Submit</button>
 				</form>
 			</div>
-
-
-
-
 		</div>
 	</div>
 </div>
+
+
+
+
+
+

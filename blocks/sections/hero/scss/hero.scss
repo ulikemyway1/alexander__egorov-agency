@@ -5,7 +5,7 @@
 @import "../../../../resources/scss/generic/variables";
 @import "../../../../resources/scss/generic/functions";
 @import "../../../../resources/scss/generic/mixins";
-@import './swiper.scss';
+@import "./swiper.scss";
 /* ------------------------------------------------------------ *\
 	Blocks: Section Hero
 \* ------------------------------------------------------------ */
@@ -461,30 +461,26 @@
 .swiper {
 	width: 600px;
 	height: 300px;
-  }
+}
 
+//consulting-modal
 
-
-  //consulting-modal
-
-  #consulting-modal {
+#consulting-modal {
 	margin: 0 auto;
 	position: relative;
-	max-width: 825px;
 	border: 1px solid black;
 	padding: 70px;
 	background: $white;
 	color: $title;
 	font-size: 60px;
 	font-weight: 900;
-	line-height: 60px;
 	border-radius: 2px;
-	
+
 	.modal {
 
-		&__descr {
+		&-descr {
 			margin-top: 20px;
-			font-family: BankGothic;;
+			font-family: BankGothic;
 			font-size: 18px;
 			line-height: 22px;
 		}
@@ -504,6 +500,10 @@
 			top: 0;
 		}
 
+		&__textarea {
+			min-height: 65px;
+			height: 65px;
+		}
 	}
 
 	#consulting-modal-form {
@@ -514,6 +514,7 @@
 		font-size: 16px;
 		font-weight: 700;
 		gap: 30px;
+		color: #13597880;
 
 		fieldset {
 			border: none;
@@ -539,16 +540,18 @@
 			gap: 20px;
 			border: none;
 		}
-		button[type='submit'] {
+		button[type="submit"] {
 			gap: 20px 40px;
 			width: 140px;
 			height: 56px;
 			background: $main-pink-color;
 			font-size: 16px;
-			color:$white;
+			color: $white;
 			font-weight: 700;
 			justify-self: flex-end;
 			margin-left: auto;
 		}
 	}
-  }
+}
+
+
