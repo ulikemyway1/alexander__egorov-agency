@@ -348,11 +348,6 @@
 	}
 }
 
-@media (hover: hover) and (pointer: fine) {
-	.gallery__category:hover {
-		border: 2px solid $main-pink-color;
-	}
-}
 
 @media (max-width: 1720px) {
 	.gallery__part-one,
@@ -464,13 +459,12 @@
 }
 
 //consulting-modal
-
+.modal-backdrop + .modal-backdrop {
+	display: none;
+}
 #consulting-modal {
 	margin: 0 auto;
-	position: relative;
-	border: 1px solid black;
 	padding: 70px;
-	background: $white;
 	color: $title;
 	font-size: 60px;
 	font-weight: 900;
@@ -504,7 +498,7 @@
 			height: 65px;
 		}
 	}
-
+	
 	#consulting-modal-form {
 		margin-top: 50px;
 		display: flex;
@@ -589,10 +583,17 @@
 	flex-direction: row;
 	padding: 40px 0;
 
+	.offers-arrow {
+		width: 14px;
+		height: 14px;
+		color: $main-pink-color;
+
+	}
+
 	.offers-item {
 		position: relative;
 		padding: 54px 35px;
-		border: 1px solid black;
+		border: 1px solid #d2d2d2;
 		height: 124px;
 		flex: 0 1 calc(100% / 3);
 		max-width: 227px;
@@ -600,18 +601,20 @@
 		font-size: 16px;
 		font-weight: 700;
 		text-transform: uppercase;
+		cursor: pointer;
+		transition: border 0.6s;
 
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			width: 14px;
-			height: 14px;
-			left: 15px;
-			top: 50%;
-			transform: translateY(-50%);
-			background: $main-pink-color;
-		}
+		// &::before {
+		// 	content: "";
+		// 	display: block;
+		// 	position: absolute;
+		// 	width: 14px;
+		// 	height: 14px;
+		// 	left: 15px;
+		// 	top: 50%;
+		// 	transform: translateY(-50%);
+		// 	background: $main-pink-color;
+		// }
 	}
 
 	.tab-pane.offers.active {
@@ -645,7 +648,7 @@
 			color: $title;
 			border: none;
 			&::after {
-				content: '';
+				content: "";
 				position: absolute;
 				left: 0;
 				bottom: 1px;
@@ -665,5 +668,62 @@
 
 	.nav-item {
 		flex-shrink: 0;
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+	.section-offers .offers-item {
+    flex: 0 1 50%;
+    max-width: 160px;
+	width: 160px;
+	padding: 54px 18px;
+	font-size: 14px;
+
+	&:before {
+		width: 7px;
+		height: 7px;
+		left: 6px;
+	}
+	}
+
+	.section-offers .tab-pane.offers.active {
+
+		width: 320px;
+	}
+
+	.offers-item {
+		font-size: 14px;
+		padding: 54px 28px;
+	}
+
+	.section-offers .nav-tabs {
+		width: 320px;
+	}
+
+	.offers-arrow {
+		width: 7px;
+		height: 7px;
+
+	}
+}
+
+@media (hover:hover) and (pointer: fine) {
+
+	.section-offers {
+	
+		.offers-item:hover {
+
+			border: 1px solid $main-pink-color;
+		}
+
+		.offers-arrow:hover {
+			color: $main-pink-color-hover;
+	
+		}
+	}
+
+	.gallery__category:hover {
+		border: 2px solid $main-pink-color;
 	}
 }

@@ -3,7 +3,7 @@
  */
 import { initScript } from '../../../../resources/js/utils/init-script';
 import Swiper from 'swiper/bundle';
-const bootstrap = require('bootstrap')
+// const bootstrap = require('bootstrap')
 
 // import styles bundle
 // import 'swiper/css/bundle';
@@ -80,12 +80,12 @@ const init = function() {
 		}
 	})
 	document.addEventListener('DOMContentLoaded', () => {
-		const myModal = new bootstrap.Modal(document.getElementById('consulting-modal'), {
-			backdrop: 'static',
-			keyboard: false
-		  })
+		// const myModal = new bootstrap.Modal(document.getElementById('consulting-modal'), {
+		// 	backdrop: 'static',
+		// 	keyboard: false
+		//   })
 
-		  myModal.modal('show')
+		//   myModal.modal('show')
 	})
 	
 }
