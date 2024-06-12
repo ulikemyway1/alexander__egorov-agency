@@ -2,7 +2,6 @@
  * Internal Dependencies
  */
 import './modules/bootstrap.bundle';
-
 import './modules/swiper-bundle';
 
 import "bootstrap/js/dist/modal";
@@ -11,6 +10,9 @@ import "./modules/hide-preloader";
 import "./modules/horizontal-scroll";
 import hideFocusOnDesktop from "./modules/hide-focus-on-desktop";
 import updateStyleVariables from "./modules/resize-dependent";
+
+import before1 from '../images/before-after/before-1.jpg';
+import after1 from '../images/before-after/after-1.jpg';
 
 var Swiper = (function () {
 	'use strict';
@@ -9654,7 +9656,7 @@ var Swiper = (function () {
   })();
   
 
-const swiper = new Swiper('.swiper.kerr', {
+const swiperKerr = new Swiper('.swiper.kerr', {
 	// Optional parameters
 	direction: 'horizontal',
 	loop: true,
@@ -9676,6 +9678,238 @@ const swiper = new Swiper('.swiper.kerr', {
 	//   el: '.swiper-scrollbar',
 	// },
   });
+
+  class SliderBar {
+	constructor(options = {}) {
+	  // 可选参数
+	  this.options = {
+		width: "",
+		height: "",
+		beforeImg: null,
+		afterImg: null,
+		line: true,
+		lineColor: ""
+	  };
+	  // 本地数据
+	  this.localData = {
+		sliderContainer: null,
+		sliderWrap: null,
+		beforeWrap: null,
+		sliderBtn: null,
+		marginX: 0
+	  };
+  
+	  this.isPhone = window.hasOwnProperty("ontouchstart"); // 是否手机
+	  this.moveHandler = this.moveHandler.bind(this); // 拖动函数绑定this，为了抬起解绑
+  
+	  this.options = { ...this.options, ...options }; // 合并默认参数和客户参数
+	  this.el = document.querySelector(options.el); // 获取容器
+  
+	  this.init(this.el);
+	}
+  
+	// 添加事件
+	addListener() {
+	  const sliderBtn = this.localData.sliderBtn;
+  
+	  if (this.isPhone) {
+		sliderBtn.ontouchstart = this.startSlide.bind(this);
+		sliderBtn.ontouchend = this.endSlide.bind(this);
+	  } else {
+		sliderBtn.onmousedown = this.startSlide.bind(this);
+		sliderBtn.onmouseup = this.endSlide.bind(this);
+	  }
+	}
+  
+	// 拖动
+	startSlide(e) {
+	  e.preventDefault();
+  
+	  const sliderWrap = this.localData.sliderWrap;
+	  const sliderBtn = this.localData.sliderBtn;
+  
+	  let slideEvent = (e.touches && e.touches[0]) || e;
+	  this.localData.marginX = slideEvent.pageX - sliderBtn.offsetLeft;
+	  this.isPhone
+		? sliderWrap.addEventListener("touchmove", this.moveHandler)
+		: sliderWrap.addEventListener("mousemove", this.moveHandler);
+	}
+  
+	// 结束拖动
+	endSlide() {
+	  const sliderWrap = this.localData.sliderWrap;
+	  this.isPhone
+		? sliderWrap.removeEventListener("touchmove", this.moveHandler)
+		: sliderWrap.removeEventListener("mousemove", this.moveHandler);
+	}
+  
+	// 拖动处理函数
+	moveHandler(e) {
+	  let marginX = this.localData.marginX;
+	  let slideEvent = (e.touches && e.touches[0]) || e;
+	  this.localData.sliderBtn.style.left = slideEvent.pageX - marginX + "px";
+	  this.localData.beforeWrap.style.width = slideEvent.pageX - marginX + "px";
+	}
+  
+	// 初始化
+	init(el) {
+	  const {
+		beforeImg,
+		afterImg,
+		width,
+		height,
+		line,
+		lineColor
+	  } = this.options;
+	  if (!beforeImg || !afterImg) return;
+  
+	  el.innerHTML = `
+		<div class="slider-container">
+		  <div class="slider-wrap">
+			<div class="before-img">
+			  <img src=${beforeImg} alt="">
+			</div>
+			<img src=${afterImg} alt="">
+			<span class="slider-btn"></span>
+		  </div>
+		</div>
+	  `;
+  
+	  this.localData.sliderContainer = el.querySelector(".slider-container");
+	  this.localData.sliderWrap = el.querySelector(".slider-wrap"); // 整个滑动区域
+	  this.localData.beforeWrap = el.querySelector(".before-img"); // 左边图片外框
+	  this.localData.sliderBtn = el.querySelector(".slider-btn"); // 滑动条
+  
+	  const {
+		sliderContainer,
+		sliderBtn
+	  } = this.localData;
+  
+	  el.style.cssText = `display: flex;justify-content: center;`;
+	  sliderContainer.style.cssText = `width: ${width}; height: ${height};`;
+	  if (!line) sliderBtn.style.background = "none";
+	  else if (lineColor) sliderBtn.style.background = lineColor;
+  
+	  this.addListener();
+	}
+  }
+
+  const beforeAfter1 = new SliderBar({
+	el: '#before-after-first',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter2 = new SliderBar({
+	el: '#before-after-second',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter3 = new SliderBar({
+	el: '#before-after-third',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter4 = new SliderBar({
+	el: '#before-after-fourth',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter5 = new SliderBar({
+	el: '#before-after-fifth',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter6 = new SliderBar({
+	el: '#before-after-sixth',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter7 = new SliderBar({
+	el: '#before-after-seventh',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter8 = new SliderBar({
+	el: '#before-after-eight',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+  const beforeAfter9 = new SliderBar({
+	el: '#before-after-ninth',
+	beforeImg: before1,
+	afterImg: after1,
+	// width: "460px",               // slide-wrap width, default 100%
+    height: "auto",            // slide-wrap height, default image-height
+    line: true,                 // Dividing line, default true
+    lineColor: "#ffffff"
+  });
+
+  const swiperBeforeAfterPhoto = new Swiper('.swiper.before-after-photo', {
+	direction: 'horizontal',
+	loop: true,
+	allowTouchMove: false,
+	slidesPerView: '3',
+	centeredSlides: true,
+	
+  });
+
+  const swiperBeforeAfterDescr = new Swiper('.swiper.before-after-description', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+  
+	// If we need pagination
+	pagination: {
+	  el: '.swiper-pagination.before-after-description',
+	  clickable: true,
+	},
+  
+	// Navigation arrows
+	navigation: {
+	  nextEl: '.swiper-button-next.before-after-description',
+	  prevEl: '.swiper-button-prev.before-after-description',
+	},
+
+	controller: {
+		control: swiperBeforeAfterPhoto,
+	  },
+  
+  });
+
+
+
 
 const admin = function() {
 	setTimeout(() => {

@@ -43,6 +43,7 @@
 		"cssnano": "^3.10.0",
 		"del": "^3.0.0",
 		"escape-string-regexp": "^1.0.5",
+		"file-loader": "^6.2.0",
 		"fs-extra": "^4.0.2",
 		"gulp": "^5.0.0",
 		"gulp-changed": "^4.0.3",

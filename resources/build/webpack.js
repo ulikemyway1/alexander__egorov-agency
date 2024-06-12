@@ -104,6 +104,14 @@ module.exports = {
 				exclude: /node_modules/,
 				use: [babelLoader],
 			},
+			{
+				test: /\.(png|jpe?g|gif)$/i,
+				use: [
+				  {
+					loader: 'file-loader',
+				  },
+				],
+			  },
 		],
 		noParse: ["raty-js"].map((module) => new RegExp(escapeRegEx(module))),
 	},
