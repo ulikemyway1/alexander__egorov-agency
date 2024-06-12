@@ -5,7 +5,7 @@
 @import "../../../../resources/scss/generic/variables";
 @import "../../../../resources/scss/generic/functions";
 @import "../../../../resources/scss/generic/mixins";
-@import "./swiper.scss";
+
 /* ------------------------------------------------------------ *\
 	Blocks: Section Hero
 \* ------------------------------------------------------------ */
@@ -348,7 +348,6 @@
 	}
 }
 
-
 @media (max-width: 1720px) {
 	.gallery__part-one,
 	.gallery__part-two {
@@ -438,11 +437,6 @@
 	}
 }
 
-.swiper {
-	width: 600px;
-	height: 300px;
-}
-
 #gallery__popup {
 	position: fixed;
 	top: 0;
@@ -451,11 +445,6 @@
 	height: 100dvh;
 	width: 100dvw;
 	background-color: #2a99c865;
-}
-
-.swiper {
-	width: 600px;
-	height: 300px;
 }
 
 //consulting-modal
@@ -498,7 +487,7 @@
 			height: 65px;
 		}
 	}
-	
+
 	#consulting-modal-form {
 		margin-top: 50px;
 		display: flex;
@@ -587,7 +576,6 @@
 		width: 14px;
 		height: 14px;
 		color: $main-pink-color;
-
 	}
 
 	.offers-item {
@@ -671,24 +659,22 @@
 	}
 }
 
-
 @media screen and (max-width: 768px) {
 	.section-offers .offers-item {
-    flex: 0 1 50%;
-    max-width: 160px;
-	width: 160px;
-	padding: 54px 18px;
-	font-size: 14px;
+		flex: 0 1 50%;
+		max-width: 160px;
+		width: 160px;
+		padding: 54px 18px;
+		font-size: 14px;
 
-	&:before {
-		width: 7px;
-		height: 7px;
-		left: 6px;
-	}
+		&:before {
+			width: 7px;
+			height: 7px;
+			left: 6px;
+		}
 	}
 
 	.section-offers .tab-pane.offers.active {
-
 		width: 320px;
 	}
 
@@ -704,26 +690,84 @@
 	.offers-arrow {
 		width: 7px;
 		height: 7px;
-
 	}
 }
 
-@media (hover:hover) and (pointer: fine) {
-
+@media (hover: hover) and (pointer: fine) {
 	.section-offers {
-	
 		.offers-item:hover {
-
 			border: 1px solid $main-pink-color;
 		}
 
 		.offers-arrow:hover {
 			color: $main-pink-color-hover;
-	
 		}
 	}
 
 	.gallery__category:hover {
 		border: 2px solid $main-pink-color;
+	}
+}
+
+.kerr-title {
+	color: $title;
+	font-size: 72px;
+	font-weight: 900;
+	line-height: 78px;
+}
+
+.kerr-info {
+	color: $title;
+	margin-left: -15px;
+	padding-top: 220px;
+	height: 100%;
+	background-image: url("../../../../../resources/images/backgrounds/kerr-girl.png");
+	background-size: contain;
+	background-position: top right -195px;
+	background-repeat: no-repeat;
+
+	&__content-wrapper {
+		max-width: 464px;
+	}
+
+	&__title {
+		font-size: 72px;
+		font-weight: 900;
+		line-height: 78px;
+	}
+
+	&__text {
+		margin-top: 30px;
+		font-family: BankGothic;
+		max-width: 400px;
+	}
+
+	&__button-wrapper {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+
+		.watch-video-btn,
+		.learn-more-btn {
+			padding: 20px 38px;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 16px;
+		}
+	}
+
+	.read-more {
+		font-family: Montserrat;
+		color: $main-pink-color;
+		text-decoration: underline;
+		font-weight: 700px;
+		transition: color 0.6s;
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.read-more:hover {
+		color: $main-pink-color-hover;
 	}
 }
