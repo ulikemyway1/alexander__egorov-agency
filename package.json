@@ -17,7 +17,8 @@
 		"build": "cross-env NODE_ENV=production npm run run-gulp -- build && npm run wp-build"
 	},
 	"dependencies": {
-		"bootstrap": "^5.2.3",
+		"@floating-ui/dom": "^1.6.5",
+		"bootstrap": "^5.3.3",
 		"jquery.scrollbar": "^0.2.11",
 		"select2": "^4.0.0",
 		"swiper": "^11.1.4",
@@ -26,6 +27,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.1.0",
 		"@babel/preset-env": "^7.1.0",
+		"@types/bootstrap": "^5.2.10",
 		"@wordpress/block-editor": "^11.4.0",
 		"@wordpress/blocks": "^12.1.0",
 		"@wordpress/create-block": "^4.8.0",

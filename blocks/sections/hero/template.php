@@ -46,7 +46,8 @@ if (isset($block['data']['block_preview_images'])) {
 				<h2 class="hero__subtitle">Macon’s Premiere Boutuque Personal Training Studio</h2>
 
 				<div class="hero__buttons-wrapper">
-					<button class="button consulting-button" id="book_consulting">Book Consultation</button>
+					<button class="button consulting-button" data-bs-toggle="modal" data-bs-target="#consulting-modal"
+						id="book_consulting">Book Consultation</button>
 					<button class="button consulting-button no-fill">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
 							<g clip-path="url(#a)">
@@ -151,26 +152,333 @@ if (isset($block['data']['block_preview_images'])) {
 
 	</div>
 
+</section>
+
+
+<section class="section section-offers">
+
+	<div class="offers-tabs">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+					role="tab" aria-controls="home" aria-selected="true">Body</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+					role="tab" aria-controls="profile"
+					aria-selected="false">BBreastBreastBreastBreastBreastBreastBreastBreastreast</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button"
+					role="tab" aria-controls="messages" aria-selected="false">Buttocks</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button"
+					role="tab" aria-controls="settings" aria-selected="false">Mens</button>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div class="tab-pane offers active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Brow Lift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Facelift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Septoplasty</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Chin<br>Augmentation</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Morpheus8</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Injectables</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Ear Surgery</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Neck Lift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Dysport®</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Eyelid Surgery</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Rhinoplasty</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>AccuTite™<br>and FaceTite®</span>
+				</div>
+
+			</div>
+
+
+			<div class="tab-pane offers" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Rhinoplasty</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>AccuTite™<br>and FaceTite®</span>
+				</div>				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Rhinoplasty</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>AccuTite™<br>and FaceTite®</span>
+				</div>				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Rhinoplasty</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>AccuTite™<br>and FaceTite®</span>
+				</div>
+			</div>
+
+
+			<div class="tab-pane offers" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+			<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Brow Lift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Facelift</span>
+				</div>	<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Brow Lift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Facelift</span>
+				</div>	<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Brow Lift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Facelift</span>
+				</div>
+			</div>
+
+
+			<div class="tab-pane offers" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+			<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Brow Lift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Facelift</span>
+				</div>	<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Brow Lift</span>
+				</div>
+				<div class="offers-item">
+					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span>Facelift</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- Nav tabs -->
 
 </section>
 
-<div id="gallery__popup" class="hidden"></div>
 
-<div class="swiper">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
-			<!-- Slides -->
-			<div class="swiper-slide">Slide 1</div>
-			<div class="swiper-slide">Slide 2</div>
-			<div class="swiper-slide">Slide 3</div>
+<div class="modal fade" id="consulting-modal" tabindex="-1" aria-labelledby="Book consulting modal with"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal__title">Book<br>Consultation</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+					<svg width="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M13.3259 12.001L23.7254 1.60144C24.0916 1.2353 24.0916 0.641675 23.7254 0.275582C23.3593 -0.0905116 22.7657 -0.0905585 22.3996 0.275582L12 10.6752L1.60046 0.275582C1.23432 -0.0905585 0.640698 -0.0905585 0.274605 0.275582C-0.0914881 0.641722 -0.091535 1.23535 0.274605 1.60144L10.6741 12.001L0.274605 22.4005C-0.091535 22.7667 -0.091535 23.3603 0.274605 23.7264C0.457651 23.9095 0.697604 24.001 0.937557 24.001C1.17751 24.001 1.41742 23.9095 1.60051 23.7264L12 13.3269L22.3995 23.7264C22.5826 23.9095 22.8225 24.001 23.0625 24.001C23.3024 24.001 23.5423 23.9095 23.7254 23.7264C24.0916 23.3603 24.0916 22.7666 23.7254 22.4005L13.3259 12.001Z"
+							fill="#currenColor" />
+					</svg>
+
+				</button>
+			</div>
+
+			<div class="modal-body">
+				<div class="modal-descr">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nullam pretium lectus est non
+					arcu diam in varius.
+				</div>
+				<form action="#" id="consulting-modal-form">
+					<fieldset>
+						<legend class="form__legend">Your first and last names</legend>
+						<div class="form__inputs-wrapper">
+							<label class="modal__label" for="first-name">First name</label>
+							<input class="modal__input" id='first-name' type="text" placeholder="First Name" required>
+							<label class="modal__label" for="last-name'">Last name</label>
+							<input class="modal__input" id='last-name' type="text" placeholder="Last Name">
+
+						</div>
+
+					</fieldset>
+
+					<fieldset>
+						<legend class="form__legend">Your contacts</legend>
+
+						<div class="form__inputs-wrapper">
+							<label class="modal__label" for="email">Email</label>
+							<input class="modal__input" id='email' type="email" placeholder="Email" required>
+
+							<label class="modal__label" for="phone">Phone number</label>
+							<input class="modal__input" id='phone' type="tel" placeholder="Phone number">
+						</div>
+
+					</fieldset>
+
+
+					<label class="modal__label" for="message">Your message</label>
+					<textarea class="modal__input modal__textarea" id='message' placeholder="Message"
+						required></textarea>
+
+
+					<button type="submit" class="button">Submit</button>
+				</form>
+			</div>
 		</div>
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
-
-		<!-- If we need navigation buttons -->
-		<div class="swiper-button-prev">prev</div>
-		<div class="swiper-button-next">next</div>
-
-		<!-- If we need scrollbar -->
-		<div class="swiper-scrollbar"></div>
 	</div>
+</div>

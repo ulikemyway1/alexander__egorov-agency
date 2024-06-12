@@ -1,6 +1,7 @@
 /**
  * Internal Dependencies
  */
+import './modules/bootstrap.bundle';
 import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/collapse";
 import "./modules/hide-preloader";
