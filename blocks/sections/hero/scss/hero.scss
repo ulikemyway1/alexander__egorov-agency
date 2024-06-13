@@ -779,6 +779,10 @@
 	}
 }
 
+.before-after-row {
+	gap: 70px;
+}
+
 @media (hover: hover) and (pointer: fine) {
 	.read-more:hover {
 		color: $main-pink-color-hover;
@@ -794,6 +798,7 @@
 @media (max-width: 1280px) {
 	.kerr-row,
 	.before-after-row {
+		justify-content: center;
 		gap: 100px;
 	}
 
@@ -991,4 +996,19 @@
 			color: $main-pink-color;
 		}
 	}
+}
+
+
+.gallery-slide {
+	max-height: 500px;
+}
+
+#gallery-slide-1,
+#gallery-slide-2,
+#gallery-slide-3 {
+	background-image: url('../../../../../resources/images/gallery/gallery-image.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: clamp(13.125rem, 8.942rem + 18.59vw, 31.25rem);
+	background-position: center;
 }
