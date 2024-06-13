@@ -60,31 +60,26 @@ const stateNames = {
 
 
 // modal with videos
-let player1;
-player1 = YouTubePlayer('player-1', {
-	playerVars: { autoplay: 1},
+
+const heroVideoModal = document.getElementById('video-y-modal-hero');
+
+const player1 = YouTubePlayer('player-1', {
+	videoId: 'HYX6H0zRmbc',
+	playerVars: { 'autoplay': 1, 'controls': 1 },
 	height: '766',
     width: '1362',
 	
 });
+player1.mute();
 
-// player1.loadVideoById('HYX6H0zRmbc');
-player1.cueVideoById('HYX6H0zRmbc',
-	0)
 
-player1.on('stateChange', function (event) {
-	if (!stateNames[event.data]) {
-		throw new Error('Unknown state (' + event.data + ').');
-	}
-	if (event.data == 5) {
-		console.log('cccc')
-		player1.playVideo();
-	}
+if (heroVideoModal && player1) {
+	
+	heroVideoModal.addEventListener('shown.bs.modal', () => player1.playVideo());
 
-	console.log('State: ' + stateNames[event.data] + ' (' + event.data + ').');
-});
+	heroVideoModal.addEventListener('hidden.bs.modal', () => player1.pauseVideo());
+}
 
-player1.playVideo();
 
 const modals = {
 	hero: [goSportVideo, '#video-e-1', '#video-e-modal'],

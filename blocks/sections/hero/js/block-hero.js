@@ -48,11 +48,6 @@ const init = function() {
 			togglePopUp('gallery__popup')
 		}
 	})
-	document.addEventListener('DOMContentLoaded', () => {
-	})
-	// console.log(YouTubePlayer);
-	console.log('lkelele')
-
 }
 
 
