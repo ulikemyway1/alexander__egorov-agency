@@ -168,6 +168,7 @@
 
 .swiper.before-after-photo {
 	padding: 160px 0;
+	width: 768px;
 	background: $main-pink-color;
 	.swiper-slide-active {
 		transform: scale(1.15);
@@ -177,6 +178,7 @@
 
 
 .before-after-photo-slider {
+	width: 768px;
 	position: relative;
 	&::before {
 		content: '';
@@ -185,7 +187,7 @@
 		background: $main-pink-color;
 		width: 70px;
 		position: absolute;
-		left: -49px;
+		left: -26px;
 		z-index: 1000;
 	}
 
@@ -214,11 +216,31 @@
 
 .swiper-slide-active .before-after-slide-descr {
 	display: flex;
-	width: 100%;
+	width: 130%;
+    margin: 0 40px 0 -40px;
 	justify-content: space-between;
 }
 
+@media (max-width: 1100px) {
+	.before-after-photo-slider {
+		width: 70dvw;
+		background-color: $main-pink-color;
+		align-self: center;
+	}
 
+	.swiper.before-after-photo {
+		width: 90%;
+	}
+
+	.before-after-photo-slider::before, .before-after-photo-slider::after {
+		content: none;
+	}
+
+	.swiper-slide-active .before-after-slide-descr { 
+		width: 30dvw;
+
+	}
+}
 
 
 
@@ -295,3 +317,39 @@
 			padding-bottom: 50px;
 		}
 	}
+
+
+	@media (max-width: 1730px) {
+		.section-before-after {
+			.container {
+				max-width: 90dvw;
+			}
+		}
+
+		.before-after-row-item {
+			width: calc(40% - 35px) !important;
+
+			&.slider {
+				width: calc(60% - 35px)!important;
+			}
+		}
+	}
+
+
+	@media (max-width: 1500px) {
+		.section-before-after {
+			.container {
+				max-width: 95dvw;
+			}
+		}
+
+		.before-after-row {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.before-after-row-item {
+			width: 100%		!important;
+		}
+	}
+

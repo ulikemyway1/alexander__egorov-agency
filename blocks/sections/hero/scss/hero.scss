@@ -716,10 +716,17 @@
 	line-height: 78px;
 }
 
+.kerr-row {
+	display: flex;
+	width: 100%;
+}
+.kerr-row-item {
+	width: 50%;
+}
+
 .kerr-info {
 	position: relative;
 	color: $title;
-	margin-left: -15px;
 	padding-top: 220px;
 	height: 100%;
 	background-image: url("../../../../../resources/images/backgrounds/kerr-girl.png");
@@ -728,10 +735,10 @@
 	background-repeat: no-repeat;
 
 	&:after {
-		top: -10%;
+		top: -40%;
 		left: -20%;
 		width: 120%;
-		height: 120%;
+		height: 140%;
 		content: "";
 		position: absolute;
 		z-index: -1;
@@ -780,7 +787,12 @@
 }
 
 .before-after-row {
+	display: flex;
 	gap: 70px;
+}
+
+.before-after-row-item {
+	width: calc(50% - 35px)
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -802,13 +814,27 @@
 		gap: 100px;
 	}
 
-	.ker-info {
+	.kerr-info {
+		padding-bottom: 120px;
 		.kerr-info__button-wrapper {
 			.watch-video-btn,
 			.learn-more-btn {
 				width: auto;
 			}
 		}
+
+		&:after {
+			content: none;
+		}
+	}
+
+	.kerr-row {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	.kerr-row-item {
+		width: 100%;
 	}
 }
 
