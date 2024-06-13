@@ -171,6 +171,7 @@
 	border: none;
 	border-radius: 2px;
 	transition: all 0.6s;
+	background: $main-pink-color;
 	cursor: pointer;
 }
 
@@ -185,7 +186,9 @@
 
 .no-fill {
 	background: none;
+	color: $main-pink-color
 }
+
 
 .like-button {
 	display: flex;
@@ -197,6 +200,10 @@
 	color: $white;
 	transition: all 0.6s;
 	cursor: pointer;
+	&.no-fill {
+		background: none;
+		color: $main-pink-color
+	}
 }
 
 .blocked {

@@ -2,6 +2,7 @@
 	Generic
 \* ------------------------------------------------------------ */
 @import "bootstrap.css";
+@import "swiper-bundle.min.css";
 @import "generic/bootstrap-grid";
 @import "generic/variables";
 @import "generic/functions";
@@ -11,10 +12,7 @@
 @import "generic/base";
 @import "generic/helpers";
 @import "generic/swiper";
-
-
-
-
+@import "slider-bar";
 
 /* ------------------------------------------------------------ *\
 	Overwrites
