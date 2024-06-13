@@ -717,6 +717,7 @@
 }
 
 .kerr-info {
+	position: relative;
 	color: $title;
 	margin-left: -15px;
 	padding-top: 220px;
@@ -725,6 +726,19 @@
 	background-size: contain;
 	background-position: top right -195px;
 	background-repeat: no-repeat;
+
+	&:after {
+		top: -10%;
+		left: -20%;
+		width: 120%;
+		height: 120%;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		background-color: rgb(0 76 108 / 20%);
+	}
+
+	
 
 	&__content-wrapper {
 		max-width: 464px;
@@ -754,6 +768,7 @@
 			text-decoration: none;
 			font-weight: 700;
 			font-size: 16px;
+			width: auto;
 		}
 	}
 
@@ -776,5 +791,24 @@
 
 	.before-after-description {
 		position: relative;
+	}
+}
+
+
+@media (max-width: 1280px) {
+	.kerr-row,
+	.before-after-row {
+		gap: 100px;
+	}
+
+	.ker-info {
+		
+		.kerr-info__button-wrapper {
+			.watch-video-btn ,
+			.learn-more-btn {
+				width: auto;
+			}
+		}
+	
 	}
 }

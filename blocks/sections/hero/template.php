@@ -71,8 +71,8 @@ if (isset($block['data']['block_preview_images'])) {
 
 <section class="section section-slider-kerr">
 	<div class="container">
-		<div class="row">
-			<div class="col-6">
+		<div class="row kerr-row">
+			<div class="col-12 col-xl-6">
 				<div class="kerr-info">
 					<div class="kerr-info__content-wrapper">
 						<div class="kerr-info__title">Alli Kerr</div>
@@ -92,7 +92,7 @@ if (isset($block['data']['block_preview_images'])) {
 
 				</div>
 			</div>
-			<div class="col-6">
+			<div class="col-12 col-xl-6">
 				<div class="row justify-content-center"">
 					<div class=" col-10">
 					<div class="kerr-title">Hear from the people who know me best</div>
@@ -304,8 +304,8 @@ if (isset($block['data']['block_preview_images'])) {
 
 <section class="section section-before-after">
 	<div class="container">
-		<div class="row">
-			<div class="col-5">
+		<div class="row before-after-row">
+			<div class="col-12 col-xl-5">
 				<div class="before-after-description-slider">
 					<div class="swiper before-after-description">
 						<!-- Additional required wrapper -->
@@ -392,7 +392,7 @@ if (isset($block['data']['block_preview_images'])) {
 				</div>
 			</div>
 
-			<div class="col-7">
+			<div class="col-12 col-xl-7">
 					<div class="before-after-photo-slider">
 						<div class="swiper before-after-photo">
 							<!-- Additional required wrapper -->
@@ -490,6 +490,9 @@ if (isset($block['data']['block_preview_images'])) {
 	</div>
 
 </section>
+
+
+
 <section class="section section-gallery">
 	<div class="container">
 		<h2 class="section__title">our gallery</h2>

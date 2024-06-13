@@ -13,6 +13,8 @@ import updateStyleVariables from "./modules/resize-dependent";
 
 import before1 from '../images/before-after/before-1.jpg';
 import after1 from '../images/before-after/after-1.jpg';
+import before2 from '../images/before-after/before-2.png';
+import after2 from '../images/before-after/after-2.png';
 
 var Swiper = (function () {
 	'use strict';
@@ -9747,8 +9749,13 @@ const swiperKerr = new Swiper('.swiper.kerr', {
 	moveHandler(e) {
 	  let marginX = this.localData.marginX;
 	  let slideEvent = (e.touches && e.touches[0]) || e;
-	  this.localData.sliderBtn.style.left = slideEvent.pageX - marginX + "px";
-	  this.localData.beforeWrap.style.width = slideEvent.pageX - marginX + "px";
+	
+	  if ((Math.abs(slideEvent.pageX - marginX) < 330) && (slideEvent.pageX - marginX > 0)) {
+		this.localData.sliderBtn.style.left = slideEvent.pageX - marginX + "px";
+
+		this.localData.beforeWrap.style.width = slideEvent.pageX - marginX + "px";
+	  }
+
 	}
   
 	// 初始化
@@ -9805,9 +9812,9 @@ const swiperKerr = new Swiper('.swiper.kerr', {
   });
   const beforeAfter2 = new SliderBar({
 	el: '#before-after-second',
-	beforeImg: before1,
-	afterImg: after1,
-	// width: "460px",               // slide-wrap width, default 100%
+	beforeImg: before2,
+	afterImg: after2,
+	// width: "480px",               // slide-wrap width, default 100%
     height: "auto",            // slide-wrap height, default image-height
     line: true,                 // Dividing line, default true
     lineColor: "#ffffff"
