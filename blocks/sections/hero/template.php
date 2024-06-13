@@ -533,21 +533,21 @@ if (isset($block['data']['block_preview_images'])) {
 
 			<div class="gallery__part-one">
 
-				<a href="#/" class="gallery__category gallery__wide" id="personal">
+				<a href="#/" class="gallery__category gallery__wide" id="personal"  data-bs-toggle="modal" data-bs-target="#gallery-personal-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">Personal<br>Training</div>
 						<div class="gallery__category-info_count">5 photos</div>
 					</div>
 				</a>
 
-				<a href="#/" class="gallery__category" id="demand">
+				<a href="#/" class="gallery__category" id="demand" data-bs-toggle="modal" data-bs-target="#gallery-demand-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">On-Demand<br>Programs</div>
 						<div class="gallery__category-info_count">2 photos</div>
 					</div>
 				</a>
 
-				<a href="#/" class="gallery__category" id="beginners">
+				<a href="#/" class="gallery__category" id="beginners" data-bs-toggle="modal" data-bs-target="#gallery-beginners-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">Beginners<br>Welcome</div>
 						<div class="gallery__category-info_count">2 photos</div>
@@ -555,7 +555,7 @@ if (isset($block['data']['block_preview_images'])) {
 				</a>
 
 
-				<a href="#/" class="gallery__category" id="virtual">
+				<a href="#/" class="gallery__category" id="virtual" data-bs-toggle="modal" data-bs-target="#gallery-virtual-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">Virtual/Hybrid<br>Training</div>
 						<div class="gallery__category-info_count">2 photos</div>
@@ -563,7 +563,7 @@ if (isset($block['data']['block_preview_images'])) {
 				</a>
 
 
-				<a href="#/" class="gallery__category" id="mind">
+				<a href="#/" class="gallery__category" id="mind" data-bs-toggle="modal" data-bs-target="#gallery-mind-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">The mind<br>fitness</div>
 						<div class="gallery__category-info_count">2 photos</div>
@@ -573,28 +573,28 @@ if (isset($block['data']['block_preview_images'])) {
 
 			<div class="gallery__part-two">
 
-				<a href="#/" class="gallery__category gallery__wide" id="semi-private">
+				<a href="#/" class="gallery__category gallery__wide" id="semi-private" data-bs-toggle="modal" data-bs-target="#gallery-semi-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">Semi-Private Training<br>for Women</div>
 						<div class="gallery__category-info_count">2 photos</div>
 					</div>
 				</a>
 
-				<a href="#/" class="gallery__category" id="nutrition">
+				<a href="#/" class="gallery__category" id="nutrition" data-bs-toggle="modal" data-bs-target="#gallery-nutrition-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">Nutrition<br>Program</div>
 						<div class="gallery__category-info_count">2 photos</div>
 					</div>
 				</a>
 
-				<a href="#/" class="gallery__category" id="co-ed">
+				<a href="#/" class="gallery__category" id="co-ed" data-bs-toggle="modal" data-bs-target="#gallery-co-ed-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">Co-ed<br>Training</div>
 						<div class="gallery__category-info_count">2 photos</div>
 					</div>
 				</a>
 
-				<a href="#/" class="gallery__category gallery__wide" id="functional">
+				<a href="#/" class="gallery__category gallery__wide" id="functional" data-bs-toggle="modal" data-bs-target="#gallery-functional-modal">
 					<div class="gallery__category-info">
 						<div class="gallery__category-info_title">Functional<br>Fitness</div>
 						<div class="gallery__category-info_count">2 photos</div>
