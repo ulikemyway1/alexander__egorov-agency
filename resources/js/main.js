@@ -87,6 +87,7 @@ player1.on('stateChange', function (event) {
 player1.playVideo();
 
 const modals = {
+	hero: [goSportVideo, '#video-e-1', '#video-e-modal'],
 	fatty: [fattyVideo, '#video-e-2', '#modal-e-2'],
 	plank: [plankVideo, '#video-e-3', '#modal-e-3'],
 	squat: [squatVideo, '#video-e-4', '#modal-e-4'],
