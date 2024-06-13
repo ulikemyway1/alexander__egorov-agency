@@ -112,6 +112,10 @@ module.exports = {
 				  },
 				],
 			  },
+			  {
+				test: /\.mp4$/,
+				use: 'file-loader?name=videos/[name].[ext]',
+		 },
 		],
 		noParse: ["raty-js"].map((module) => new RegExp(escapeRegEx(module))),
 	},
