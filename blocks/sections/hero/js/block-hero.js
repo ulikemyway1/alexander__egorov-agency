@@ -3,7 +3,6 @@
  */
 import { initScript } from '../../../../resources/js/utils/init-script';
 
-
 const init = function() {
 	const $section = $( this );
 
@@ -50,14 +49,10 @@ const init = function() {
 		}
 	})
 	document.addEventListener('DOMContentLoaded', () => {
-		// const myModal = new bootstrap.Modal(document.getElementById('consulting-modal'), {
-		// 	backdrop: 'static',
-		// 	keyboard: false
-		//   })
-
-		//   myModal.modal('show')
 	})
-	
+	// console.log(YouTubePlayer);
+	console.log('lkelele')
+
 }
 
 

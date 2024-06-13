@@ -16,6 +16,120 @@ import after1 from '../images/before-after/after-1.jpg';
 import before2 from '../images/before-after/before-2.png';
 import after2 from '../images/before-after/after-2.png';
 
+import goSportVideo from '../video/go-sport.mp4';
+import fattyVideo from '../video/fatty.mp4';
+import plankVideo from '../video/plank.mp4';
+import squatVideo from '../video/squat.mp4';
+
+/**
+ * @typedef options
+ * @see https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player
+ * @param {Number} width
+ * @param {Number} height
+ * @param {String} videoId
+ * @param {Object} playerVars
+ * @param {Object} events
+ */
+
+/**
+ * @typedef YT.Player
+ * @see https://developers.google.com/youtube/iframe_api_reference
+ * */
+
+/**
+ * A factory function used to produce an instance of YT.Player and queue function calls and proxy events of the resulting object.
+ *
+ * @param {YT.Player|HTMLElement|String} elementId Either An existing YT.Player instance,
+ * the DOM element or the id of the HTML element where the API will insert an <iframe>.
+ * @param {YouTubePlayer~options} options See `options` (Ignored when using an existing YT.Player instance).
+ * @param {boolean} strictState A flag designating whether or not to wait for
+ * an acceptable state when calling supported functions. Default: `false`.
+ * See `FunctionStateMap.js` for supported functions and acceptable states.
+ * @returns {Object}
+ */
+
+import YouTubePlayer from 'youtube-player';
+const stateNames = {
+	'-1': 'unstarted',
+	0: 'ended',
+	1: 'playing',
+	2: 'paused',
+	3: 'buffering',
+	5: 'video cued'
+};
+
+
+// modal with videos
+let player1;
+player1 = YouTubePlayer('player-1', {
+	playerVars: { autoplay: 1},
+	height: '766',
+    width: '1362',
+	
+});
+
+// player1.loadVideoById('HYX6H0zRmbc');
+player1.cueVideoById('HYX6H0zRmbc',
+	0)
+
+player1.on('stateChange', function (event) {
+	if (!stateNames[event.data]) {
+		throw new Error('Unknown state (' + event.data + ').');
+	}
+	if (event.data == 5) {
+		console.log('cccc')
+		player1.playVideo();
+	}
+
+	console.log('State: ' + stateNames[event.data] + ' (' + event.data + ').');
+});
+
+player1.playVideo();
+
+const modals = {
+	fatty: [fattyVideo, '#video-e-2', '#modal-e-2'],
+	plank: [plankVideo, '#video-e-3', '#modal-e-3'],
+	squat: [squatVideo, '#video-e-4', '#modal-e-4'],
+}
+
+function modalVideoInit(videoSrc, videoSelector, modalSelector) {
+	
+	const videoElement = document.querySelector(videoSelector);
+	const modal = document.querySelector(modalSelector);
+
+	
+	if (videoSrc && videoSelector && modal) {
+		if (videoElement instanceof HTMLVideoElement)  {
+			videoElement.src = videoSrc;
+			videoElement.muted = true;
+		}
+		
+		modal.addEventListener('shown.bs.modal', () => {
+			if (videoElement instanceof HTMLVideoElement) {
+				videoElement.play()
+			}
+			
+		})
+
+		modal.addEventListener('hidden.bs.modal', () => {
+			if (videoElement instanceof HTMLVideoElement)
+			videoElement.pause()
+		})
+
+	}
+
+
+}
+
+Object.values(modals).forEach((modalInfoSet) => modalVideoInit(...modalInfoSet));
+
+
+
+
+
+
+
+// sliders
 var Swiper = (function () {
 	'use strict';
   

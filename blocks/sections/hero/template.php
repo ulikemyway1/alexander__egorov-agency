@@ -48,7 +48,8 @@ if (isset($block['data']['block_preview_images'])) {
 				<div class="hero__buttons-wrapper">
 					<button class="button consulting-button" data-bs-toggle="modal" data-bs-target="#consulting-modal"
 						id="book_consulting">Book Consultation</button>
-					<button class="button consulting-button no-fill">
+					<button id="hero-video-btn" data-embed-1="true" class="button consulting-button no-fill"
+						data-bs-toggle="modal" data-bs-target="#video-e-modal">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
 							<g clip-path="url(#a)">
 								<path fill="#fff"
@@ -66,6 +67,36 @@ if (isset($block['data']['block_preview_images'])) {
 			</div>
 		</div>
 
+	</div>
+</section>
+
+<section class="section section-testimonials">
+	<div class="container">
+		<h2 class="testimonials__title">Testimonials</h2>
+		<div class="testimonials__video-wrapper">
+			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-2">
+				<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
+						fill="currentColor" />
+				</svg>
+
+			</a>
+			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-3">
+			<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
+						fill="currentColor" />
+				</svg>
+			</a>
+			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-4">
+			<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
+						fill="currentColor" />
+				</svg>
+			</a>
+		</div>
 	</div>
 </section>
 
@@ -393,96 +424,96 @@ if (isset($block['data']['block_preview_images'])) {
 			</div>
 
 			<div class="col-12 col-xl-7">
-					<div class="before-after-photo-slider">
-						<div class="swiper before-after-photo">
-							<!-- Additional required wrapper -->
-							<div class="swiper-wrapper">
-								<!-- Slides -->
-								<article class="swiper-slide">
-									<div class="before-after-slide-wrapper">
+				<div class="before-after-photo-slider">
+					<div class="swiper before-after-photo">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<article class="swiper-slide">
+								<div class="before-after-slide-wrapper">
 									<div id="before-after-first"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-second"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-third"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-fourth"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-fifth"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-sixth"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-seventh"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-eight"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-								<article class="swiper-slide">
+								</div>
+							</article>
+							<article class="swiper-slide">
 								<div class="before-after-slide-wrapper">
 									<div id="before-after-ninth"></div>
-										<div class="before-after-slide-descr">
-											<span>Before</span>
-											<span>After</span>
-										</div>
+									<div class="before-after-slide-descr">
+										<span>Before</span>
+										<span>After</span>
 									</div>
-								</article>
-							</div>
+								</div>
+							</article>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -908,6 +939,79 @@ if (isset($block['data']['block_preview_images'])) {
 					<button type="submit" class="button">Submit</button>
 				</form>
 			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="video-y-modal" tabindex="-1" aria-labelledby="Book consulting modal with"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+			</div>
+			<div id='player-1'></div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="video-e-modal" tabindex="-1" aria-labelledby="Book consulting modal with"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="video-e-modal-1" type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close">X</button>
+			</div>
+			<video id='video-e-1' src="" controls="off"></video>
+
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="modal-e-2" tabindex="-1" aria-labelledby="Book consulting modal with"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="video-e-modal-2" type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close">X</button>
+			</div>
+			<video id='video-e-2' src="" controls="off"></video>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-e-3" tabindex="-1" aria-labelledby="Book consulting modal with"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="video-e-modal-3" type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close">X</button>
+			</div>
+			<video id='video-e-3' src="" controls="off"></video>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-e-4" tabindex="-1" aria-labelledby="Book consulting modal with"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="video-e-modal-4" type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close">X</button>
+			</div>
+			<video id='video-e-4' src="" controls="off"></video>
+
 		</div>
 	</div>
 </div>
