@@ -230,6 +230,7 @@
 
 	.swiper.before-after-photo {
 		width: 90%;
+		padding: 55px 0;
 	}
 
 	.before-after-photo-slider::before, .before-after-photo-slider::after {
@@ -239,6 +240,10 @@
 	.swiper-slide-active .before-after-slide-descr { 
 		width: 30dvw;
 
+	}
+
+	.slider-container .slider-wrap img {
+		height: 380px !important;
 	}
 }
 
@@ -331,6 +336,7 @@
 
 			&.slider {
 				width: calc(60% - 35px)!important;
+				margin-right: 20%;
 			}
 		}
 	}

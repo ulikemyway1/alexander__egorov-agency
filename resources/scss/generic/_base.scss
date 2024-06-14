@@ -427,7 +427,7 @@ tbody.collapse.show {
 
 .preloader {
 	margin:auto;
-	width: 100dvh;
+	height: 100dvh;
 	padding: 100px;
 	transition: opacity 0.2s;
 	opacity: 1;
@@ -435,4 +435,6 @@ tbody.collapse.show {
 	&.is-visually-hidden {
 		opacity: 0;
 	}
+
 }
+
