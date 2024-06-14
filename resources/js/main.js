@@ -10079,6 +10079,8 @@ const initMap = () => {}
 const galleryLeft = document.querySelector('.gallery__part-one-grid');
 const galleryRight = document.querySelector('.gallery__part-two-grid');
 const addMoreBTN = document.getElementById('add-card');
+const addMoreBTN2 = document.getElementById('add-card-2');
+const galleryGRID = document.querySelector('.gallery__grid-wrapper');
 
 addMoreBTN.addEventListener('click', () => {
 	const card1 = document.createElement('a');
@@ -10102,6 +10104,21 @@ galleryRight.append(card2);
 	updateGalleryLayoutLeft();
 	updateGalleryLayoutRight();
 })
+
+addMoreBTN2.addEventListener('click', () => {
+
+
+const card2 = document.createElement('a');
+card2.classList.add('gallery__category');
+card2.id = 'co-ed';
+card2.innerHTML = `	<div class="gallery__category-info">
+<div class="gallery__category-info_title">Functional<br>Fitness</div>
+<div class="gallery__category-info_count">2 photos</div>
+</div>`
+galleryGRID.append(card2);
+
+})
+
 
 
 function updateGalleryLayoutLeft() {
