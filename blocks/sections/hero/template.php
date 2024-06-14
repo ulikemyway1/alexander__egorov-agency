@@ -618,6 +618,100 @@ if (isset($block['data']['block_preview_images'])) {
 
 </section>
 
+<section class="section section-gallery">
+	<div class="container">
+		<h2 class="section__title">our gallery</h2>
+		<h3 class="section__subtitle">A fitness training center for<br>women, by women</h3>
+
+		<div class="gallery">
+
+			<div class="gallery__part-one-grid">
+
+				<a href="#/" class="gallery__category span-row" id="personal" data-bs-toggle="modal"
+					data-bs-target="#gallery-personal-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Personal<br>Training</div>
+						<div class="gallery__category-info_count">5 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="demand" data-bs-toggle="modal"
+					data-bs-target="#gallery-demand-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">On-Demand<br>Programs</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="beginners" data-bs-toggle="modal"
+					data-bs-target="#gallery-beginners-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Beginners<br>Welcome</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+
+				<a href="#/" class="gallery__category" id="virtual" data-bs-toggle="modal"
+					data-bs-target="#gallery-virtual-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Virtual/Hybrid<br>Training</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+
+				<a href="#/" class="gallery__category" id="mind" data-bs-toggle="modal"
+					data-bs-target="#gallery-mind-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">The mind<br>fitness</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="gallery__part-two-grid">
+
+				<a href="#/" class="gallery__category span-col" id="semi-private" data-bs-toggle="modal"
+					data-bs-target="#gallery-semi-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Semi-Private Training<br>for Women</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="nutrition" data-bs-toggle="modal"
+					data-bs-target="#gallery-nutrition-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Nutrition<br>Program</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="co-ed" data-bs-toggle="modal"
+					data-bs-target="#gallery-co-ed-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Co-ed<br>Training</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category span-col" id="functional" data-bs-toggle="modal"
+					data-bs-target="#gallery-functional-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Functional<br>Fitness</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+			</div>
+
+		</div>
+
+	</div>
+<button id="add-card">Add more!</button>
+</section>
+
 
 <section class="section section-offers">
 
