@@ -348,8 +348,6 @@
 	}
 }
 
-
-
 #gallery__popup {
 	position: fixed;
 	top: 0;
@@ -705,7 +703,7 @@
 }
 
 .before-after-row-item {
-	width: calc(50% - 35px)
+	width: calc(50% - 35px);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -793,8 +791,7 @@
 
 		svg {
 			position: relative;
-			transition: filter 0.6s,
-						transform 0.5s;
+			transition: filter 0.6s, transform 0.5s;
 		}
 
 		&[data-bs-target="#modal-e-2"] {
@@ -817,7 +814,7 @@
 		transform: scale(1.05);
 		svg {
 			transform: translateX(10px);
-			filter: drop-shadow(0px 3px 8px #000000)
+			filter: drop-shadow(0px 3px 8px #000000);
 		}
 	}
 }
@@ -857,7 +854,7 @@
 			transform: scale(1.02);
 			svg {
 				transform: translateX(10px);
-				filter: drop-shadow(0px 3px 8px #000000)
+				filter: drop-shadow(0px 3px 8px #000000);
 			}
 		}
 	}
@@ -937,7 +934,6 @@
 	}
 }
 
-
 .gallery-slide {
 	max-height: 500px;
 }
@@ -945,7 +941,7 @@
 #gallery-slide-1,
 #gallery-slide-2,
 #gallery-slide-3 {
-	background-image: url('../../../../../resources/images/gallery/gallery-image.png');
+	background-image: url("../../../../../resources/images/gallery/gallery-image.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: clamp(13.125rem, 8.942rem + 18.59vw, 31.25rem);
@@ -1044,9 +1040,68 @@
 	}
 }
 
-
 @media (max-width: 560px) {
 	.kerr-info__button-wrapper {
 		flex-wrap: wrap;
+	}
+}
+
+.gallery__part-one-grid,
+.gallery__part-two-grid {
+	width: calc(50% - 12px);
+}
+
+.gallery__part-one-grid,
+.gallery__part-two-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 320px;
+	grid-auto-rows: 320px;
+	gap: 25px;
+
+	.gallery__category {
+		height: auto;
+		width: auto;
+	}
+
+	.span-row {
+		grid-row: span 2;
+	}
+
+	.span-col {
+		grid-column: span 2;
+	}
+}
+
+@media (max-width: 1280px) {
+	.gallery__part-one-grid,
+	.gallery__part-two-grid {
+		width: 100%;
+	}
+	.gallery {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 768px) {
+	.gallery__part-one-grid,
+	.gallery__part-two-grid {
+		grid-template-rows: 250px;
+		grid-auto-rows: 250px;
+	}
+	.gallery__part-one-grid .gallery__category,
+	.gallery__part-two-grid .gallery__category {
+		height: 250px;
+		width: auto;
+		grid-column: span 2;
+	}
+
+	.gallery__part-one-grid .span-row,
+	.gallery__part-two-grid .span-row {
+		grid-row: 1;
+	}
+
+	.span-col {
+		grid-column: span 2;
 	}
 }
