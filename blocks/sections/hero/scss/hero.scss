@@ -1048,7 +1048,9 @@
 
 .gallery__part-one-grid,
 .gallery__part-two-grid {
+	grid-auto-flow: dense;
 	width: calc(50% - 12px);
+
 }
 
 .gallery__part-one-grid,
@@ -1105,3 +1107,4 @@
 		grid-column: span 2;
 	}
 }
+

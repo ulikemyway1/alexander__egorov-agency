@@ -709,7 +709,7 @@ if (isset($block['data']['block_preview_images'])) {
 		</div>
 
 	</div>
-
+<button id="add-card">Add more!</button>
 </section>
 
 

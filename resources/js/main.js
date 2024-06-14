@@ -10075,3 +10075,122 @@ $(function () {
 });
 
 const initMap = () => {}
+
+const galleryLeft = document.querySelector('.gallery__part-one-grid');
+const galleryRight = document.querySelector('.gallery__part-two-grid');
+const addMoreBTN = document.getElementById('add-card');
+
+addMoreBTN.addEventListener('click', () => {
+	const card1 = document.createElement('a');
+	card1.classList.add('gallery__category');
+	card1.id = 'functional';
+	card1.innerHTML = `	<div class="gallery__category-info">
+	<div class="gallery__category-info_title">Functional<br>Fitness</div>
+	<div class="gallery__category-info_count">2 photos</div>
+</div>`
+galleryLeft.append(card1);
+
+const card2 = document.createElement('a');
+card2.classList.add('gallery__category');
+card2.id = 'co-ed';
+card2.innerHTML = `	<div class="gallery__category-info">
+<div class="gallery__category-info_title">Functional<br>Fitness</div>
+<div class="gallery__category-info_count">2 photos</div>
+</div>`
+galleryRight.append(card2);
+
+	updateGalleryLayoutLeft();
+	updateGalleryLayoutRight();
+})
+
+
+function updateGalleryLayoutLeft() {
+	const gallery = document.querySelector('.gallery__part-one-grid');
+	const items = gallery.children;
+	const count = items.length;
+	const basePattern = 5;
+	let patternType = count % basePattern;
+	// Reset all items to default
+	for (let item of items) {
+	  item.style.gridColumn = '';
+	  item.style.gridRow = '';
+	}
+  
+	// Apply styles based on the pattern type
+	if (patternType === 0) {
+	  // 5n pattern
+	  items[0].style.gridRow = 'span 2';
+	  if (items.length > 5) {
+		console.log('s')
+		items[count - 4].style.gridRow = 'span 2';
+		
+	  }
+	} else if (patternType === 1) {
+	  // 5n + 1 pattern
+	  items[0].style.gridRow = 'span 2';
+	  if (count - 1 < 5) 
+	  items[count - 1].style.gridColumn = 'span 2';
+	  if (items.length > 10) {
+
+		items[count - 2].style.gridRow = 'span 2';
+	  }
+	} else if (patternType === 2) {
+	  // 5n + 2 pattern
+	  items[0].style.gridRow = 'span 2';
+	  // No additional styles needed for last 2 items
+	} else if (patternType === 3) {
+	  // 5n + 3 pattern
+	  items[0].style.gridRow = 'span 2';
+	  items[count - 3].style.gridRow = 'span 2';
+	  // The other two items follow the default style
+	} else if (patternType === 4) {
+	  // 5n + 4 pattern
+	//   items[0].style.gridRow = 'span 2';
+	items[count - 4].style.gridRow = 'span 2';
+	  // The additional items follow the default style
+	}
+  }
+
+
+  function updateGalleryLayoutRight() {
+	const gallery = document.querySelector('.gallery__part-two-grid');
+	const items = gallery.children;
+	const count = items.length;
+	const basePattern = 4;
+	let patternType = count % basePattern;
+  
+	// Reset all items to default
+	for (let item of items) {
+	  item.style.gridColumn = '';
+	  item.style.gridRow = '';
+	}
+  
+	// Apply styles based on the pattern type
+	if (patternType === 0) {
+	  // 5n pattern
+	  items[0].style.gridColumn = 'span 2';
+	  if (items.length > 4) {
+		console.log('s')
+		items[count - 2].style.gridColumn = 'span 2';
+	  }
+	} else if (patternType === 1 && count > 4) {
+		items[count - 3].style.gridColumn = 'span 2';
+	} else if  (patternType === 3) {
+	  // 5n + 3 pattern
+	  items[0].style.gridColumn = 'span 2';
+	  items[count - 2].style.gridColumn = 'span 2';
+	  // The other two items follow the default style
+	} 
+  }
+  
+  // Run the function to update the layout
+  updateGalleryLayoutLeft();
+  updateGalleryLayoutRight()
+  
+  // Optionally, run the function whenever new items are added or the window is resized
+  window.addEventListener('resize', () => {
+	updateGalleryLayoutLeft();
+	updateGalleryLayoutRight();
+  });
+  // MutationObserver could be used to observe when children are added to the gallery
+  
