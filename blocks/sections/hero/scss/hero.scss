@@ -348,94 +348,7 @@
 	}
 }
 
-@media (max-width: 1720px) {
-	.gallery__part-one,
-	.gallery__part-two {
-		flex-direction: row;
-		justify-content: flex-start;
-		align-content: flex-start;
-		height: auto;
 
-		.gallery__category {
-			flex-basis: 100%;
-		}
-	}
-}
-
-@media (max-width: 1280px) {
-	.gallery {
-		flex-direction: column;
-	}
-	.gallery__part-one,
-	.gallery__part-two {
-		width: 100%;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-content: flex-start;
-		height: auto;
-
-		.gallery__category {
-			width: 340px;
-			flex-basis: calc(50% - 14px);
-		}
-
-		.gallery__wide {
-			flex-basis: 100%;
-		}
-	}
-
-	#personal {
-		order: 3;
-	}
-
-	#demand {
-		order: 3;
-	}
-
-	#beginners {
-		order: 1;
-	}
-
-	#virtual {
-		order: 2;
-	}
-
-	.gallery #mind {
-		order: 4;
-		background-position: center bottom;
-	}
-
-	#semi-private {
-		order: 1;
-	}
-
-	#nutrition {
-		order: 2;
-	}
-
-	#co-ed {
-		order: 3;
-	}
-
-	#functional {
-		order: 4;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.gallery__part-one,
-	.gallery__part-two {
-		.gallery__wide,
-		.gallery__category {
-			height: 250px;
-			flex-basis: 100%;
-		}
-	}
-
-	.gallery #mind {
-		background-position: center top 30%;
-	}
-}
 
 #gallery__popup {
 	position: fixed;
@@ -716,10 +629,17 @@
 	line-height: 78px;
 }
 
+.kerr-row {
+	display: flex;
+	width: 100%;
+}
+.kerr-row-item {
+	width: 50%;
+}
+
 .kerr-info {
 	position: relative;
 	color: $title;
-	margin-left: -15px;
 	padding-top: 220px;
 	height: 100%;
 	background-image: url("../../../../../resources/images/backgrounds/kerr-girl.png");
@@ -728,10 +648,10 @@
 	background-repeat: no-repeat;
 
 	&:after {
-		top: -10%;
+		top: -40%;
 		left: -20%;
 		width: 120%;
-		height: 120%;
+		height: 140%;
 		content: "";
 		position: absolute;
 		z-index: -1;
@@ -779,6 +699,15 @@
 	}
 }
 
+.before-after-row {
+	display: flex;
+	gap: 70px;
+}
+
+.before-after-row-item {
+	width: calc(50% - 35px)
+}
+
 @media (hover: hover) and (pointer: fine) {
 	.read-more:hover {
 		color: $main-pink-color-hover;
@@ -794,16 +723,31 @@
 @media (max-width: 1280px) {
 	.kerr-row,
 	.before-after-row {
+		justify-content: center;
 		gap: 100px;
 	}
 
-	.ker-info {
+	.kerr-info {
+		padding-bottom: 120px;
 		.kerr-info__button-wrapper {
 			.watch-video-btn,
 			.learn-more-btn {
 				width: auto;
 			}
 		}
+
+		&:after {
+			content: none;
+		}
+	}
+
+	.kerr-row {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	.kerr-row-item {
+		width: 100%;
 	}
 }
 
@@ -990,5 +934,119 @@
 		.btn-close:hover {
 			color: $main-pink-color;
 		}
+	}
+}
+
+
+.gallery-slide {
+	max-height: 500px;
+}
+
+#gallery-slide-1,
+#gallery-slide-2,
+#gallery-slide-3 {
+	background-image: url('../../../../../resources/images/gallery/gallery-image.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: clamp(13.125rem, 8.942rem + 18.59vw, 31.25rem);
+	background-position: center;
+}
+@media (max-width: 1720px) {
+	.gallery__part-one,
+	.gallery__part-two {
+		flex-direction: row;
+		justify-content: flex-start;
+		align-content: flex-start;
+		height: auto;
+
+		.gallery__category {
+			flex-basis: 100%;
+		}
+	}
+
+	.kerr-info {
+		background-position: bottom right -195px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.gallery {
+		flex-direction: column;
+	}
+	.gallery__part-one,
+	.gallery__part-two {
+		width: 100%;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-content: flex-start;
+		height: auto;
+
+		.gallery__category {
+			width: 340px;
+			flex-basis: calc(50% - 14px);
+		}
+
+		.gallery__wide {
+			flex-basis: 100%;
+		}
+	}
+
+	#personal {
+		order: 3;
+	}
+
+	#demand {
+		order: 3;
+	}
+
+	#beginners {
+		order: 1;
+	}
+
+	#virtual {
+		order: 2;
+	}
+
+	.gallery #mind {
+		order: 4;
+		background-position: center bottom;
+	}
+
+	#semi-private {
+		order: 1;
+	}
+
+	#nutrition {
+		order: 2;
+	}
+
+	#co-ed {
+		order: 3;
+	}
+
+	#functional {
+		order: 4;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.gallery__part-one,
+	.gallery__part-two {
+		.gallery__wide,
+		.gallery__category {
+			height: 250px;
+			flex-basis: 100%;
+		}
+	}
+
+	.gallery #mind {
+		background-position: center top 30%;
+	}
+}
+
+
+@media (max-width: 560px) {
+	.kerr-info__button-wrapper {
+		flex-wrap: wrap;
 	}
 }

@@ -14,6 +14,7 @@
       user-select: none;
       max-width: unset !important;
       border-radius: 2px;
+      pointer-events: none;
     }
     .before-img {
       position: absolute;
@@ -24,6 +25,7 @@
       overflow: hidden;
     }
     .slider-btn {
+      pointer-events: none;
       display: block;
       width: 3px;
       height: 100%;
@@ -35,7 +37,7 @@
       cursor: ew-resize;
 
       &::after {
-        content: '';
+        content: none;
         border: 1px solid $white;
         width: 9px;
         height: 60px;
@@ -50,5 +52,15 @@
         border-color: $main-pink-color-hover;
       }
     }
+  }
+}
+
+
+.swiper-slide-active .slider-container .slider-wrap .slider-btn {
+  display: block;
+  pointer-events: all;
+
+  &::after {
+    content: '';
   }
 }

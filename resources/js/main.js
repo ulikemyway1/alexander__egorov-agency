@@ -9785,10 +9785,6 @@ const swiperKerr = new Swiper('.swiper.kerr', {
 	  prevEl: '.swiper-button-prev.kerr',
 	},
   
-	// And if we need scrollbar
-	// scrollbar: {
-	//   el: '.swiper-scrollbar',
-	// },
   });
 
   class SliderBar {
@@ -10024,6 +10020,31 @@ const swiperKerr = new Swiper('.swiper.kerr', {
 	  },
   
   });
+
+
+  const galleryPersonalModal = document.getElementById("gallery-personal-modal");
+if (galleryPersonalModal) {
+	galleryPersonalModal.addEventListener('shown.bs.modal', () => {
+		const swiperGallery = new Swiper('.swiper.gallery-slider', {
+			direction: 'horizontal',
+			loop: true,	
+			pagination: {
+				el: '.swiper-pagination.gallery-slider',
+				clickable: true,
+			  },
+			
+			  // Navigation arrows
+			  navigation: {
+				nextEl: '.swiper-button-next.gallery-slider',
+				prevEl: '.swiper-button-prev.gallery-slider',
+			  },
+		  });
+		  setTimeout(function() {
+			swiperGallery.update();
+		  }, 0);
+	})
+}
+
 
 
 
