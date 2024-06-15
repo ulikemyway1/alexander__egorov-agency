@@ -193,7 +193,14 @@
 	flex-direction: row;
 	gap: 24px;
 	padding: 20px 0;
-
+	&__load-more-btn {
+		display: block;
+		padding: 22px 48px;
+		margin: 0 auto;
+		margin-top: 60px;
+		color: $white;
+		font-weight: 700;
+	}
 	&__category {
 		display: flex;
 		align-items: flex-end;
@@ -346,6 +353,8 @@
 				center/cover no-repeat;
 		background-position: center top;
 	}
+
+	
 }
 
 #gallery__popup {

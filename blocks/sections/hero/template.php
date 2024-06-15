@@ -524,7 +524,7 @@ if (isset($block['data']['block_preview_images'])) {
 
 
 
-<section class="section section-gallery">
+<!-- <section class="section section-gallery">
 	<div class="container">
 		<h2 class="section__title">our gallery</h2>
 		<h3 class="section__subtitle">A fitness training center for<br>women, by women</h3>
@@ -710,7 +710,7 @@ if (isset($block['data']['block_preview_images'])) {
 
 	</div>
 <button id="add-card">Add more!</button>
-</section>
+</section> -->
 
 <section class="section section-gallery">
 	<div class="container">
@@ -801,7 +801,7 @@ if (isset($block['data']['block_preview_images'])) {
 
 
 		</div>
-
+	<button class="button gallery__load-more-btn">Load More</button>
 	</div>
 
 </section>
@@ -818,7 +818,7 @@ if (isset($block['data']['block_preview_images'])) {
 			<li class="nav-item" role="presentation">
 				<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
 					role="tab" aria-controls="profile"
-					aria-selected="false">BBreastBreastBreastBreastBreastBreastBreastBreastreast</button>
+					aria-selected="false">Breast</button>
 			</li>
 			<li class="nav-item" role="presentation">
 				<button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button"
@@ -1075,7 +1075,6 @@ if (isset($block['data']['block_preview_images'])) {
 		</div>
 	</div>
 	<!-- Nav tabs -->
-	<button id="add-card-2">Add more!</button>
 </section>
 
 
