@@ -524,7 +524,7 @@ if (isset($block['data']['block_preview_images'])) {
 
 
 
-<section class="section section-gallery">
+<!-- <section class="section section-gallery">
 	<div class="container">
 		<h2 class="section__title">our gallery</h2>
 		<h3 class="section__subtitle">A fitness training center for<br>women, by women</h3>
@@ -710,6 +710,100 @@ if (isset($block['data']['block_preview_images'])) {
 
 	</div>
 <button id="add-card">Add more!</button>
+</section> -->
+
+<section class="section section-gallery">
+	<div class="container">
+		<h2 class="section__title">our gallery</h2>
+		<h3 class="section__subtitle">A fitness training center for<br>women, by women</h3>
+
+		<div class="gallery__grid-wrapper">
+
+	
+
+				<a href="#/" class="gallery__category span-row" id="personal" data-bs-toggle="modal"
+					data-bs-target="#gallery-personal-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Personal<br>Training</div>
+						<div class="gallery__category-info_count">5 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="demand" data-bs-toggle="modal"
+					data-bs-target="#gallery-demand-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">On-Demand<br>Programs</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="beginners" data-bs-toggle="modal"
+					data-bs-target="#gallery-beginners-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Beginners<br>Welcome</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+
+				<a href="#/" class="gallery__category" id="virtual" data-bs-toggle="modal"
+					data-bs-target="#gallery-virtual-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Virtual/Hybrid<br>Training</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+
+				<a href="#/" class="gallery__category" id="mind" data-bs-toggle="modal"
+					data-bs-target="#gallery-mind-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">The mind<br>fitness</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+		
+
+			
+
+				<a href="#/" class="gallery__category span-col" id="semi-private" data-bs-toggle="modal"
+					data-bs-target="#gallery-semi-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Semi-Private Training<br>for Women</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="nutrition" data-bs-toggle="modal"
+					data-bs-target="#gallery-nutrition-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Nutrition<br>Program</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category" id="co-ed" data-bs-toggle="modal"
+					data-bs-target="#gallery-co-ed-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Co-ed<br>Training</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+				<a href="#/" class="gallery__category span-col" id="functional" data-bs-toggle="modal"
+					data-bs-target="#gallery-functional-modal">
+					<div class="gallery__category-info">
+						<div class="gallery__category-info_title">Functional<br>Fitness</div>
+						<div class="gallery__category-info_count">2 photos</div>
+					</div>
+				</a>
+
+
+
+		</div>
+	<button class="button gallery__load-more-btn">Load More</button>
+	</div>
+
 </section>
 
 
@@ -724,7 +818,7 @@ if (isset($block['data']['block_preview_images'])) {
 			<li class="nav-item" role="presentation">
 				<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
 					role="tab" aria-controls="profile"
-					aria-selected="false">BBreastBreastBreastBreastBreastBreastBreastBreastreast</button>
+					aria-selected="false">Breast</button>
 			</li>
 			<li class="nav-item" role="presentation">
 				<button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button"
@@ -981,7 +1075,6 @@ if (isset($block['data']['block_preview_images'])) {
 		</div>
 	</div>
 	<!-- Nav tabs -->
-
 </section>
 
 

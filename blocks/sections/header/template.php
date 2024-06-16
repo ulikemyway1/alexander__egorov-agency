@@ -21,8 +21,8 @@ if (isset($block['data']['block_preview_images'])) {
 	<div class="container">
 		<div class="header-wrapper d-flex justify-content-between">
 			<div class="header__menu-wrapper">
-				<button class="header__menu-button">
-					<span class="button header__menu-button_icon">
+				<button class="header__menu-button" id="menu-toggle">
+					<span class="button header__menu-button_icon" id="main-menu-btn__icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor">
 							<g fill="#fff" clip-path="url(#a)">
 								<path
@@ -35,7 +35,7 @@ if (isset($block['data']['block_preview_images'])) {
 							</defs>
 						</svg>
 					</span>
-					<span class="header__menu-button_text link">Menu</span>
+					<span class="header__menu-button_text link" id="main-menu-btn__text">Menu</span>
 				</button>
 
 				<a href="tel:+4782543220" class="link header__tel-link">

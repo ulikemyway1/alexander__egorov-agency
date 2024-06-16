@@ -16,7 +16,7 @@
 	left: 0;
 	top: 0;
 	width: 100%;
-	z-index: 10;
+	z-index: 2000;
 
 	&__wrapper {
 		width: 100%;
@@ -49,7 +49,6 @@
 			border-radius: 2px;
 			background: $main-pink-color;
 		}
-
 	}
 
 	&__tel-link {
@@ -78,7 +77,6 @@
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
-
 	}
 
 	&__logo {
@@ -95,9 +93,7 @@
 }
 
 @media (max-width: 1280px) {
-
 	.header {
-
 		&__menu-wrapper {
 			gap: 10px;
 		}
@@ -121,7 +117,6 @@
 		}
 
 		&__menu-button {
-
 			&_icon {
 				width: 44px;
 				height: 44px;
@@ -131,7 +126,6 @@
 				display: none;
 			}
 		}
-	
 	}
 
 	.button,
@@ -148,7 +142,7 @@
 }
 
 @media screen and (max-width: 768px) {
-	.header .consulting-button, 
+	.header .consulting-button,
 	.header__tel-link_text {
 		display: none;
 	}
@@ -157,5 +151,140 @@
 @media (hover: hover) and (pointer: fine) {
 	.header__logo:hover {
 		color: $main-pink-color-hover;
+	}
+}
+
+// modal main-menu
+#main-menu {
+	background-color: #125978;
+	.modal-dialog {
+		margin: 0;
+		margin-top: 135px;
+		max-width: unset;
+	}
+
+	.modal-content {
+		display: flex;
+		padding: 200px 0px;
+		border: none;
+		flex-direction: row;
+		width: 100%;
+		background: none;
+		justify-content: space-between;
+		align-items: center;
+
+		.hero__nav {
+			align-self: flex-start;
+
+			&_link {
+				color: $white-semi;
+				font-size: 60px;
+				font-weight: 900;
+			}
+		}
+
+		.hero__nav_ol {
+			padding-left: 12px;
+
+			.hero__nav_li {
+				margin-top: 26px;
+				position: relative;
+
+				.hero__nav_link {
+					color: $white;
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					left: -12px;
+					top: 50%;
+					transform: translateY(-50%);
+					display: block;
+					width: 3px;
+					height: 30px;
+					background: $main-pink-color;
+				}
+
+				&:not(.active) {
+					&::before {
+						content: none;
+					}
+
+					.hero__nav_link {
+						color: $white-semi;
+					}
+				}
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.main-menu__contacts {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			font-family: BankGothic;
+			font-size: 18px;
+			color: $white;
+			list-style-type: none;
+			.link-with-icon a span {
+				transition: color 0.6s;
+			}
+			.main-menu__contacts-item {
+				display: flex;
+				gap: 10px;
+				text-decoration: none;
+				span {
+					color: $white;
+					&:first-child {
+						color: $main-pink-color;
+					}
+				}
+			}
+		}
+
+		.main-menu__social-wrapper {
+			margin-top: 80px;
+			display: flex;
+			gap: 20px;
+			color: $main-pink-color;
+			transition: color 0.6s;
+		}
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	#main-menu {
+		.main-menu__social-wrapper a:hover {
+			color: $main-pink-color-hover;
+		}
+
+		.main-menu__contacts .link-with-icon:hover a span:first-child {
+			color: $main-pink-color-hover;
+		}
+	}
+}
+
+@media (max-width: 1280px) {
+	#main-menu .modal-content .hero__nav_link {
+		font-size: 30px;
+	}
+
+	#main-menu .modal-content .main-menu__social-wrapper {
+		margin-top: 35px;
+	}
+}
+
+@media (max-width: 984px) {
+	#main-menu .modal-content {
+		padding: 70px 0px;
+	}
+	#main-menu .modal-content {
+		flex-direction: column;
+		gap: 70px;
+		align-items: flex-start;
 	}
 }

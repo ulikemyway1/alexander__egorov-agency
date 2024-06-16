@@ -38,16 +38,16 @@ const init = function() {
 		}
 	})
 
-	const gallery = document.querySelector('.gallery');
-	console.log(gallery);
-	gallery.addEventListener('click', (e) => {
-		const target = e.target;
-		if (target instanceof HTMLElement && target.classList.contains('gallery__category')) {
-			console.log(target.id);
-			const popup = document.getElementById('gallery__popup').addEventListener('click', () => togglePopUp('gallery__popup'));
-			togglePopUp('gallery__popup')
-		}
-	})
+	// const gallery = document.querySelector('.gallery');
+	// console.log(gallery);
+	// gallery.addEventListener('click', (e) => {
+	// 	const target = e.target;
+	// 	if (target instanceof HTMLElement && target.classList.contains('gallery__category')) {
+	// 		console.log(target.id);
+	// 		const popup = document.getElementById('gallery__popup').addEventListener('click', () => togglePopUp('gallery__popup'));
+	// 		togglePopUp('gallery__popup')
+	// 	}
+	// })
 }
 
 
