@@ -27,7 +27,6 @@ const init = function() {
 	menu.addEventListener('click', (e) => {
 		e.preventDefault();
 		const link = e.target;
-		console.log(link)
 		if (link instanceof HTMLElement) {
 			const li = link.closest('.hero__nav_li');
 			console.log(li)

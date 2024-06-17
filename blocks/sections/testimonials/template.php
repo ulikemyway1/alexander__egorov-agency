@@ -19,12 +19,12 @@ if (isset($block['data']['block_preview_images'])) {
 /**
  * Block Variables
  */
-
+$section_title = get_field('section_title');
 ?>
 
 <section class="section section-testimonials">
 	<div class="container">
-		<h2 class="testimonials__title">Testimonials</h2>
+		<h2 class="testimonials__title"><?=$section_title?></h2>
 		<div class="testimonials__video-wrapper">
 			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-2">
 				<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">

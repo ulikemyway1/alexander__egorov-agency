@@ -17,9 +17,7 @@ import updateStyleVariables from "./modules/resize-dependent";
 // import after2 from '../images/before-after/after-2.png';
 
 // import goSportVideo from '../video/go-sport.mp4';
-// import fattyVideo from '../video/fatty.mp4';
-// import plankVideo from '../video/plank.mp4';
-// import squatVideo from '../video/squat.mp4';
+
 
 // /**
 //  * @typedef options
@@ -80,44 +78,6 @@ import updateStyleVariables from "./modules/resize-dependent";
 // 	heroVideoModal.addEventListener('hidden.bs.modal', () => player1.pauseVideo());
 // }
 
-
-// const modals = {
-// 	hero: [goSportVideo, '#video-e-1', '#video-e-modal'],
-// 	fatty: [fattyVideo, '#video-e-2', '#modal-e-2'],
-// 	plank: [plankVideo, '#video-e-3', '#modal-e-3'],
-// 	squat: [squatVideo, '#video-e-4', '#modal-e-4'],
-// }
-
-// function modalVideoInit(videoSrc, videoSelector, modalSelector) {
-	
-// 	const videoElement = document.querySelector(videoSelector);
-// 	const modal = document.querySelector(modalSelector);
-
-	
-// 	if (videoSrc && videoSelector && modal) {
-// 		if (videoElement instanceof HTMLVideoElement)  {
-// 			videoElement.src = videoSrc;
-// 			videoElement.muted = true;
-// 		}
-		
-// 		modal.addEventListener('shown.bs.modal', () => {
-// 			if (videoElement instanceof HTMLVideoElement) {
-// 				videoElement.play()
-// 			}
-			
-// 		})
-
-// 		modal.addEventListener('hidden.bs.modal', () => {
-// 			if (videoElement instanceof HTMLVideoElement)
-// 			videoElement.pause()
-// 		})
-
-// 	}
-
-
-// }
-
-// Object.values(modals).forEach((modalInfoSet) => modalVideoInit(...modalInfoSet));
 
 
 
