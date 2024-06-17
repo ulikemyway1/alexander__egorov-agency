@@ -15,7 +15,16 @@ if (isset($block['data']['block_preview_images'])) {
 	hm_get_template_part_with_params('fragments/block-preview-image', ['block' => $block]);
 	return;
 }
-?>
+
+
+/**
+ * Block Variables
+ */
+
+ $phone_number = get_field('phone_number');
+
+ ?>
+
 
 <header class="header">
 	<div class="container">
@@ -37,8 +46,9 @@ if (isset($block['data']['block_preview_images'])) {
 					</span>
 					<span class="header__menu-button_text link" id="main-menu-btn__text">Menu</span>
 				</button>
-
-				<a href="tel:+4782543220" class="link header__tel-link">
+				<?php if (!empty($phone_number)) : ?>
+					
+					<a href="tel:+4782543220" class="link header__tel-link">
 					<span class="like-button">
 					<svg xmlns="http://www.w3.org/2000/svg" width="100%"  viewBox="0 0 34 34" fill="currentColor">
 						<path fill="currentColor"
@@ -46,8 +56,10 @@ if (isset($block['data']['block_preview_images'])) {
 					</svg>
 					</span>
 
-					<span class="header__tel-link_text">(478) 254-3220</span>
+					<span class="header__tel-link_text"><?=$phone_number?></span>
 				</a>
+					<?php endif; ?>
+	
 			</div>
 
 

@@ -20,13 +20,31 @@ if (isset($block['data']['block_preview_images'])) {
  * Block Variables
  */
 $section_title = get_field('section_title');
-?>
+$links = get_field('links')
+	?>
 
 <section class="section section-testimonials">
 	<div class="container">
-		<h2 class="testimonials__title"><?=$section_title?></h2>
+		<h2 class="testimonials__title"><?= $section_title ?></h2>
 		<div class="testimonials__video-wrapper">
-			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-2">
+			<?php foreach ($links as $link): ?>
+				<?php
+				$modal_id = $link['modal-id'];
+				$img_src = $link['link-image'];
+				?>
+				<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="<?=$modal_id?>">
+					<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
+							fill="currentColor" />
+					</svg>
+
+				</a>
+
+			<?php endforeach; ?>
+
+
+			<!-- <a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-2">
 				<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
@@ -47,7 +65,7 @@ $section_title = get_field('section_title');
 						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
 						fill="currentColor" />
 				</svg>
-			</a>
+			</a> -->
 		</div>
 	</div>
 </section>

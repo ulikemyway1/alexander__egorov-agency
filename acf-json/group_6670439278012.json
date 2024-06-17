@@ -65,6 +65,34 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_667045730848d"
+                },
+                {
+                    "key": "field_66704aa865931",
+                    "label": "link-image",
+                    "name": "link-image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "return_format": "url",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_667045730848d"
                 }
             ]
         }
@@ -94,5 +122,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718634145
+    "modified": 1718635288
 }
