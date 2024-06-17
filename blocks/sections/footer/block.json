@@ -5,7 +5,7 @@
 	"style": ["file:../../../dist/css/blocks/footer/scss/block-footer.css"],
   	"script": "block-footer",
 	"category": "hm-sections",
-	"icon": "block-default",
+	"icon": "slides",
 	"apiVersion": 2,
 	"keywords": [],
 	"acf": {

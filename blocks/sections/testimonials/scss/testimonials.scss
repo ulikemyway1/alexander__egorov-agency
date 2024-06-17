@@ -1,0 +1,193 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+.section-testimonials {
+    padding-top: 150px;
+}
+
+.testimonials {
+    &__title {
+        font-size: 60px;
+        color: $title;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    &__video-wrapper {
+        margin-top: 30px;
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        border-radius: 2px;
+        background: $main-pink-color;
+    }
+
+    &__video-link {
+        width: 520px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $main-pink-color;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: color 0.6s, transform 0.5s;
+
+        svg {
+            position: relative;
+            transition: filter 0.6s, transform 0.5s;
+        }
+
+        &[data-bs-target="#modal-e-2"] {
+            background-image: url("../../../../../resources/images/backgrounds/t-l-1.png");
+        }
+
+        &[data-bs-target="#modal-e-3"] {
+            background-image: url("../../../../../resources/images/backgrounds/t-l-2.png");
+        }
+
+        &[data-bs-target="#modal-e-4"] {
+            background-image: url("../../../../../resources/images/backgrounds/t-l-3.png");
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .testimonials__video-link:hover {
+        color: $main-pink-color-hover;
+        transform: scale(1.05);
+
+        svg {
+            transform: translateX(10px);
+            filter: drop-shadow(0px 3px 8px #000000);
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .testimonials {
+        &__video-wrapper {
+            padding: 10px;
+            gap: 10px;
+        }
+
+        &__video-link {
+            width: 216px;
+            height: 162px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials {
+        &__video-wrapper {
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        &__video-link {
+            width: 100%;
+            height: 162px;
+            background-position-y: 5%;
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .testimonials__video-link:hover {
+            color: $main-pink-color-hover;
+            transform: scale(1.02);
+
+            svg {
+                transform: translateX(10px);
+                filter: drop-shadow(0px 3px 8px #000000);
+            }
+        }
+    }
+}
+
+.modal:has(.modal-video) {
+    border: none;
+
+    .btn-close {
+        padding: 16px;
+        margin-right: 6px;
+        align-self: flex-end;
+        background: $white;
+        z-index: 10;
+        border-radius: 2px;
+        color: #13597880;
+        transition: color 0.6s;
+    }
+
+    .modal-content {
+        background: none;
+        border: none;
+    }
+
+    .modal-video {
+        position: relative;
+        bottom: 60px;
+        z-index: 5;
+        border-radius: 4px;
+        max-height: 90dvh;
+        max-width: 100dvw;
+    }
+}
+
+.modal:has(.modal-iframe-video) {
+    .modal-dialog {
+        max-width: max-content;
+    }
+
+    .modal-content {
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: none;
+    }
+
+    .modal-header {
+        padding: 0;
+        width: 100%;
+        padding-left: 16px;
+        align-items: flex-end;
+        opacity: 1;
+
+        .btn-close {
+            width: 40px;
+            height: 40px;
+            padding: 6px;
+            border-radius: 100%;
+            align-self: flex-end;
+            background: $white;
+            z-index: 10;
+            border-radius: 2px;
+            color: #13597880;
+            transition: color 0.6s;
+            right: 26px;
+            top: 0px;
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .modal:has(.modal-video),
+    .modal:has(.modal-iframe-video) {
+        .btn-close:hover {
+            color: $main-pink-color;
+        }
+    }
+}

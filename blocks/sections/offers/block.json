@@ -1,11 +1,11 @@
 {
-	"name": "header",
-	"title": "Header",
+	"name": "offers",
+	"title": "Offers",
 	"description": "",
-	"style": ["file:../../../dist/css/blocks/header/scss/block-header.css"],
-	"script": "block-header",
+	"style": ["file:../../../dist/css/blocks/offers/scss/block-offers.css"],
+	"script": "block-offers",
 	"category": "hm-sections",
-	"icon": "heading",
+	"icon": "cart",
 	"apiVersion": 2,
 	"keywords": [],
 	"acf": {
@@ -37,7 +37,7 @@
 		"attributes": {
 			"mode": "preview",
 			"data": {
-				"block_preview_images": "block-header.png"
+				"block_preview_images": "block-offers.png"
 			}
 		}
 	}

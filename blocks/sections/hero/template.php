@@ -19,31 +19,43 @@ if (isset($block['data']['block_preview_images'])) {
 /**
  * Block Variables
  */
-
+$title = get_field('hero_section_title_text');
+$sub_title = get_field('hero_section_subtitle');
+$navigation_links = get_field('navigation');
 ?>
 
 <section class="section section-hero">
 	<div class="container">
 
 		<div class="hero__wrapper">
+			<?php if (!empty($navigation_links)): ?>
+				<nav class="hero-menu__nav">
 
-			<nav class="hero__nav">
-				<ol class="hero__nav_ol">
-					<li class="hero__nav_li active"><a href="#" class="link hero__nav_link">Main</a></li>
-					<li class="hero__nav_li"><a href="#/" class="link hero__nav_link">About Us</a></li>
-					<li class="hero__nav_li"><a href="#" class="link hero__nav_link">Contact Us</a></li>
-					<li class="hero__nav_li"><a href="#" class="link hero__nav_link">Before & After</a></li>
-					<li class="hero__nav_li"><a href="#" class="link hero__nav_link">Resources</a></li>
-					<li class="hero__nav_li"><a href="#" class="link hero__nav_link">Payment</a></li>
-				</ol>
-			</nav>
+					<ol class="hero-menu__nav_ol">
+						<?php foreach ($navigation_links as $index => $link): ?>
+							<?php
+							$link_title = !empty($link['title']) ? $link['title'] : '';
+							$link_url = !empty($link['url']) ? $link['url'] : '';
+							if ($index === 0) {
+								$class_active = 'active';
+							} else {
+								$class_active = '';
+							}
+							?>
+							<li class="hero-menu__nav_li <?= $class_active ?>"><a href="<?= $link_url ?>"
+									class="link hero-menu__nav_link"><?= $link_title ?></a></li>
+						<?php endforeach; ?>
+					</ol>
+
+				</nav>
+
+			<?php endif; ?>
 
 			<div class="hero__descr-wrapper">
 				<h1 class="hero__title">
-					<span>The</span>
-					<span>Happy Fitness</span>
+					<?= $title ?>
 				</h1>
-				<h2 class="hero__subtitle">Macon’s Premiere Boutuque Personal Training Studio</h2>
+				<h2 class="hero__subtitle"><?= $sub_title ?></h2>
 
 				<div class="hero__buttons-wrapper">
 					<button class="button consulting-button" data-bs-toggle="modal" data-bs-target="#consulting-modal"
@@ -70,1013 +82,8 @@ if (isset($block['data']['block_preview_images'])) {
 	</div>
 </section>
 
-<section class="section section-testimonials">
-	<div class="container">
-		<h2 class="testimonials__title">Testimonials</h2>
-		<div class="testimonials__video-wrapper">
-			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-2">
-				<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
-						fill="currentColor" />
-				</svg>
 
-			</a>
-			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-3">
-				<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
-						fill="currentColor" />
-				</svg>
-			</a>
-			<a href="#" class="testimonials__video-link" data-bs-toggle="modal" data-bs-target="#modal-e-4">
-				<svg width="40" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M0.96582 2.01218V39.9933C0.96582 40.8968 1.92472 41.4778 2.72561 41.0596L38.9645 22.1338C39.8245 21.6847 39.8262 20.4544 38.9674 20.0028L2.7286 0.947475C1.92757 0.526276 0.96582 1.10717 0.96582 2.01218Z"
-						fill="currentColor" />
-				</svg>
-			</a>
-		</div>
-	</div>
-</section>
-
-<section class="section section-slider-kerr">
-	<div class="container">
-		<div class="kerr-row">
-			<div class="kerr-row-item">
-				<div class="kerr-info">
-					<div class="kerr-info__content-wrapper">
-						<div class="kerr-info__title">Alli Kerr</div>
-						<div class="kerr-info__text">
-							<span class="capitalize">business.</span> Knowing I had more to offer
-							the universe, I got the crazy idea to open my own brick and mortar fitness business. It was
-							an
-							itch that I had to scratch. In 2010 The Happy Fitness was born...
-							<br>
-							<a href="#" class="link read-more">Read more</a>
-						</div>
-						<div class="kerr-info__button-wrapper">
-							<a href="#" class="button like-button watch-video-btn ">Watch Video of The Bio</a>
-							<a href="#" class="button like-button no-fill learn-more-btn">Learn More</a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<div class="kerr-row-item">
-				<div class="row justify-content-center"">
-					<div class=" col-10">
-					<div class="kerr-title">Hear from the people who know me best</div>
-				</div>
-			</div>
-			<div class="row justify-content-center"">
-					<div class=" col-10">
-				<div class="section-slider-kerr-wrapper">
-					<div class="swiper kerr">
-						<!-- Additional required wrapper -->
-						<div class="swiper-wrapper kerr">
-							<!-- Slides -->
-							<div class="swiper-slide">
-								<article class="kerr-slide">
-									<div class="kerr-slide__title">Sally Profit</div>
-									<div class="kerr-slide__scores">
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-
-									</div>
-									<p class="kerr-slide__text">The Happy Fitness has it going on!!! I love this
-										gym, the staff and all
-										the members. I have been in different gyms all my life and the Happy
-										Fitness is the best by far.
-										The staff are very knowledgeable about all aspects of exercise and
-										nutrition. Whether you are
-										using the trainers or not, they will always help make sure you are doing
-										the exercises correctly
-										so you get the best benefit and do not hurt yourself. I never thought I
-										would care one way or
-										the other if I was in an all female gym, but now that I am I truly love
-										it. The other aspect I
-										love about this gym is the cleanliness. The staff works very hard
-										keeping the gym orderly and
-										spotless. Check it out...I promise you it won't disappoint!!</p>
-								</article>
-							</div>
-							<div class="swiper-slide">
-								<article class="kerr-slide">
-									<div class="kerr-slide__title">Sally Bally</div>
-									<div class="kerr-slide__scores">
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-
-									</div>
-									<p class="kerr-slide__text">The Happy Fitness has it going on!!! I love this
-										gym, the staff and all
-										the members. I have been in different gyms all my life and the Happy
-										Fitness is the best by far.
-										The staff are very knowledgeable about all aspects of exercise and
-										nutrition. Whether you are
-										using the trainers or not, they will always help make sure you are doing
-										the exercises correctly
-										so you get the best benefit and do not hurt yourself. I never thought I
-										would care one way or
-										the other if I was in an all female gym, but now that I am I truly love
-										it. The other aspect I
-										love about this gym is the cleanliness. The staff works very hard
-										keeping the gym orderly and
-										spotless. Check it out...I promise you it won't disappoint!!</p>
-								</article>
-							</div>
-							<div class="swiper-slide">
-								<article class="kerr-slide">
-									<div class="kerr-slide__title">Sally Bally</div>
-									<div class="kerr-slide__scores">
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-										<svg class="kerr-slide__score" width="100% " viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M4.52736 15.5148C4.30348 15.6708 4.04847 15.7485 3.79359 15.7485L3.78969 15.7485C3.52747 15.748 3.26564 15.6652 3.03849 15.5002C2.58939 15.1742 2.40299 14.6202 2.56363 14.0889L3.74808 10.1697C3.77335 10.0861 3.74393 9.99414 3.67472 9.9408L0.50101 7.49146C0.202756 7.26129 0.0290369 6.92981 0.00335014 6.57551C-0.00904851 6.40511 0.0128109 6.2294 0.0715444 6.05713C0.251842 5.52844 0.72755 5.18677 1.2837 5.18677H5.2454C5.33951 5.18677 5.41825 5.13379 5.4462 5.05188L6.78409 1.12024C6.96427 0.591431 7.4412 0.25 7.9993 0.25H8.00074C8.55885 0.25 9.03578 0.591431 9.21595 1.12024L10.5538 5.05188C10.5818 5.13379 10.6605 5.18677 10.7547 5.18677H14.716C15.2721 5.18677 15.7482 5.52844 15.9285 6.05713C15.985 6.22294 16.0074 6.39193 15.9979 6.55631C15.997 6.57196 15.9959 6.58758 15.9944 6.60314C15.9619 6.94701 15.7895 7.26729 15.499 7.49146L12.3253 9.9408C12.2561 9.99414 12.2267 10.0861 12.252 10.1697L13.4364 14.0889C13.5971 14.6202 13.4107 15.1742 12.9616 15.5002C12.7344 15.6652 12.4726 15.748 12.2104 15.7485L12.2065 15.7485C11.9516 15.7485 11.6966 15.6708 11.4727 15.5148L8.12052 13.1798C8.08447 13.1547 8.04227 13.1421 8.00002 13.1419C7.95777 13.1421 7.91557 13.1547 7.87953 13.1798L4.52736 15.5148Z"
-												fill="currentColor" />
-										</svg>
-
-									</div>
-									<p class="kerr-slide__text">The Happy Fitness has it going on!!! I love this
-										gym, the staff and all
-										the members. I have been in different gyms all my life and the Happy
-										Fitness is the best by far.
-										The staff are very knowledgeable about all aspects of exercise and
-										nutrition. Whether you are
-										using the trainers or not, they will always help make sure you are doing
-										the exercises correctly
-										so you get the best benefit and do not hurt yourself. I never thought I
-										would care one way or
-										the other if I was in an all female gym, but now that I am I truly love
-										it. The other aspect I
-										love about this gym is the cleanliness. The staff works very hard
-										keeping the gym orderly and
-										spotless. Check it out...I promise you it won't disappoint!!</p>
-								</article>
-							</div>
-
-
-						</div>
-					</div>
-					<div class="swiper-kerr-navigation-wrapper">
-						<div class="swiper-button-prev kerr">
-							<svg width="100%" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="m.856 10.429 8.559-8.58a.977.977 0 0 1 1.383 1.379l-8.56 8.581c-.381.38-.381 1 0 1.382l8.56 8.58a.977.977 0 1 1-1.383 1.38L.857 14.57a2.933 2.933 0 0 1-.001-4.142Z"
-									fill="currentColor" />
-								<path d="M6.298 11.523h17.725a.977.977 0 0 1 0 1.954H6.298a.977.977 0 1 1 0-1.954Z"
-									fill="currentColor" />
-							</svg>
-						</div>
-						<div class="swiper-pagination kerr"></div>
-						<div class="swiper-button-next kerr">
-							<svg width="100%" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="m24.144 10.429-8.559-8.58a.977.977 0 0 0-1.383 1.379l8.56 8.581c.381.38.381 1 0 1.382l-8.56 8.58a.977.977 0 1 0 1.383 1.38l8.558-8.58a2.933 2.933 0 0 0 .001-4.142Z"
-									fill="currentColor" />
-								<path d="M18.702 11.523H.977a.977.977 0 0 0 0 1.954h17.725a.977.977 0 1 0 0-1.954Z"
-									fill="currentColor" />
-							</svg>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	</div>
-	</div>
-
-	<!-- Slider main container -->
-
-</section>
-
-<section class="section section-before-after">
-	<div class="container">
-		<div class="before-after-row">
-			<div class="before-after-row-item">
-				<div class="before-after-description-slider">
-					<div class="swiper before-after-description">
-						<!-- Additional required wrapper -->
-						<div class="swiper-wrapper before-after-description">
-							<!-- Slides -->
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Women,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Men,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I believe when you truly commit to making a change, you will not see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Animsla,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I can't believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Animsla,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I can't believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Animsla,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I can't believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Animsla,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I can't believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Animsla,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I can't believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Animsla,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I can't believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-							<article class="swiper-slide before-after-description">
-								<div class="before-after-description__title">Real Animsla,<br>Real Results</div>
-								<div class="before-after-description__subtitle">
-									I can't believe when you truly commit to making a change, you will see results
-								</div>
-							</article>
-						</div>
-					</div>
-					<div class="before-after-slider-navigation-wrapper before-after-description">
-						<div class="swiper-button-prev before-after-description">
-							<svg width="100%" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="m.856 10.429 8.559-8.58a.977.977 0 0 1 1.383 1.379l-8.56 8.581c-.381.38-.381 1 0 1.382l8.56 8.58a.977.977 0 1 1-1.383 1.38L.857 14.57a2.933 2.933 0 0 1-.001-4.142Z"
-									fill="currentColor" />
-								<path d="M6.298 11.523h17.725a.977.977 0 0 1 0 1.954H6.298a.977.977 0 1 1 0-1.954Z"
-									fill="currentColor" />
-							</svg>
-						</div>
-						<div class="swiper-pagination before-after-description"></div>
-						<div class="swiper-button-next before-after-description">
-							<svg width="100%" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="m24.144 10.429-8.559-8.58a.977.977 0 0 0-1.383 1.379l8.56 8.581c.381.38.381 1 0 1.382l-8.56 8.58a.977.977 0 1 0 1.383 1.38l8.558-8.58a2.933 2.933 0 0 0 .001-4.142Z"
-									fill="currentColor" />
-								<path d="M18.702 11.523H.977a.977.977 0 0 0 0 1.954h17.725a.977.977 0 1 0 0-1.954Z"
-									fill="currentColor" />
-							</svg>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="before-after-row-item slider">
-				<div class="before-after-photo-slider">
-					<div class="swiper before-after-photo">
-						<!-- Additional required wrapper -->
-						<div class="swiper-wrapper">
-							<!-- Slides -->
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-first"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-second"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-third"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-fourth"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-fifth"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-sixth"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-seventh"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-eight"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-							<article class="swiper-slide">
-								<div class="before-after-slide-wrapper">
-									<div id="before-after-ninth"></div>
-									<div class="before-after-slide-descr">
-										<span>Before</span>
-										<span>After</span>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-		</div>
-	</div>
-
-</section>
-
-
-
-<!-- <section class="section section-gallery">
-	<div class="container">
-		<h2 class="section__title">our gallery</h2>
-		<h3 class="section__subtitle">A fitness training center for<br>women, by women</h3>
-
-		<div class="gallery">
-
-			<div class="gallery__part-one">
-
-				<a href="#/" class="gallery__category gallery__wide" id="personal" data-bs-toggle="modal"
-					data-bs-target="#gallery-personal-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Personal<br>Training</div>
-						<div class="gallery__category-info_count">5 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="demand" data-bs-toggle="modal"
-					data-bs-target="#gallery-demand-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">On-Demand<br>Programs</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="beginners" data-bs-toggle="modal"
-					data-bs-target="#gallery-beginners-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Beginners<br>Welcome</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-
-				<a href="#/" class="gallery__category" id="virtual" data-bs-toggle="modal"
-					data-bs-target="#gallery-virtual-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Virtual/Hybrid<br>Training</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-
-				<a href="#/" class="gallery__category" id="mind" data-bs-toggle="modal"
-					data-bs-target="#gallery-mind-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">The mind<br>fitness</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-			</div>
-
-			<div class="gallery__part-two">
-
-				<a href="#/" class="gallery__category gallery__wide" id="semi-private" data-bs-toggle="modal"
-					data-bs-target="#gallery-semi-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Semi-Private Training<br>for Women</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="nutrition" data-bs-toggle="modal"
-					data-bs-target="#gallery-nutrition-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Nutrition<br>Program</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="co-ed" data-bs-toggle="modal"
-					data-bs-target="#gallery-co-ed-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Co-ed<br>Training</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category gallery__wide" id="functional" data-bs-toggle="modal"
-					data-bs-target="#gallery-functional-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Functional<br>Fitness</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-			</div>
-
-		</div>
-
-	</div>
-
-</section>
-
-<section class="section section-gallery">
-	<div class="container">
-		<h2 class="section__title">our gallery</h2>
-		<h3 class="section__subtitle">A fitness training center for<br>women, by women</h3>
-
-		<div class="gallery">
-
-			<div class="gallery__part-one-grid">
-
-				<a href="#/" class="gallery__category span-row" id="personal" data-bs-toggle="modal"
-					data-bs-target="#gallery-personal-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Personal<br>Training</div>
-						<div class="gallery__category-info_count">5 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="demand" data-bs-toggle="modal"
-					data-bs-target="#gallery-demand-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">On-Demand<br>Programs</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="beginners" data-bs-toggle="modal"
-					data-bs-target="#gallery-beginners-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Beginners<br>Welcome</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-
-				<a href="#/" class="gallery__category" id="virtual" data-bs-toggle="modal"
-					data-bs-target="#gallery-virtual-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Virtual/Hybrid<br>Training</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-
-				<a href="#/" class="gallery__category" id="mind" data-bs-toggle="modal"
-					data-bs-target="#gallery-mind-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">The mind<br>fitness</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-			</div>
-
-			<div class="gallery__part-two-grid">
-
-				<a href="#/" class="gallery__category span-col" id="semi-private" data-bs-toggle="modal"
-					data-bs-target="#gallery-semi-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Semi-Private Training<br>for Women</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="nutrition" data-bs-toggle="modal"
-					data-bs-target="#gallery-nutrition-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Nutrition<br>Program</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="co-ed" data-bs-toggle="modal"
-					data-bs-target="#gallery-co-ed-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Co-ed<br>Training</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category span-col" id="functional" data-bs-toggle="modal"
-					data-bs-target="#gallery-functional-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Functional<br>Fitness</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-			</div>
-
-		</div>
-
-	</div>
-<button id="add-card">Add more!</button>
-</section> -->
-
-<section class="section section-gallery">
-	<div class="container">
-		<h2 class="section__title">our gallery</h2>
-		<h3 class="section__subtitle">A fitness training center for<br>women, by women</h3>
-
-		<div class="gallery__grid-wrapper">
-
-	
-
-				<a href="#/" class="gallery__category span-row" id="personal" data-bs-toggle="modal"
-					data-bs-target="#gallery-personal-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Personal<br>Training</div>
-						<div class="gallery__category-info_count">5 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="demand" data-bs-toggle="modal"
-					data-bs-target="#gallery-demand-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">On-Demand<br>Programs</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="beginners" data-bs-toggle="modal"
-					data-bs-target="#gallery-beginners-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Beginners<br>Welcome</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-
-				<a href="#/" class="gallery__category" id="virtual" data-bs-toggle="modal"
-					data-bs-target="#gallery-virtual-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Virtual/Hybrid<br>Training</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-
-				<a href="#/" class="gallery__category" id="mind" data-bs-toggle="modal"
-					data-bs-target="#gallery-mind-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">The mind<br>fitness</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-		
-
-			
-
-				<a href="#/" class="gallery__category span-col" id="semi-private" data-bs-toggle="modal"
-					data-bs-target="#gallery-semi-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Semi-Private Training<br>for Women</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="nutrition" data-bs-toggle="modal"
-					data-bs-target="#gallery-nutrition-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Nutrition<br>Program</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category" id="co-ed" data-bs-toggle="modal"
-					data-bs-target="#gallery-co-ed-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Co-ed<br>Training</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-				<a href="#/" class="gallery__category span-col" id="functional" data-bs-toggle="modal"
-					data-bs-target="#gallery-functional-modal">
-					<div class="gallery__category-info">
-						<div class="gallery__category-info_title">Functional<br>Fitness</div>
-						<div class="gallery__category-info_count">2 photos</div>
-					</div>
-				</a>
-
-
-
-		</div>
-	<button class="button gallery__load-more-btn">Load More</button>
-	</div>
-
-</section>
-
-
-<section class="section section-offers">
-
-	<div class="offers-tabs">
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li class="nav-item" role="presentation">
-				<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-					role="tab" aria-controls="home" aria-selected="true">Body</button>
-			</li>
-			<li class="nav-item" role="presentation">
-				<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-					role="tab" aria-controls="profile"
-					aria-selected="false">Breast</button>
-			</li>
-			<li class="nav-item" role="presentation">
-				<button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button"
-					role="tab" aria-controls="messages" aria-selected="false">Buttocks</button>
-			</li>
-			<li class="nav-item" role="presentation">
-				<button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button"
-					role="tab" aria-controls="settings" aria-selected="false">Mens</button>
-			</li>
-		</ul>
-
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<div class="tab-pane offers active" id="home" role="tabpanel" aria-labelledby="home-tab">
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Brow Lift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Facelift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Septoplasty</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Chin<br>Augmentation</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Morpheus8</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Injectables</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Ear Surgery</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Neck Lift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Dysport®</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Eyelid Surgery</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Rhinoplasty</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>AccuTite™<br>and FaceTite®</span>
-				</div>
-
-			</div>
-
-
-			<div class="tab-pane offers" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Rhinoplasty</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>AccuTite™<br>and FaceTite®</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Rhinoplasty</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>AccuTite™<br>and FaceTite®</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Rhinoplasty</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>AccuTite™<br>and FaceTite®</span>
-				</div>
-			</div>
-
-
-			<div class="tab-pane offers" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Brow Lift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Facelift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Brow Lift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Facelift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Brow Lift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Facelift</span>
-				</div>
-			</div>
-
-
-			<div class="tab-pane offers" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Brow Lift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Facelift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Brow Lift</span>
-				</div>
-				<div class="offers-item">
-					<svg class="offers-arrow" width="100%" viewBox="0 0 6 10" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.25 8.5L4.75 5L1.25 1.5" stroke="currentColor" stroke-width="2"
-							stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Facelift</span>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<!-- Nav tabs -->
-</section>
-
+<!-- Modals -->
 
 <div class="modal fade" id="consulting-modal" tabindex="-1" aria-labelledby="Book consulting modal with"
 	aria-hidden="true">
@@ -1139,8 +146,6 @@ if (isset($block['data']['block_preview_images'])) {
 	</div>
 </div>
 
-
-
 <div class="modal fade" id="video-y-modal-hero" tabindex="-1" aria-labelledby="Watch video" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
@@ -1164,7 +169,6 @@ if (isset($block['data']['block_preview_images'])) {
 	</div>
 </div>
 
-
 <div class="modal fade" id="video-e-modal" tabindex="-1" aria-labelledby="Book consulting modal with"
 	aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
@@ -1184,124 +188,130 @@ if (isset($block['data']['block_preview_images'])) {
 	</div>
 </div>
 
-
-<div class="modal fade" id="modal-e-2" tabindex="-1" aria-labelledby="Testimonials video" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<button id="video-e-modal-2" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-				title="Close">
-				<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M13.3259 12.001L23.7254 1.60144C24.0916 1.2353 24.0916 0.641675 23.7254 0.275582C23.3593 -0.0905116 22.7657 -0.0905585 22.3996 0.275582L12 10.6752L1.60046 0.275582C1.23432 -0.0905585 0.640698 -0.0905585 0.274605 0.275582C-0.0914881 0.641722 -0.091535 1.23535 0.274605 1.60144L10.6741 12.001L0.274605 22.4005C-0.091535 22.7667 -0.091535 23.3603 0.274605 23.7264C0.457651 23.9095 0.697604 24.001 0.937557 24.001C1.17751 24.001 1.41742 23.9095 1.60051 23.7264L12 13.3269L22.3995 23.7264C22.5826 23.9095 22.8225 24.001 23.0625 24.001C23.3024 24.001 23.5423 23.9095 23.7254 23.7264C24.0916 23.3603 24.0916 22.7666 23.7254 22.4005L13.3259 12.001Z"
-						fill="currentColor" />
-				</svg>
-
-			</button>
-			<video playsinline="true" class="modal-video" id='video-e-2' src="" controls="off"></video>
-
-		</div>
-	</div>
-</div>
-
-<div class="modal fade" id="modal-e-3" tabindex="-1" aria-labelledby="Testimonials video" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<button id="video-e-modal-3" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-				title="Close">
-				<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M13.3259 12.001L23.7254 1.60144C24.0916 1.2353 24.0916 0.641675 23.7254 0.275582C23.3593 -0.0905116 22.7657 -0.0905585 22.3996 0.275582L12 10.6752L1.60046 0.275582C1.23432 -0.0905585 0.640698 -0.0905585 0.274605 0.275582C-0.0914881 0.641722 -0.091535 1.23535 0.274605 1.60144L10.6741 12.001L0.274605 22.4005C-0.091535 22.7667 -0.091535 23.3603 0.274605 23.7264C0.457651 23.9095 0.697604 24.001 0.937557 24.001C1.17751 24.001 1.41742 23.9095 1.60051 23.7264L12 13.3269L22.3995 23.7264C22.5826 23.9095 22.8225 24.001 23.0625 24.001C23.3024 24.001 23.5423 23.9095 23.7254 23.7264C24.0916 23.3603 24.0916 22.7666 23.7254 22.4005L13.3259 12.001Z"
-						fill="currentColor" />
-				</svg>
-
-			</button>
-			<video playsinline="true" class="modal-video" id='video-e-3' src="" controls="off"></video>
-
-		</div>
-	</div>
-</div>
-
-<div class="modal fade" id="modal-e-4" tabindex="-1" aria-labelledby="Testimonials video" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<button id="video-e-modal-4" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-				title="Close">
-				<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M13.3259 12.001L23.7254 1.60144C24.0916 1.2353 24.0916 0.641675 23.7254 0.275582C23.3593 -0.0905116 22.7657 -0.0905585 22.3996 0.275582L12 10.6752L1.60046 0.275582C1.23432 -0.0905585 0.640698 -0.0905585 0.274605 0.275582C-0.0914881 0.641722 -0.091535 1.23535 0.274605 1.60144L10.6741 12.001L0.274605 22.4005C-0.091535 22.7667 -0.091535 23.3603 0.274605 23.7264C0.457651 23.9095 0.697604 24.001 0.937557 24.001C1.17751 24.001 1.41742 23.9095 1.60051 23.7264L12 13.3269L22.3995 23.7264C22.5826 23.9095 22.8225 24.001 23.0625 24.001C23.3024 24.001 23.5423 23.9095 23.7254 23.7264C24.0916 23.3603 24.0916 22.7666 23.7254 22.4005L13.3259 12.001Z"
-						fill="currentColor" />
-				</svg>
-
-			</button>
-			<video playsinline="true" class="modal-video" id='video-e-4' src="" controls="off"></video>
-
-		</div>
-	</div>
-</div>
-
-<!-- //gallery modals// -->
-
-<div class="modal fade" id="gallery-personal-modal" tabindex="-1" aria-labelledby="Testimonials video"
+<!-- Menu Popup -->
+<div class="modal" id="main-menu" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
 	aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close">
-				<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M13.3259 12.001L23.7254 1.60144C24.0916 1.2353 24.0916 0.641675 23.7254 0.275582C23.3593 -0.0905116 22.7657 -0.0905585 22.3996 0.275582L12 10.6752L1.60046 0.275582C1.23432 -0.0905585 0.640698 -0.0905585 0.274605 0.275582C-0.0914881 0.641722 -0.091535 1.23535 0.274605 1.60144L10.6741 12.001L0.274605 22.4005C-0.091535 22.7667 -0.091535 23.3603 0.274605 23.7264C0.457651 23.9095 0.697604 24.001 0.937557 24.001C1.17751 24.001 1.41742 23.9095 1.60051 23.7264L12 13.3269L22.3995 23.7264C22.5826 23.9095 22.8225 24.001 23.0625 24.001C23.3024 24.001 23.5423 23.9095 23.7254 23.7264C24.0916 23.3603 24.0916 22.7666 23.7254 22.4005L13.3259 12.001Z"
-						fill="currentColor" />
-				</svg>
+	<div class="modal-dialog">
+		<div class="container">
+			<div class="modal-content">
+				<?php if (!empty($navigation_links)): ?>
+					<nav class="popup-menu__nav">
 
-			</button>
+						<ol class="popup-menu__nav_ol">
+							<?php foreach ($navigation_links as $index => $link): ?>
+								<?php
+								$link_title = !empty($link['title']) ? $link['title'] : '';
+								$link_url = !empty($link['url']) ? $link['url'] : '';
+								if ($index === 0) {
+									$class_active = 'active';
+								} else {
+									$class_active = '';
+								}
+								?>
+								<li class="popup-menu___nav_li<?= $class_active ?>"><a href="<?= $link_url ?>"
+										class="link popup-menu__nav_link"><?= $link_title ?></a></li>
+							<?php endforeach; ?>
+						</ol>
 
-			<div class="modal-body">
-			<div class="gallery-slider">
-					<div class="swiper gallery-slider">
-						<!-- Additional required wrapper -->
-						<div class="swiper-wrapper gallery-slider">
-							<!-- Slides -->
-							<div class="swiper-slide gallery-slide" id="gallery-slide-1">
-								
-							</div>
-							<div class="swiper-slide gallery-slide"  id="gallery-slide-2">
-								
-							</div>
-							<div class="swiper-slide gallery-slide"  id="gallery-slide-3">
-								
-							</div>
+					</nav>
 
+				<?php endif; ?>
+				<ul class="main-menu__contacts">
+					<li class="link-with-icon"> <a class="main-menu__contacts-item"
+							href="https://maps.app.goo.gl/ZxqPPfiYB8YnVnSr6" target="__blank">
+							<span>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M12 3.75C8.76914 3.75 6.14062 6.37852 6.14062 9.60938C6.14062 12.8402 8.76914 15.4688 12 15.4688C12.5457 15.4688 13.0863 15.3936 13.607 15.2454C14.105 15.1037 14.3937 14.5851 14.252 14.0871C14.1102 13.5891 13.5917 13.3003 13.0936 13.4421C12.74 13.5427 12.372 13.5938 12 13.5938C9.80302 13.5938 8.01562 11.8064 8.01562 9.60938C8.01562 7.41239 9.80302 5.625 12 5.625C14.197 5.625 15.9844 7.41239 15.9844 9.60938C15.9844 10.0003 15.9281 10.3861 15.8172 10.7561C15.6684 11.252 15.9499 11.7746 16.4459 11.9234C16.9418 12.072 17.4644 11.7907 17.6131 11.2947C17.7765 10.7498 17.8594 10.1828 17.8594 9.60938C17.8594 6.37852 15.2309 3.75 12 3.75Z"
+										fill="currentColor" />
+									<path
+										d="M18.791 2.81081C16.9764 0.99825 14.5646 0 11.9999 0C9.43505 0 7.02328 0.99825 5.20875 2.81086C3.39441 4.62333 2.39358 7.03373 2.39062 9.60014C2.39245 11.4683 2.91136 13.2211 3.97692 14.9587C4.89966 16.4632 6.09839 17.776 7.36748 19.1658C8.61187 20.5285 9.89855 21.9377 10.9261 23.5634C11.0979 23.8352 11.3971 24 11.7186 24H12.2811C12.6026 24 12.9018 23.8352 13.0736 23.5634C14.1012 21.9376 15.3878 20.5285 16.6322 19.1658C17.9013 17.776 19.1001 16.4632 20.0228 14.9586C21.0884 13.221 21.6073 11.4683 21.6091 9.59808C21.6062 7.03369 20.6053 4.62328 18.791 2.81081ZM15.2476 17.9015C14.1412 19.1132 13.0027 20.36 11.9999 21.7939C10.997 20.36 9.85851 19.1132 8.75208 17.9015C6.3465 15.2671 4.26891 12.9919 4.26562 9.60028C4.2705 5.34056 7.74009 1.875 11.9999 1.875C16.2596 1.875 19.7292 5.34056 19.7341 9.59827C19.7308 12.9919 17.6532 15.267 15.2476 17.9015Z"
+										fill="currentColor" />
+								</svg>
+							</span>
+							<span>4535 Forsyth Rd Suite 2<br>Macon, GA 31210</span>
+						</a></li>
+					<li class="link-with-icon"> <a class="main-menu__contacts-item" href="tel:+4782543220">
+							<span>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_408_7086)">
+										<path
+											d="M23.9976 19.3384C23.9642 18.41 23.5775 17.5437 22.9088 16.8989C21.5995 15.6364 20.5026 14.9076 19.4566 14.6053C18.0154 14.1888 16.6804 14.5676 15.489 15.7311C15.4873 15.7328 15.4855 15.7346 15.4837 15.7364L14.2162 16.9944C13.4241 16.5479 11.8837 15.5674 10.2196 13.9033L10.0962 13.78C8.43177 12.1156 7.45138 10.575 7.00527 9.78378L8.2634 8.51623C8.26518 8.51445 8.26696 8.51267 8.26874 8.51084C9.43223 7.31956 9.81098 5.98465 9.39449 4.54329C9.09219 3.49737 8.36343 2.4004 7.1009 1.09113C6.45618 0.422555 5.58988 0.0358358 4.66152 0.00236701C3.7326 -0.0311486 2.84122 0.292195 2.14991 0.912727L2.12301 0.936914C2.11054 0.948117 2.09835 0.959695 2.08644 0.971555C0.71024 2.34776 -0.0111662 4.27437 0.000130668 6.54317C0.0193963 10.3973 2.13763 14.8049 5.66633 18.3335C6.33173 18.9989 7.08796 19.6574 7.91399 20.2908C8.32485 20.6058 8.91332 20.5282 9.22837 20.1173C9.54346 19.7064 9.46574 19.1179 9.05483 18.8029C8.29382 18.2193 7.59983 17.6154 6.99215 17.0078C3.80483 13.8205 1.89191 9.90504 1.87508 6.53384C1.86641 4.78652 2.39202 3.3281 3.39529 2.31438L3.40246 2.30791C4.08388 1.69624 5.11555 1.73346 5.75127 2.39266C8.17841 4.90976 8.00268 6.09809 6.93018 7.19787L5.19233 8.94874C4.9198 9.22334 4.84391 9.63715 5.00127 9.99059C5.04538 10.0897 6.11268 12.4481 8.77072 15.1062L8.89415 15.2294C11.5519 17.8872 13.9103 18.9544 14.0094 18.9985C14.3628 19.156 14.7767 19.08 15.0512 18.8075L16.8021 17.0696C17.9021 15.9971 19.0904 15.8214 21.6074 18.2486C22.2666 18.8842 22.3038 19.9159 21.6922 20.5972L21.6856 20.6046C20.6802 21.5997 19.2373 22.1249 17.509 22.1249C17.4947 22.1249 17.4805 22.1249 17.4662 22.1248C16.0847 22.1179 14.485 21.7392 12.8401 21.0297C12.3648 20.8246 11.8131 21.0438 11.608 21.5192C11.4029 21.9947 11.6221 22.5463 12.0975 22.7514C13.9989 23.5715 15.802 23.9915 17.4569 23.9998C17.4744 23.9998 17.4919 23.9999 17.5094 23.9999C19.7554 23.9999 21.6629 23.279 23.0285 21.9135C23.0403 21.9016 23.0519 21.8894 23.0631 21.8769L23.0874 21.8499C23.7079 21.1586 24.0312 20.2667 23.9976 19.3384Z"
+											fill="currentColor" />
+									</g>
+									<defs>
+										<clipPath id="clip0_408_7086">
+											<rect width="24" height="24" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
 
-						</div>
-					</div>
-					<div class="gallery-slider-navigation-wrapper">
-						<div class="swiper-button-prev gallery-slider">
-							<svg width="100%" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="m.856 10.429 8.559-8.58a.977.977 0 0 1 1.383 1.379l-8.56 8.581c-.381.38-.381 1 0 1.382l8.56 8.58a.977.977 0 1 1-1.383 1.38L.857 14.57a2.933 2.933 0 0 1-.001-4.142Z"
-									fill="currentColor" />
-								<path d="M6.298 11.523h17.725a.977.977 0 0 1 0 1.954H6.298a.977.977 0 1 1 0-1.954Z"
-									fill="currentColor" />
+							</span>
+							<span>(478) 254-3220</span>
+						</a></li>
+					<li class="main-menu__social-wrapper">
+						<a href="#" target="__blank"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_408_7100)">
+									<path
+										d="M17.3346 33.9999C17.222 33.9999 17.1095 33.9999 16.9961 33.9994C14.331 34.0059 11.8686 33.9382 9.47379 33.7924C7.27823 33.6588 5.27411 32.9001 3.67776 31.5984C2.13745 30.3424 1.08559 28.6441 0.551483 26.5513C0.0866395 24.7292 0.0619965 22.9407 0.0383911 21.2107C0.0212707 19.9695 0.00363159 18.4987 0 17.003C0.00363159 15.5011 0.0212707 14.0303 0.0383911 12.7891C0.0619965 11.0594 0.0866395 9.27084 0.551483 7.44856C1.08559 5.35573 2.13745 3.65744 3.67776 2.40142C5.27411 1.09976 7.27823 0.341015 9.47404 0.207424C11.8688 0.0619011 14.3318 -0.00606158 17.0026 0.000423414C19.6684 -0.00528337 22.1301 0.0619011 24.5249 0.207424C26.7205 0.341015 28.7246 1.09976 30.3209 2.40142C31.8615 3.65744 32.9131 5.35573 33.4472 7.44856C33.9121 9.27058 33.9367 11.0594 33.9603 12.7891C33.9774 14.0303 33.9953 15.5011 33.9987 16.9968C33.9953 18.4987 33.9774 19.9695 33.9603 21.2107C33.9505 21.9443 33.3445 22.5306 32.6143 22.5207C31.8807 22.5106 31.2945 21.9077 31.3043 21.1744C31.3212 19.9405 31.3391 18.4793 31.3425 16.9968C31.3391 15.5206 31.3212 14.0594 31.3043 12.8254C31.2828 11.2506 31.2605 9.62207 30.8735 8.10536C30.4831 6.57542 29.7324 5.34898 28.6424 4.46002C27.4634 3.49843 26.0237 2.95965 24.3636 2.85875C22.0251 2.71659 19.6179 2.65097 17.0026 2.65641C14.3811 2.65019 11.9736 2.71659 9.63513 2.85875C7.97498 2.95965 6.53557 3.49843 5.35634 4.45976C4.26634 5.34872 3.51564 6.57516 3.12524 8.10536C2.73822 9.62207 2.71591 11.2506 2.69438 12.8254C2.67752 14.0594 2.65988 15.5206 2.65625 17.003C2.65988 18.4793 2.67752 19.9405 2.69438 21.1744C2.71591 22.7492 2.73822 24.3777 3.12524 25.8945C3.51564 27.4244 4.26634 28.6508 5.35634 29.5398C6.53557 30.5014 7.97498 31.0402 9.63513 31.1411C11.9736 31.2832 14.3816 31.3496 16.9964 31.3431C19.6181 31.3494 22.0251 31.2832 24.3636 31.1411C26.0237 31.0402 27.4631 30.5014 28.6424 29.5398C29.4276 28.8993 30.041 28.0776 30.4657 27.097C30.7572 26.4241 31.5391 26.1147 32.2122 26.4062C32.8854 26.6978 33.1946 27.4796 32.9033 28.1528C32.3079 29.5273 31.4392 30.6866 30.3209 31.5984C28.7246 32.9003 26.7205 33.6588 24.5249 33.7924C22.2316 33.9319 19.8757 33.9999 17.3346 33.9999ZM25.2336 16.9999C25.2336 12.4228 21.5099 8.69912 16.9328 8.69912C12.356 8.69912 8.63203 12.4228 8.63203 16.9999C8.63203 21.577 12.356 25.3007 16.9328 25.3007C21.5099 25.3007 25.2336 21.577 25.2336 16.9999ZM22.5773 16.9999C22.5773 20.1122 20.0453 22.6444 16.9328 22.6444C13.8205 22.6444 11.2883 20.1122 11.2883 16.9999C11.2883 13.8876 13.8205 11.3554 16.9328 11.3554C20.0453 11.3554 22.5773 13.8876 22.5773 16.9999ZM26.1633 6.04287C25.0632 6.04287 24.1711 6.93469 24.1711 8.03506C24.1711 9.13543 25.0632 10.0272 26.1633 10.0272C27.2637 10.0272 28.1555 9.13543 28.1555 8.03506C28.1555 6.93469 27.2637 6.04287 26.1633 6.04287Z"
+										fill="currentColor" />
+								</g>
+								<defs>
+									<clipPath id="clip0_408_7100">
+										<rect width="34" height="34" fill="white" />
+									</clipPath>
+								</defs>
 							</svg>
-						</div>
-						<div class="swiper-pagination gallery-slider"></div>
-						<div class="swiper-button-next gallery-slider">
-							<svg width="100%" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="m24.144 10.429-8.559-8.58a.977.977 0 0 0-1.383 1.379l8.56 8.581c.381.38.381 1 0 1.382l-8.56 8.58a.977.977 0 1 0 1.383 1.38l8.558-8.58a2.933 2.933 0 0 0 .001-4.142Z"
-									fill="currentColor" />
-								<path d="M18.702 11.523H.977a.977.977 0 0 0 0 1.954h17.725a.977.977 0 1 0 0-1.954Z"
-									fill="currentColor" />
+						</a>
+						<a href="#" target="__blank"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_408_7106)">
+									<path
+										d="M29.966 7.63566L29.9492 7.57029C31.3896 6.70676 32.5527 5.28318 33.0702 3.65234C31.7208 4.45518 30.1421 5.06399 28.5546 5.3789C27.2815 4.0225 25.583 3.1875 23.5742 3.1875C19.7245 3.1875 16.5351 6.30443 16.5351 10.1601C16.5351 10.751 16.5839 11.3233 16.649 11.8244C13.2592 11.5611 10.0738 10.4613 7.16075 8.54485C4.61709 6.87173 3.24591 5.16852 3.23424 5.154C2.86071 4.6806 2.21506 4.51795 1.66229 4.75842C1.10925 4.99888 0.787595 5.58149 0.878644 6.17732C0.910291 6.38303 1.55879 10.4488 4.00932 13.9914C3.43813 13.9025 3.09728 13.7437 3.03191 13.7113C2.55773 13.4304 1.97642 13.482 1.54504 13.8259C1.11107 14.172 0.955945 14.7616 1.12896 15.2889C1.18499 15.4602 2.35047 18.8585 6.6059 20.6595C5.69411 20.9226 4.88531 20.9181 4.87493 20.9181C4.86586 20.9181 4.85678 20.9179 4.8477 20.9179C4.28558 20.9179 3.78313 21.2725 3.59558 21.8043C3.40466 22.3446 3.58235 22.9464 4.03578 23.2968C4.13824 23.3759 6.04326 24.8234 9.13918 25.5549C8.0562 26.151 6.77788 26.5097 5.31384 26.6267C3.28768 26.7886 1.65814 26.4047 1.64491 26.4013C0.971249 26.2363 0.284103 26.6171 0.0669869 27.2757C-0.150129 27.9344 0.176453 28.6493 0.816389 28.9167C1.00808 28.9966 5.56338 30.8785 10.094 30.8785C13.239 30.8785 15.5946 30.5921 17.7312 29.9499C20.3976 29.1481 22.6614 27.7808 24.6512 25.7699C25.1671 25.2485 25.1627 24.4076 24.6413 23.8916C24.1197 23.3757 23.279 23.3801 22.763 23.9017C19.2147 27.4877 15.1321 28.2225 10.094 28.2225C9.976 28.2225 9.85798 28.221 9.73969 28.2179C11.1451 27.5728 12.3503 26.6527 13.3126 25.4784C13.6335 25.0867 13.7041 24.5469 13.494 24.0859C13.2841 23.6252 12.8304 23.3241 12.3243 23.309C10.9376 23.2683 9.71271 23.0027 8.70365 22.673C9.4528 22.2924 10.1825 21.7519 10.7581 20.9843C11.0346 20.6157 11.1002 20.1301 10.9316 19.7013C10.763 19.2725 10.384 18.9618 9.93061 18.8803C7.70082 18.4795 6.21991 17.582 5.25936 16.6985C5.79839 16.6705 6.3906 16.5888 7.0295 16.4293C7.49797 16.312 7.86606 15.9499 7.99057 15.4832C8.11508 15.0168 7.97682 14.5193 7.62897 14.1844C6.4251 13.0244 5.55015 11.5868 4.92422 10.2307C5.14263 10.3871 5.37039 10.5446 5.60696 10.702C8.24348 12.4542 12.5791 14.5429 18.262 14.5429C18.6752 14.5429 19.0648 14.3497 19.3159 14.0215C19.5673 13.6936 19.6513 13.2662 19.5439 12.8672C19.5403 12.8542 19.1916 11.5451 19.1916 10.1601C19.1916 9.01644 19.6479 7.9363 20.4767 7.11894C21.3102 6.29665 22.4103 5.84374 23.5744 5.84374C24.7513 5.84374 25.7754 6.29898 26.6182 7.19676C27.2268 7.76951 27.8908 9.29685 27.8908 10.2187V11.0234C27.8908 11.0514 27.8937 11.0896 27.9004 11.1347C27.8947 11.1855 27.8908 11.2369 27.8908 11.289C27.8908 14.3082 27.3321 16.996 26.2299 19.2777C25.9108 19.9384 26.1879 20.7324 26.8483 21.0515C27.0346 21.1412 27.2312 21.1838 27.4249 21.1838C27.9188 21.1838 28.3928 20.9073 28.6218 20.4331C29.8993 17.788 30.5471 14.7115 30.5471 11.289C30.5471 11.2384 30.5434 11.1886 30.538 11.1396C30.5442 11.094 30.5471 11.0545 30.5471 11.0234V10.0937C31.9115 9.10827 33.0669 7.77729 34.0002 6.37499C33.9999 6.37499 31.5517 7.53502 29.966 7.63566Z"
+										fill="currentColor" />
+								</g>
+								<defs>
+									<clipPath id="clip0_408_7106">
+										<rect width="34" height="34" fill="white" />
+									</clipPath>
+								</defs>
 							</svg>
-						</div>
-
-					</div>
-				</div>
+						</a>
+						<a href="#" target="__blank"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_408_7102)">
+									<path
+										d="M32.6719 23.375C33.4054 23.375 34 22.7804 34 22.0469V5.3125C34 2.38319 31.6168 0 28.6875 0H5.3125C2.38319 0 0 2.38319 0 5.3125V28.6875C0 31.6168 2.38319 34 5.3125 34H28.6875C31.6168 34 34 31.6168 34 28.6875C34 27.954 33.4054 27.3594 32.6719 27.3594C31.9384 27.3594 31.3438 27.954 31.3438 28.6875C31.3438 30.1522 30.1522 31.3438 28.6875 31.3438H21.7148V19.7891H24.7031C25.4366 19.7891 26.0312 19.1945 26.0312 18.4609C26.0312 17.7274 25.4366 17.1328 24.7031 17.1328H21.7148V13.4805C21.7148 12.0158 22.9064 10.8242 24.3711 10.8242H25.0352C25.7687 10.8242 26.3633 10.2296 26.3633 9.49609C26.3633 8.76257 25.7687 8.16797 25.0352 8.16797H24.3711C21.4418 8.16797 19.0586 10.5512 19.0586 13.4805V17.1328H16.0703C15.3368 17.1328 14.7422 17.7274 14.7422 18.4609C14.7422 19.1945 15.3368 19.7891 16.0703 19.7891H19.0586V31.3438H5.3125C3.84784 31.3438 2.65625 30.1522 2.65625 28.6875V5.3125C2.65625 3.84784 3.84784 2.65625 5.3125 2.65625H28.6875C30.1522 2.65625 31.3438 3.84784 31.3438 5.3125V22.0469C31.3438 22.7804 31.9384 23.375 32.6719 23.375Z"
+										fill="currentColor" />
+								</g>
+								<defs>
+									<clipPath id="clip0_408_7102">
+										<rect width="34" height="34" fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+						</a>
+						<a href="#" target="__blank"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_408_7108)">
+									<path
+										d="M27.2869 6.8824C24.9225 6.6509 21.2186 6.37498 16.9998 6.37498C12.7809 6.37498 9.07698 6.65084 6.71268 6.8824C4.86881 7.0629 3.39994 8.46827 3.14056 10.3001C2.81888 12.5715 2.65578 14.8257 2.65578 17.0002C2.65578 19.1748 2.81888 21.4289 3.14056 23.7003C3.39994 25.5322 4.86881 26.9376 6.71268 27.1181C9.07705 27.3496 12.7809 27.6255 16.9998 27.6255C21.2186 27.6255 24.9226 27.3496 27.2869 27.1181C29.1308 26.9376 30.5996 25.5322 30.859 23.7004C30.9619 22.9741 31.634 22.4686 32.3602 22.5716C33.0866 22.6744 33.5919 23.3465 33.4891 24.0728C33.0572 27.1221 30.6132 29.4615 27.5456 29.7617C25.1225 29.999 21.3258 30.2817 16.9997 30.2817C12.6736 30.2817 8.87703 29.999 6.45382 29.7617C3.3862 29.4615 0.942205 27.1221 0.510357 24.0728C-0.170119 19.243 -0.170119 14.7575 0.510357 9.92764C0.942205 6.87841 3.3862 4.53895 6.45382 4.23872C8.87696 4.00151 12.6736 3.71875 16.9997 3.71875C21.3258 3.71875 25.1224 4.00151 27.5456 4.23872C30.6132 4.53895 33.0572 6.87842 33.4891 9.92771C33.8281 12.322 34 14.7015 34 17.0002C33.9306 18.7607 31.414 18.7628 31.3437 17.0002C31.3437 14.8257 31.1806 12.5715 30.8589 10.3002C30.5996 8.46827 29.1308 7.0629 27.2869 6.8824ZM22.1469 14.8664C23.8636 15.8251 23.8633 18.4081 22.1469 19.3664L16.4455 22.6747C15.6344 23.1454 14.6649 23.1471 13.8523 22.679C13.0372 22.2096 12.5505 21.3669 12.5505 20.4248V13.808C12.5505 12.8659 13.0372 12.0233 13.8523 11.5538C14.6649 11.0858 15.6344 11.0875 16.4455 11.5581L22.1469 14.8664ZM20.7317 17.1164L15.2068 13.9105V20.3225L20.7317 17.1164Z"
+										fill="currentColor" />
+								</g>
+								<defs>
+									<clipPath id="clip0_408_7108">
+										<rect width="34" height="34" fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+						</a>
+					</li>
+				</ul>
 			</div>
-
 		</div>
+
 	</div>
 </div>
-
-
-
-

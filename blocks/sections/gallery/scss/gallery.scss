@@ -1,0 +1,478 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Gallery
+\* ------------------------------------------------------------ */
+
+
+// GALLERY
+
+.section-gallery {
+    padding-top: 120px;
+    background: $white;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 20px 0;
+
+    &__load-more-btn {
+        display: block;
+        padding: 22px 48px;
+        margin: 0 auto;
+        margin-top: 60px;
+        color: $white;
+        font-weight: 700;
+    }
+
+    &__category {
+        display: flex;
+        align-items: flex-end;
+        justify-content: start;
+        width: 380px;
+        height: 320px;
+        padding: 24px;
+        border: 2px solid $white;
+        transition: border 0.6s;
+        cursor: pointer;
+        text-decoration: none;
+
+        &-info {
+            &_title {
+                font-family: BankGothic;
+                font-size: 32px;
+                line-height: 33px;
+                font-weight: 500;
+                color: $white;
+            }
+
+            &_count {
+                font-size: 18px;
+                font-weight: 400;
+                color: $white;
+                opacity: 80%;
+            }
+        }
+    }
+
+    &__part-one,
+    &__part-two {
+        justify-content: flex-start;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+        height: 1016px;
+    }
+
+    &__wide {
+        flex-basis: 100%;
+    }
+
+    &__part-one {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .gallery__wide {
+            flex-basis: calc(((100% / 3) * 2) - 10px);
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+    }
+
+    #personal {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/personal.jpg") center center/cover no-repeat;
+        background-position: left 30% top;
+    }
+
+    #demand {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/demand.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #beginners {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/beginners.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #virtual {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/virtual.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #mind {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/mind.jpg") center center/cover no-repeat;
+        background-position: center bottom 30%;
+    }
+
+    #semi-private {
+        background: linear-gradient(180deg,
+                #13597800 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/semi.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #nutrition {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/nutrition.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #co-ed {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/co-ed.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #functional {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/functional.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+
+}
+
+#gallery__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: #2a99c865;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  
+    .gallery__category:hover {
+        border: 2px solid $main-pink-color;
+    }
+}
+
+
+.gallery-slide {
+    max-height: 500px;
+}
+
+#gallery-slide-1,
+#gallery-slide-2,
+#gallery-slide-3 {
+    background-image: url("../../../../../resources/images/gallery/gallery-image.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: clamp(13.125rem, 8.942rem + 18.59vw, 31.25rem);
+    background-position: center;
+}
+
+@media (max-width: 1720px) {
+
+    .gallery__part-one,
+    .gallery__part-two {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: flex-start;
+        height: auto;
+
+        .gallery__category {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery__part-one,
+    .gallery__part-two {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: flex-start;
+        height: auto;
+
+        .gallery__category {
+            width: 340px;
+            flex-basis: calc(50% - 14px);
+        }
+
+        .gallery__wide {
+            flex-basis: 100%;
+        }
+    }
+
+    #personal {
+        order: 3;
+    }
+
+    #demand {
+        order: 3;
+    }
+
+    #beginners {
+        order: 1;
+    }
+
+    #virtual {
+        order: 2;
+    }
+
+    .gallery #mind {
+        order: 4;
+        background-position: center bottom;
+    }
+
+    #semi-private {
+        order: 1;
+    }
+
+    #nutrition {
+        order: 2;
+    }
+
+    #co-ed {
+        order: 3;
+    }
+
+    #functional {
+        order: 4;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .gallery__part-one,
+    .gallery__part-two {
+
+        .gallery__wide,
+        .gallery__category {
+            height: 250px;
+            flex-basis: 100%;
+        }
+    }
+
+    .gallery #mind {
+        background-position: center top 30%;
+    }
+}
+
+.gallery__part-one-grid,
+.gallery__part-two-grid {
+    grid-auto-flow: dense;
+    width: calc(50% - 12px);
+
+}
+
+.gallery__part-one-grid,
+.gallery__part-two-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 320px;
+    grid-auto-rows: 320px;
+    gap: 25px;
+
+    .gallery__category {
+        height: auto;
+        width: auto;
+    }
+
+    .span-row {
+        grid-row: span 2;
+    }
+
+    .span-col {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .gallery__part-one-grid,
+    .gallery__part-two-grid {
+        width: 100%;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .gallery__part-one-grid,
+    .gallery__part-two-grid {
+        grid-template-rows: 250px;
+        grid-auto-rows: 250px;
+    }
+
+    .gallery__part-one-grid .gallery__category,
+    .gallery__part-two-grid .gallery__category {
+        height: 250px;
+        width: auto;
+        grid-column: span 2;
+    }
+
+    .gallery__part-one-grid .span-row,
+    .gallery__part-two-grid .span-row {
+        grid-row: 1;
+    }
+
+    .span-col {
+        grid-column: span 2;
+    }
+}
+
+
+
+.gallery__grid-wrapper {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 320px;
+    grid-auto-rows: 320px;
+    grid-auto-flow: dense;
+
+    .gallery__category {
+        width: auto;
+        height: auto;
+
+    }
+
+    #personal {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/personal.jpg") center center/cover no-repeat;
+        background-position: left 30% top;
+    }
+
+    #demand {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/demand.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #beginners {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/beginners.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #virtual {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/virtual.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #mind {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/mind.jpg") center center/cover no-repeat;
+        background-position: center bottom 30%;
+    }
+
+    #semi-private {
+        background: linear-gradient(180deg,
+                #13597800 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/semi.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #nutrition {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/nutrition.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #co-ed {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/co-ed.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+
+    #functional {
+        background: linear-gradient(180deg,
+                rgba(19, 89, 120, 0) 27.42%,
+                rgba(19, 89, 120, 0.6) 100%),
+            url("../../../../../resources/images/gallery/functional.jpg") center center/cover no-repeat;
+        background-position: center top;
+    }
+}
+
+
+
+.gallery__grid-wrapper>a:nth-child(9n + 1) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.gallery__grid-wrapper>a:nth-child(9n + 3) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.gallery__grid-wrapper>a:nth-child(9n + 9) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+
+.gallery__grid-wrapper>a:not(:nth-child(9n + 1)):not(:nth-child(9n + 3)):not(:nth-child(9n + 9)) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery__grid-wrapper>a:not(:nth-child(9n + 1)):not(:nth-child(9n + 3)):not(:nth-child(9n + 9)) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery__grid-wrapper>a:not(:first-child):nth-child(9n + 1) {
+    grid-column: span 2;
+    grid-row: 1;
+}
