@@ -23,14 +23,16 @@
     font-weight: 900;
 }
 
-.section-hero {
+.section-hero,
+#main-menu {
     .hero__wrapper {
         display: flex;
         padding-right: 40px;
         justify-content: space-between;
     }
 
-    .hero__nav {
+    .hero-menu__nav,
+    .popup-menu__nav {
         align-self: flex-start;
 
         &_link {
@@ -40,14 +42,17 @@
         }
     }
 
-    .hero__nav_ol {
+    .hero-menu__nav_ol,
+    .popup-menu__nav_ol {
         padding-left: 12px;
 
-        .hero__nav_li {
+        .hero-menu__nav_li,
+        .popup-menu__nav_li {
             margin-top: 26px;
             position: relative;
 
-            .hero__nav_link {
+            .hero-menu__nav_link,
+            .popup-menu__nav_link {
                 color: $white;
             }
 
@@ -68,7 +73,8 @@
                     content: none;
                 }
 
-                .hero__nav_link {
+                .hero-menu__nav_link,
+                .popup-menu__nav_link {
                     color: $white-semi;
                 }
             }
@@ -108,7 +114,7 @@
 }
 
 @media (max-width: 1280px) {
-    .section-hero .hero__nav {
+    .section-hero .hero-menu__nav {
         display: none;
     }
 
@@ -161,16 +167,24 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .hero__nav_li:hover~.nero__nav_link {
+    .hero-menu__nav_li:hover~.nero-menu__nav_link,
+    .popup-menu__nav_li:hover~.popup-menu__nav_link {
         color: $white-semi;
     }
 
-    .hero__nav_li:hover .hero__nav_link {
-        text-decoration: none;
+    .hero-menu__nav_li:hover .hero-menu__nav_link,
+    .popup-menu__nav_li:hover .popup-menu__nav_link {
+        text-decoration: none !important;
         color: $white !important;
     }
 
-    .hero__nav_ol:hover .hero__nav_li.active .hero__nav_link {
+    .popup-menu__nav_li:hover .link.popup-menu__nav_link {
+        text-decoration: none !important;
+        color: $white !important;
+    }
+
+    .hero-menu__nav_ol:hover .hero-menu__nav_li.active .hero-menu__nav_link,
+    .popup-menu__nav_ol:hover .popup-menu__nav_li.active .popup-menu__nav_link  {
         text-decoration: none;
         color: $white-semi;
     }
