@@ -7,22 +7,8 @@
 @import "../../../../resources/scss/generic/mixins";
 
 /* ------------------------------------------------------------ *\
-	Blocks: Section Hero
+	Blocks: Section Kerr
 \* ------------------------------------------------------------ */
-
-// .acf-block-preview {
-//     position: relative;
-//     padding-top: 320px;
-//     height: 930px;
-//     background-image: url("../../../../../resources/images/backgrounds/hero_bg.png");
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: center;
-//     color: $white;
-//     font-weight: 900;
-// }
-
-
 
 .kerr-title {
     color: $title;
@@ -102,31 +88,16 @@
     }
 }
 
-.before-after-row {
-    display: flex;
-    gap: 70px;
-}
-
-.before-after-row-item {
-    width: calc(50% - 35px);
-}
-
 @media (hover: hover) and (pointer: fine) {
     .read-more:hover {
         color: $main-pink-color-hover;
     }
 }
 
-.section-before-after {
-    .before-after-description {
-        position: relative;
-    }
-}
 
 @media (max-width: 1280px) {
 
-    .kerr-row,
-    .before-after-row {
+    .kerr-row {
         justify-content: center;
         gap: 100px;
     }

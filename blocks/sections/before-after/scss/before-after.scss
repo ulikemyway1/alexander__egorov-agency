@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Before-After
+\* ------------------------------------------------------------ */
+
+.before-after-row {
+    display: flex;
+    gap: 70px;
+}
+
+.before-after-row-item {
+    width: calc(50% - 35px);
+}
+
+
+.section-before-after {
+    .before-after-description {
+        position: relative;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .before-after-row {
+        justify-content: center;
+        gap: 100px;
+    }
+}

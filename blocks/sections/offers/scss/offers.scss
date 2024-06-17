@@ -7,7 +7,7 @@
 @import "../../../../resources/scss/generic/mixins";
 
 /* ------------------------------------------------------------ *\
-	Blocks: Section Hero
+	Blocks: Section Offers
 \* ------------------------------------------------------------ */
 .section-offers {
     display: flex;
@@ -32,21 +32,12 @@
         width: 227px;
         font-size: 16px;
         font-weight: 700;
+        text-decoration: none;
+        color: inherit;
         text-transform: uppercase;
         cursor: pointer;
         transition: border 0.6s;
 
-        // &::before {
-        // 	content: "";
-        // 	display: block;
-        // 	position: absolute;
-        // 	width: 14px;
-        // 	height: 14px;
-        // 	left: 15px;
-        // 	top: 50%;
-        // 	transform: translateY(-50%);
-        // 	background: $main-pink-color;
-        // }
     }
 
     .tab-pane.offers.active {

@@ -10,24 +10,6 @@ import before2 from "../../../../resources/images/before-after/before-2.png";
 import after2 from "../../../../resources/images/before-after/after-2.png";
 
 document.addEventListener("DOMContentLoaded", () => {
-	const swiperKerr = new Swiper(".swiper.kerr", {
-		// Optional parameters
-		direction: "horizontal",
-		loop: true,
-
-		// If we need pagination
-		pagination: {
-			el: ".swiper-pagination.kerr",
-			clickable: true,
-		},
-
-		// Navigation arrows
-		navigation: {
-			nextEl: ".swiper-button-next.kerr",
-			prevEl: ".swiper-button-prev.kerr",
-		},
-	});
-
 	const beforeAfter1 = new SliderBar({
 		el: "#before-after-first",
 		beforeImg: before1,
@@ -146,4 +128,4 @@ const init = function () {
 	const $section = $(this);
 };
 
-initScript(".section-kerr", "kerr", init);
+initScript(".section-before-after", "before-after", init);
