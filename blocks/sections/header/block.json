@@ -5,7 +5,7 @@
 	"style": ["file:../../../dist/css/blocks/header/scss/block-header.css"],
 	"script": "block-header",
 	"category": "hm-sections",
-	"icon": "block-default",
+	"icon": "heading",
 	"apiVersion": 2,
 	"keywords": [],
 	"acf": {

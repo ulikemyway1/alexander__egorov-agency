@@ -5,7 +5,7 @@
 	"style": ["file:../../../dist/css/blocks/offers/scss/block-offers.css"],
 	"script": "block-offers",
 	"category": "hm-sections",
-	"icon": "block-default",
+	"icon": "cart",
 	"apiVersion": 2,
 	"keywords": [],
 	"acf": {

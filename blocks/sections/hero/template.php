@@ -19,7 +19,8 @@ if (isset($block['data']['block_preview_images'])) {
 /**
  * Block Variables
  */
-
+$title = get_field('hero_section_title_text');
+$sub_title = get_field('hero_section_subtitle');
 ?>
 
 <section class="section section-hero">
@@ -40,10 +41,9 @@ if (isset($block['data']['block_preview_images'])) {
 
 			<div class="hero__descr-wrapper">
 				<h1 class="hero__title">
-					<span>The</span>
-					<span>Happy Fitness</span>
+					<?= $title ?>
 				</h1>
-				<h2 class="hero__subtitle">Macon’s Premiere Boutuque Personal Training Studio</h2>
+				<h2 class="hero__subtitle"><?= $sub_title ?></h2>
 
 				<div class="hero__buttons-wrapper">
 					<button class="button consulting-button" data-bs-toggle="modal" data-bs-target="#consulting-modal"

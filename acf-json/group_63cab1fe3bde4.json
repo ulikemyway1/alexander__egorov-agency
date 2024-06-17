@@ -134,7 +134,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "The Happy Fitness",
             "acfe_textarea_code": 0,
             "maxlength": "",
             "rows": "",
@@ -284,5 +284,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677767452
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1718627077
 }
