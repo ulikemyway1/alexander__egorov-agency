@@ -1,0 +1,248 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+// .acf-block-preview {
+//     position: relative;
+//     padding-top: 320px;
+//     height: 930px;
+//     background-image: url("../../../../../resources/images/backgrounds/hero_bg.png");
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     color: $white;
+//     font-weight: 900;
+// }
+
+
+
+.kerr-title {
+    color: $title;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 78px;
+}
+
+.kerr-row {
+    display: flex;
+    width: 100%;
+}
+
+.kerr-row-item {
+    width: 50%;
+}
+
+.kerr-info {
+    position: relative;
+    color: $title;
+    padding-top: 220px;
+    height: 100%;
+    background-image: url("../../../../../resources/images/backgrounds/kerr-girl.png");
+    background-size: contain;
+    background-position: top right -195px;
+    background-repeat: no-repeat;
+
+    &:after {
+        top: -40%;
+        left: -20%;
+        width: 120%;
+        height: 140%;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-color: rgb(0 76 108 / 20%);
+    }
+
+    &__content-wrapper {
+        max-width: 464px;
+    }
+
+    &__title {
+        font-size: 72px;
+        font-weight: 900;
+        line-height: 78px;
+    }
+
+    &__text {
+        margin-top: 30px;
+        font-family: BankGothic;
+        max-width: 400px;
+    }
+
+    &__button-wrapper {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .watch-video-btn,
+        .learn-more-btn {
+            padding: 20px 38px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            width: auto;
+        }
+    }
+
+    .read-more {
+        font-family: Montserrat;
+        color: $main-pink-color;
+        text-decoration: underline;
+        font-weight: 700px;
+        transition: color 0.6s;
+    }
+}
+
+.before-after-row {
+    display: flex;
+    gap: 70px;
+}
+
+.before-after-row-item {
+    width: calc(50% - 35px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .read-more:hover {
+        color: $main-pink-color-hover;
+    }
+}
+
+.section-before-after {
+    .before-after-description {
+        position: relative;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .kerr-row,
+    .before-after-row {
+        justify-content: center;
+        gap: 100px;
+    }
+
+    .kerr-info {
+        padding-bottom: 120px;
+
+        .kerr-info__button-wrapper {
+
+            .watch-video-btn,
+            .learn-more-btn {
+                width: auto;
+            }
+        }
+
+        &:after {
+            content: none;
+        }
+    }
+
+    .kerr-row {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .kerr-row-item {
+        width: 100%;
+    }
+}
+
+
+
+
+.modal:has(.modal-video) {
+    border: none;
+
+    .btn-close {
+        padding: 16px;
+        margin-right: 6px;
+        align-self: flex-end;
+        background: $white;
+        z-index: 10;
+        border-radius: 2px;
+        color: #13597880;
+        transition: color 0.6s;
+    }
+
+    .modal-content {
+        background: none;
+        border: none;
+    }
+
+    .modal-video {
+        position: relative;
+        bottom: 60px;
+        z-index: 5;
+        border-radius: 4px;
+        max-height: 90dvh;
+        max-width: 100dvw;
+    }
+}
+
+.modal:has(.modal-iframe-video) {
+    .modal-dialog {
+        max-width: max-content;
+    }
+
+    .modal-content {
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: none;
+    }
+
+    .modal-header {
+        padding: 0;
+        width: 100%;
+        padding-left: 16px;
+        align-items: flex-end;
+        opacity: 1;
+
+        .btn-close {
+            width: 40px;
+            height: 40px;
+            padding: 6px;
+            border-radius: 100%;
+            align-self: flex-end;
+            background: $white;
+            z-index: 10;
+            border-radius: 2px;
+            color: #13597880;
+            transition: color 0.6s;
+            right: 26px;
+            top: 0px;
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .modal:has(.modal-video),
+    .modal:has(.modal-iframe-video) {
+        .btn-close:hover {
+            color: $main-pink-color;
+        }
+    }
+}
+
+@media (max-width: 1720px) {
+    .kerr-info {
+        background-position: bottom right -195px;
+    }
+}
+
+@media (max-width: 560px) {
+    .kerr-info__button-wrapper {
+        flex-wrap: wrap;
+    }
+}

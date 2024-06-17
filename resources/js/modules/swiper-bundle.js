@@ -10,7 +10,7 @@
  * Released on: May 30, 2024
  */
 
-var Swiper = (function () {
+const Swiper = (function () {
   'use strict';
 
   /**
@@ -9650,3 +9650,5 @@ var Swiper = (function () {
   return Swiper;
 
 })();
+
+export default Swiper;
