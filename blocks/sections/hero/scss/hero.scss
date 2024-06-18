@@ -44,7 +44,12 @@
 
     .hero-menu__nav_ol,
     .popup-menu__nav_ol {
-        padding-left: 12px;
+        direction: rtl;
+        text-align: left;
+        padding-left: 26px;
+        max-height: 420px;
+        overflow-y: auto;
+        
 
         .hero-menu__nav_li,
         .popup-menu__nav_li {
@@ -393,3 +398,22 @@
         }
     }
 }
+
+
+.styled-scrollbars-semi::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  .styled-scrollbars-semi::-webkit-scrollbar-thumb {
+	background: #00000029
+  }
+  
+  .styled-scrollbars-semi::-webkit-scrollbar-track {
+	background: #0000000c /* track color */
+  }
+  
+  /* For Firefox */
+  .styled-scrollbars-semi {
+	scrollbar-color:  #00000029 #0000000c;
+	scrollbar-width: thin; 
+  }

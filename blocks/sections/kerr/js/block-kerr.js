@@ -8,8 +8,33 @@ import before1 from "../../../../resources/images/before-after/before-1.jpg";
 import after1 from "../../../../resources/images/before-after/after-1.jpg";
 import before2 from "../../../../resources/images/before-after/before-2.png";
 import after2 from "../../../../resources/images/before-after/after-2.png";
+import bootstrapBundle from '../../../../resources/js/modules/bootstrap.bundle';
 
 document.addEventListener("DOMContentLoaded", () => {
+
+	const readMoreBtn = document.getElementById('kerr_read-more-btn');
+	const readMoreCollapse = new bootstrapBundle.Collapse('#kerr-read-more', {
+		toggle: false
+	  });
+
+
+	readMoreBtn.addEventListener('click', () => {
+		if (readMoreBtn.classList.contains('hide')) {
+			readMoreBtn.textContent = 'Read more';
+			readMoreCollapse.hide();
+			readMoreBtn.classList.remove('hide');
+		} else {
+			readMoreBtn.textContent = 'Read less';
+			readMoreCollapse.show();
+			readMoreBtn.classList.add('hide');
+		}
+		
+	})
+
+
+	
+
+
 	const swiperKerr = new Swiper(".swiper.kerr", {
 		// Optional parameters
 		direction: "horizontal",

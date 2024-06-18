@@ -1,11 +1,8 @@
 // /**
 //  * Internal Dependencies
 //  */
-import './modules/bootstrap.bundle';
 import './modules/swiper-bundle';
 
-import "bootstrap/js/dist/modal";
-import "bootstrap/js/dist/collapse";
 import "./modules/hide-preloader";
 import "./modules/horizontal-scroll";
 import hideFocusOnDesktop from "./modules/hide-focus-on-desktop";

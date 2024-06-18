@@ -11,10 +11,32 @@
 }
 
 .swiper.kerr {
+	position: relative;
 	margin: 20px 0;
 	max-height: 500px;
 	border-left: 3px solid $main-pink-color;
 	width: 100%;
+	&::after {
+		content: '';
+		position: absolute;
+		height: 25px;
+		background: linear-gradient(#ffffff2b, #ffffff);
+		bottom: 26px;
+		left: 0;
+		width: 94%;
+		z-index: 100;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		height: 25px;
+		background: linear-gradient(#ffffff, #ffffff2b);
+		top: 85px;
+		left: 0;
+		width: 94%;
+		z-index: 100;
+	}
 
 	.kerr-slide {
 		display: flex;
@@ -39,11 +61,33 @@
 		}
 
 		&__text {
+			max-height: 340px;
+			padding-right: 25px;
+			overflow-y: auto;
 			font-weight: 500;
+			
 		}
 	}
 }
 
+.styled-scrollbars-pink::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  .styled-scrollbars-pink::-webkit-scrollbar-thumb {
+	background: $main-pink-color-hover;
+  }
+  
+  .styled-scrollbars-pink::-webkit-scrollbar-track {
+	background: $main-pink-color; /* track color */
+  }
+  
+  /* For Firefox */
+  .styled-scrollbars-pink {
+	scrollbar-color: $main-pink-color $main-pink-color-hover;  
+	scrollbar-width: thin; 
+  }
+  
 .section-slider-kerr,
 .section-before-after {
 	margin: 0 auto;

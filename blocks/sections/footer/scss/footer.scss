@@ -13,5 +13,25 @@
 .footer {
     position: relative;
     overflow: hidden;
-    background: #94b30a;
+    background: #eef3f6;
+    color: $title;
+
+    &__wrapper {
+        display: flex;
+        gap: 200px
+    }
+
+    &__navigation {
+        font-weight: 900;
+        font-size: 22px;
+
+        &-ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            list-style-type: none;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
 }
