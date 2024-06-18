@@ -24,6 +24,8 @@ $kerr_title = get_field('kerr-heading');
 $kerr_slides = get_field('kerr-slides');
 
 $kerr_descr = get_field('alli_kerr_description');
+$kerr_descr_parts = get_extended($kerr_descr);
+$kerr_descr_more = $kerr_descr_parts['extended'];
 ?>
 
 
@@ -34,10 +36,19 @@ $kerr_descr = get_field('alli_kerr_description');
 				<div class="kerr-info">
 					<div class="kerr-info__content-wrapper">
 						<div class="kerr-info__title">Alli Kerr</div>
-						<div class="kerr-info__text">
-							<?= $kerr_descr ?>
-							<br>
-							<a href="#" class="link read-more">Read more</a>
+						<div class="kerr-info__text styled-scrollbars-pink">
+							<?= $kerr_descr_parts['main'] ?>
+							<?php if (!empty($kerr_descr_more)): ?>
+								<div id="kerr-read-more">
+									<?= $kerr_descr_more ?>
+								</div>
+								<br>
+								<button class="link read-more" id="kerr_read-more-btn" aria-expanded="false"
+									aria-controls="collapse-read-more-kerr">
+									Read more
+								</button>
+							<?php endif; ?>
+
 						</div>
 						<div class="kerr-info__button-wrapper">
 							<a href="#" class="button like-button watch-video-btn ">Watch Video of The Bio</a>

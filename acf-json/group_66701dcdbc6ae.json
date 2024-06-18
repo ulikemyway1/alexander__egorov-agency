@@ -118,9 +118,9 @@
             "label": "Alli Kerr Description",
             "name": "alli_kerr_description",
             "aria-label": "",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -128,10 +128,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": 500,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -159,5 +159,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718706752
+    "modified": 1718709655
 }

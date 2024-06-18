@@ -202,7 +202,7 @@ if (!empty($bg)) {
 				<?php if (!empty($navigation_links)): ?>
 					<nav class="popup-menu__nav">
 
-						<ol class="popup-menu__nav_ol">
+						<ol class="popup-menu__nav_ol styled-scrollbars-semi">
 							<?php foreach ($navigation_links as $index => $link): ?>
 								<?php
 								$link_title = !empty($link['title']) ? $link['title'] : '';
