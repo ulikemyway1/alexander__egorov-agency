@@ -36,7 +36,7 @@ if (!empty($bg)) {
 			<?php if (!empty($navigation_links)): ?>
 				<nav class="hero-menu__nav">
 
-					<ol class="hero-menu__nav_ol">
+					<ol class="hero-menu__nav_ol styled-scrollbars-semi">
 						<?php foreach ($navigation_links as $index => $link): ?>
 							<?php
 							$link_title = !empty($link['title']) ? $link['title'] : '';

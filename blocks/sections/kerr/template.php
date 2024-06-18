@@ -85,7 +85,7 @@ $kerr_descr = get_field('alli_kerr_description');
 												}
 												?>
 											</div>
-											<p class="kerr-slide__text"><?= $text ?></p>
+											<p class="kerr-slide__text styled-scrollbars-pink"><?= $text ?></p>
 										</article>
 									</div>
 
