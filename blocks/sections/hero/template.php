@@ -213,7 +213,7 @@ if (!empty($bg)) {
 									$class_active = '';
 								}
 								?>
-								<li class="popup-menu___nav_li<?= $class_active ?>"><a href="<?= $link_url ?>"
+								<li class="popup-menu__nav_li <?= $class_active ?>"><a href="<?= $link_url ?>"
 										class="link popup-menu__nav_link"><?= $link_title ?></a></li>
 							<?php endforeach; ?>
 						</ol>
