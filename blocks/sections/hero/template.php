@@ -22,9 +22,14 @@ if (isset($block['data']['block_preview_images'])) {
 $title = get_field('hero_section_title_text');
 $sub_title = get_field('hero_section_subtitle');
 $navigation_links = get_field('navigation');
+$bg = get_field('bg_image');
+if (!empty($bg)) {
+	$backgroundImageUrl = $bg;
+	$bg_style = 'style="background-image: url(' . $backgroundImageUrl . ');"';
+}
 ?>
 
-<section class="section section-hero">
+<section <?= $bg_style ?> class="section section-hero">
 	<div class="container">
 
 		<div class="hero__wrapper">
