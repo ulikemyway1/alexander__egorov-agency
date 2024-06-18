@@ -47,7 +47,7 @@
             "sub_fields": [
                 {
                     "key": "field_6670461b0848e",
-                    "label": "modal-id",
+                    "label": "Modal ID",
                     "name": "modal-id",
                     "aria-label": "",
                     "type": "text",
@@ -68,7 +68,7 @@
                 },
                 {
                     "key": "field_66704aa865931",
-                    "label": "link-image",
+                    "label": "Link Image",
                     "name": "link-image",
                     "aria-label": "",
                     "type": "image",
@@ -122,5 +122,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718635288
+    "modified": 1718700878
 }

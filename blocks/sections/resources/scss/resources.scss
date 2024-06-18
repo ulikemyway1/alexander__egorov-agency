@@ -1,0 +1,119 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section resources
+\* ------------------------------------------------------------ */
+
+.section-resources {
+	padding-top: 120px;
+	background: #eef3f6;
+	color: $title;
+	.resources {
+		&-wrapper {
+			width: 100%;
+			min-height: 1150px;
+			display: flex;
+			flex-direction: row;
+			gap: clamp(1.25rem, -20rem + 26.56vw, 11.875rem);
+		}
+
+		&__img {
+			width: 40dvw;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		&-card {
+			width: 344px;
+			height: 314px;
+			border-radius: 6px;
+			cursor: pointer;
+			&__image {
+				height: 200px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+			}
+
+			&__date {
+				font-family: BankGothic;
+				font-size: 14px;
+				color: #13597880;
+			}
+
+			&__title {
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: normal;
+
+				text-align: left;
+				margin-top: 20px;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 22px;
+			}
+
+			&__footer {
+				padding: 20px;
+				padding-top: 11px;
+				background: $white;
+			}
+		}
+	}
+
+	.cards {
+		box-sizing: border-box;
+		&__title {
+			font-weight: 900;
+			font-size: 100px;
+		}
+
+		&__subtitle {
+			font-family: BankGothic;
+			font-size: 24px;
+			line-height: 24px;
+		}
+
+		&__wrapper {
+			background: #eef3f6;
+			display: flex;
+			gap: 9px;
+			flex-wrap: wrap;
+			margin-top: 50px;
+		}
+	}
+}
+
+@media (max-width: 1340px) {
+	.section-resources .resources-wrapper .resources__img {
+		display: none;
+	}
+
+	.cards__wrapper {
+		justify-content: center;
+	}
+
+	.section-resources .resources-card {
+		width: 338px;
+	}
+}
+
+@media (max-width: 800px) {
+	.section-resources .cards__title {
+		font-size: 40px;
+	}
+
+	.section-resources .resources-card {
+		width: 320px;
+	}
+}

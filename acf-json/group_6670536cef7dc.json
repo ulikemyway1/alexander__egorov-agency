@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6670536d08b5a",
-            "label": "categories",
+            "label": "Categories",
             "name": "category",
             "aria-label": "",
             "type": "repeater",
@@ -17,7 +17,7 @@
                 "id": ""
             },
             "acfe_repeater_stylised_button": 0,
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -27,7 +27,7 @@
             "sub_fields": [
                 {
                     "key": "field_6670539008b5b",
-                    "label": "category-items",
+                    "label": "Category Items",
                     "name": "category-items",
                     "aria-label": "",
                     "type": "repeater",
@@ -49,7 +49,7 @@
                     "sub_fields": [
                         {
                             "key": "field_6670539f08b5c",
-                            "label": "category-item-title",
+                            "label": "Category Item Title",
                             "name": "category-item-title",
                             "aria-label": "",
                             "type": "text",
@@ -70,7 +70,7 @@
                         },
                         {
                             "key": "field_667053b308b5d",
-                            "label": "category-item-url",
+                            "label": "Category Item URL",
                             "name": "category-item-url",
                             "aria-label": "",
                             "type": "url",
@@ -91,7 +91,7 @@
                 },
                 {
                     "key": "field_667054420d370",
-                    "label": "category-title",
+                    "label": "Category Title",
                     "name": "category-title",
                     "aria-label": "",
                     "type": "text",
@@ -138,5 +138,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718646278
+    "modified": 1718700815
 }
