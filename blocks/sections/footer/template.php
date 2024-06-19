@@ -17,6 +17,14 @@ if (isset($block['data']['block_preview_images'])) {
 }
 ?>
 
+<section class="section section-subscribe">
+	<div class="container">
+	<div class="subscribe-wrapper">
+		
+	</div>
+	</div>
+</section>
+
 <footer class="footer">
 	<div class="container">
 		<div class="footer__wrapper">

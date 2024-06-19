@@ -35,3 +35,18 @@
         }
     }
 }
+
+.section-subscribe {
+    padding-top: 30px;
+    height: 280px;
+    background: linear-gradient(180deg, rgba(250,183,216,1) 0%, rgba(250,183,216,1) 50%, rgba(238,243,246,1) 50%, rgba(238,243,246,1) 100%);
+
+    .subscribe {
+
+        &-wrapper {
+            background: $main-pink-color;
+            min-height: 238px;
+        }
+    }
+
+}
