@@ -11,42 +11,172 @@
 \* ------------------------------------------------------------ */
 
 .footer {
-    position: relative;
-    overflow: hidden;
-    background: #eef3f6;
-    color: $title;
+    padding-top: 100px;
+	position: relative;
+	overflow: hidden;
+	background: #eef3f6;
+	color: $title;
 
-    &__wrapper {
-        display: flex;
-        gap: 200px
-    }
+	&__wrapper {
+		display: flex;
+		gap: 200px;
+	}
 
-    &__navigation {
-        font-weight: 900;
-        font-size: 22px;
+	&__navigation {
+		font-weight: 900;
+		font-size: 22px;
 
-        &-ul {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            list-style-type: none;
-            font-size: 16px;
-            font-weight: 700;
-        }
-    }
+		&-ul {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			list-style-type: none;
+			font-size: 16px;
+			font-weight: 700;
+		}
+	}
 }
 
 .section-subscribe {
-    padding-top: 30px;
-    height: 280px;
-    background: linear-gradient(180deg, rgba(250,183,216,1) 0%, rgba(250,183,216,1) 50%, rgba(238,243,246,1) 50%, rgba(238,243,246,1) 100%);
+	padding-top: 30px;
+	min-height: 280px;
+	background: linear-gradient(
+		180deg,
+		rgba(250, 183, 216, 1) 0%,
+		rgba(250, 183, 216, 1) 50%,
+		rgba(238, 243, 246, 1) 50%,
+		rgba(238, 243, 246, 1) 100%
+	);
 
-    .subscribe {
+	.subscribe {
+		&-wrapper {
+			display: flex;
+			background: $main-pink-color;
+			min-height: 238px;
+			.info {
+				display: flex;
+				width: 50%;
+				padding: 0 50px;
+				align-items: center;
+				justify-content: flex-end;
+				color: $white;
+				font-size: 22px;
+				line-height: 27px;
+				text-align: right;
+				font-weight: 900;
 
-        &-wrapper {
-            background: $main-pink-color;
-            min-height: 238px;
+				border-right: 1px solid $white-semi;
+			}
+			.form-wrapper {
+				display: flex;
+				padding: 0 50px;
+				display: flex;
+				width: 50%;
+				align-items: center;
+			}
+		}
+	}
+
+	#nf-form-3-cont {
+		width: 100%;
+		.nf-form-fields-required {
+			display: none;
+		}
+
+        .nf-response-msg {
+            display: none !important;
         }
-    }
 
+		#nf-field-12 {
+			width: 142px;
+            height: 56px;
+			font-size: 16px;
+			font-weight: 700;
+			border-radius: 2px;
+			background: $white;
+			color: $main-pink-color;
+			transition: background 0.6s, color 0.6s;
+			.icon {
+				display: none;
+			}
+		}
+
+		#nf-field-12:disabled {
+			background: #eef3f6 !important;
+			color: $main-pink-color !important;
+		}
+
+		input[type="email"] {
+			padding: 20px;
+			height: 60px;
+			background: none;
+			border-radius: 2px;
+			border: 1px solid $white-semi;
+			font-size: 16px;
+			color: $white;
+			font-weight: 700;
+		}
+
+		.nf-error-wrap.nf-error,
+		.nf-error-msg.nf-error-field-errors,
+		.nf-error-parse-response-ERROR,
+		.nf-error-invalid-email,
+		.nf-error-msg.nf-error-required-error {
+			font-size: 16px;
+			line-height: 18px;
+			color: $white;
+		}
+	}
 }
+
+@media (hover: hover) and (pointer: fine) {
+	.section-subscribe #nf-form-3-cont #nf-field-12:hover {
+		background: $main-pink-color-hover;
+		color: $white;
+	}
+}
+
+@media (max-width: 1280px) {
+	.section-subscribe {
+		.subscribe {
+			&-wrapper {
+				.info {
+					font-size: 18px;
+				}
+			}
+		}
+
+        #nf-form-3-cont  {
+            nf-cells {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+            .nf-cell:has(#nf-field-11-container) {
+                width: 100% !important;
+            }
+            .nf-cell:has(#nf-field-12-container) {
+                width: 152px !important;
+            }
+        }
+        }
+	}
+}
+
+
+@media (max-width: 768px) {
+	.section-subscribe {
+		.subscribe {
+			&-wrapper {
+                padding: 30px 20px;
+				flex-direction: column;
+                gap: 30px;
+                .info,
+                .form-wrapper {
+                    text-align: left;
+                    width: 100%;
+                    border: none;
+                }
+		}
+	}
+}}

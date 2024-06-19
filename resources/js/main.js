@@ -141,6 +141,9 @@ document.addEventListener("nfFormReady", () => {
 jQuery(document).ready(function () {
 	const consultModal = new bootstrapBundle.Modal("#consulting-modal");
 	const successModal = new bootstrapBundle.Modal("#success-modal");
+	const successModalForForm3 = new bootstrapBundle.Modal(
+		"#success-modal-form-3"
+	);
 	const errorModal = new bootstrapBundle.Modal("#error-modal");
 	const bookConsultingBtn = document.querySelector("#book_consulting");
 	bookConsultingBtn.addEventListener("click", () => {
@@ -148,23 +151,41 @@ jQuery(document).ready(function () {
 	});
 
 	jQuery(document).on("nfFormSubmitResponse", function (event, response, id) {
-		consultModal.hide();
-		if (!response.response.errors.length > 0) {
-			const userMsg = response.response.data.fields["9"].value;
-			if (userMsg === "error") {
-				errorModal.show();
-			} else {
-				const responseText = response.response.data.actions.success_message;
-				const dialogBox = document.querySelector("#success-modal .text");
-				const messageBox = document.querySelector("#user-msg");
-				if (dialogBox instanceof HTMLElement) {
-					dialogBox.innerHTML = responseText;
-					messageBox.textContent = `Your message: ${userMsg}`;
-				}
-				successModal.show();
+		if (response.response.data.form_id == "3") {
+			const responseText = response?.response?.data?.actions?.success_message;
+			const dialogBox = document.querySelector("#success-modal-form-3 .text");
+			
+            if (dialogBox instanceof HTMLElement) {
+				dialogBox.innerHTML = responseText;
 			}
+
+			successModalForForm3.show();
 		} else {
-			errorModal.show();
+			consultModal.hide();
+
+			if (!response.response.errors.length > 0) {
+				const userMsg = response?.response?.data?.fields["9"]?.value;
+			
+                if (userMsg === "error") {
+					errorModal.show();
+				} else {
+
+					const responseText =
+						response?.response?.data?.actions?.success_message;
+					
+                        const dialogBox = document.querySelector("#success-modal .text");
+					
+                    const messageBox = document.querySelector("#user-msg");
+					
+                    if (dialogBox instanceof HTMLElement) {
+						dialogBox.innerHTML = responseText;
+						if (userMsg) messageBox.textContent = `Your message: ${userMsg}`;
+					}
+					successModal.show();
+				}
+			} else {
+				errorModal.show();
+			}
 		}
 	});
 });

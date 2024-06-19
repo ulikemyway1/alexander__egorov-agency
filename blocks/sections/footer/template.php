@@ -20,7 +20,12 @@ if (isset($block['data']['block_preview_images'])) {
 <section class="section section-subscribe">
 	<div class="container">
 	<div class="subscribe-wrapper">
-		
+		<div class="info">Sign up to receive exclusive access to workout and wellness inspiration, meal prep tips, recipes, and more</div>
+		<div class="form-wrapper">
+		<?php
+			echo do_shortcode('[ninja_form id="3"]');
+			?>
+		</div>
 	</div>
 	</div>
 </section>

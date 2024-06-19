@@ -531,6 +531,7 @@
 
 // modal success
 #success-modal,
+#success-modal-form-3,
 #error-modal  {
 	.icon {
 		display: flex;
@@ -591,6 +592,7 @@
 
 @media (hover: hover) and (pointer: fine) {
 	#subscription-modal,
+    #success-modal-form-3,
     #error-modal  {
 		.modal-body {
 			.pay:hover {
@@ -602,6 +604,7 @@
 
 @media (max-width: 850px) {
     #success-modal,
+    #success-modal-form-3,
     #error-modal  {
 		.modal-body {
 			padding: 20px;
