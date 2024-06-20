@@ -139,6 +139,12 @@ document.addEventListener("nfFormReady", () => {
 });
 
 jQuery(document).ready(function () {
+
+		let wt = document.querySelector(".content-title");
+	  
+		wt.style.setProperty("--bg-width", "60%");
+
+	
 	const consultModal = new bootstrapBundle.Modal("#consulting-modal");
 	const successModal = new bootstrapBundle.Modal("#success-modal");
 	const successModalForForm3 = new bootstrapBundle.Modal(
