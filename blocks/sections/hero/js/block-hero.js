@@ -60,6 +60,8 @@ const init = function () {
 			}
 		}
 	});
+
+	
 };
 
 function makeActiveByIndex(arr, targetIndex) {
@@ -68,5 +70,8 @@ function makeActiveByIndex(arr, targetIndex) {
 	});
 	arr[targetIndex].classList.add("active");
 }
+
+
+
 
 initScript(".section-hero", "hero", init);
