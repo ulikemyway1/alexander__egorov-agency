@@ -63,7 +63,7 @@ if (!empty($bg)) {
 				<h2 class="hero__subtitle"><?= $sub_title ?></h2>
 
 				<div class="hero__buttons-wrapper">
-					<button class="button consulting-button" id="book_consulting">Book Consultation</button>
+					<button class="button consulting-button book_consulting">Book Consultation</button>
 					<button id="hero-video-btn" data-embed-1="true" class="button consulting-button no-fill"
 						data-bs-toggle="modal" data-bs-target="#video-y-modal-hero">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">

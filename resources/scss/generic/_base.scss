@@ -10,6 +10,19 @@
 	box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $main-pink-color;
+}
+
+::-webkit-scrollbar-track {
+	background: $main-pink-color-hover; /* track color */
+}
+
+
 *:focus {
 	outline: none !important;
 }

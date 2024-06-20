@@ -14,18 +14,6 @@
 	--bg-width: 0%;
 }
 
-::-webkit-scrollbar {
-	width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-	background: $main-pink-color;
-}
-
-::-webkit-scrollbar-track {
-	background: $main-pink-color-hover; /* track color */
-}
-
 .content-title {
 	z-index: 100;
 	position: relative !important;
