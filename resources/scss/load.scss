@@ -23,3 +23,19 @@
 /* ------------------------------------------------------------ *\
 	Plugins
 \* ------------------------------------------------------------ */
+
+.header {
+	position: fixed !important;
+	background: #135978e0 !important;
+	top: 32px !important;
+	backdrop-filter: blur(6px);
+	z-index: 200 !important;
+}
+
+.preloader.hidden ~ .wp-site-blocks header {
+	display: block;
+}
+
+.preloader ~ .wp-site-blocks header {
+	display: none;
+}
