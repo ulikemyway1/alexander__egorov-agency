@@ -10,6 +10,19 @@
 	box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $main-pink-color;
+}
+
+::-webkit-scrollbar-track {
+	background: $main-pink-color-hover; /* track color */
+}
+
+
 *:focus {
 	outline: none !important;
 }
@@ -426,15 +439,29 @@ tbody.collapse.show {
 }
 
 .preloader {
-	margin:auto;
+	position: relative;
+	margin: auto;
 	height: 100dvh;
-	padding: 100px;
 	transition: opacity 0.2s;
 	opacity: 1;
-	
+	margin-bottom: 0;
+	padding-bottom: 0;
+
 	&.is-visually-hidden {
 		opacity: 0;
 	}
 
-}
+	.loader-lottie {
+		position: absolute;
+		background: plum;
+		border-radius: 100%;
+		filter: drop-shadow(0 0 80px plum);
+		left: 50%;
+		transform: translateX(-50%) translateY(50%);
+		bottom: 50%;
 
+		& * {
+			filter: drop-shadow(2px 2px 6px black);
+		}
+	}
+}

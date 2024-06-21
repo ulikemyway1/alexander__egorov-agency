@@ -1,0 +1,151 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Offers
+\* ------------------------------------------------------------ */
+.section-offers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 40px 0;
+
+    .offers-arrow {
+        width: 14px;
+        height: 14px;
+        color: $main-pink-color;
+    }
+
+    .offers-item {
+        position: relative;
+        padding: 54px 35px;
+        border: 1px solid #d2d2d2;
+        height: 124px;
+        flex: 0 1 calc(100% / 3);
+        max-width: 227px;
+        width: 227px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: border 0.6s;
+
+    }
+
+    .tab-pane.offers.active {
+        display: flex;
+        flex-wrap: wrap;
+        width: 682px;
+        min-height: 496px;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 0;
+    }
+
+    .nav-tabs {
+        margin: auto;
+        margin-bottom: 20px;
+        width: 682px;
+        flex-wrap: nowrap;
+        justify-content: center;
+        border-bottom: none;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+
+        /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-link {
+            position: relative;
+            font-size: 16px;
+            font-weight: 700;
+            color: $title;
+            border: none;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 1px;
+                width: 100%;
+                height: 2px;
+                background: #686868;
+            }
+        }
+
+        .nav-link.active {
+            color: $main-pink-color;
+
+            &::after {
+                background: currentColor;
+            }
+        }
+    }
+
+    .nav-item {
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-offers .offers-item {
+        flex: 0 1 50%;
+        max-width: 160px;
+        width: 160px;
+        padding: 54px 18px;
+        font-size: 14px;
+
+        &:before {
+            width: 7px;
+            height: 7px;
+            left: 6px;
+        }
+    }
+
+    .section-offers .tab-pane.offers.active {
+        width: 320px;
+    }
+
+    .offers-item {
+        font-size: 14px;
+        padding: 54px 28px;
+    }
+
+    .section-offers .nav-tabs {
+        width: 320px;
+    }
+
+    .offers-arrow {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .section-offers {
+        .offers-item:hover {
+            border: 1px solid $main-pink-color;
+        }
+
+        .offers-arrow:hover {
+            color: $main-pink-color-hover;
+        }
+    }
+
+    .gallery__category:hover {
+        border: 2px solid $main-pink-color;
+    }
+}

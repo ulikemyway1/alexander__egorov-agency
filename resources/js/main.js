@@ -139,16 +139,21 @@ document.addEventListener("nfFormReady", () => {
 });
 
 jQuery(document).ready(function () {
+
+		let wt = document.querySelector(".content-title");
+	  if (wt) wt.style.setProperty("--bg-width", "60%");
+
+	
 	const consultModal = new bootstrapBundle.Modal("#consulting-modal");
 	const successModal = new bootstrapBundle.Modal("#success-modal");
 	const successModalForForm3 = new bootstrapBundle.Modal(
 		"#success-modal-form-3"
 	);
 	const errorModal = new bootstrapBundle.Modal("#error-modal");
-	const bookConsultingBtn = document.querySelector("#book_consulting");
-	bookConsultingBtn.addEventListener("click", () => {
+	const bookConsultingBtn = document.querySelectorAll(".book_consulting");
+	bookConsultingBtn.forEach((btn) => btn.addEventListener("click", () => {
 		consultModal.show();
-	});
+	}));
 
 	jQuery(document).on("nfFormSubmitResponse", function (event, response, id) {
 		if (response.response.data.form_id == "3") {

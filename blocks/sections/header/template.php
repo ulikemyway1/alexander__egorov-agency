@@ -103,7 +103,7 @@ if (isset($block['data']['block_preview_images'])) {
 					</svg>
 				</a>
 
-				<button class="button consulting-button">Book Consultation</button>
+				<button class="button consulting-button book_consulting">Book Consultation</button>
 			</div>
 
 

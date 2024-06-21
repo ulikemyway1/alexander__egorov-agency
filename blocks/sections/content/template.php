@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Hero.
+ * Block Page Default Content.
  *
  * @var array $block The block settings and attributes.
  * @var string $content The block inner HTML (empty).
@@ -16,78 +16,20 @@ if (isset($block['data']['block_preview_images'])) {
 	return;
 }
 
-/**
- * Block Variables
- */
-$title = get_field('hero_section_title_text');
-$sub_title = get_field('hero_section_subtitle');
-$navigation_links = get_field('navigation');
-$bg = get_field('bg_image');
-if (!empty($bg)) {
-	$backgroundImageUrl = $bg;
-	$bg_style = 'style="background-image: url(' . $backgroundImageUrl . ');"';
-}
 ?>
 
-<section <?= $bg_style ?> class="section section-hero">
+<section class="page-content">
 	<div class="container">
-
-		<div class="hero__wrapper">
-			<?php if (!empty($navigation_links)): ?>
-				<nav class="hero-menu__nav">
-
-					<ol class="hero-menu__nav_ol styled-scrollbars-semi">
-						<?php foreach ($navigation_links as $index => $link): ?>
-							<?php
-							$link_title = !empty($link['title']) ? $link['title'] : '';
-							$link_url = !empty($link['url']) ? $link['url'] : '';
-							if ($index === 0) {
-								$class_active = 'active';
-							} else {
-								$class_active = '';
-							}
-							?>
-							<li class="hero-menu__nav_li <?= $class_active ?>"><a href="<?= $link_url ?>"
-									class="link hero-menu__nav_link"><?= $link_title ?></a></li>
-						<?php endforeach; ?>
-					</ol>
-
-				</nav>
-
-			<?php endif; ?>
-
-			<div class="hero__descr-wrapper">
-				<h1 class="hero__title">
-					<?= $title ?>
-				</h1>
-				<h2 class="hero__subtitle"><?= $sub_title ?></h2>
-
-				<div class="hero__buttons-wrapper">
-					<button class="button consulting-button book_consulting">Book Consultation</button>
-					<button id="hero-video-btn" data-embed-1="true" class="button consulting-button no-fill"
-						data-bs-toggle="modal" data-bs-target="#video-y-modal-hero">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
-							<g clip-path="url(#a)">
-								<path fill="#fff"
-									d="M17.338 7.692 5.525.411A2.698 2.698 0 0 0 2.761.352c-.876.49-1.399 1.381-1.399 2.385v14.496c0 1.518 1.223 2.759 2.726 2.767H4.1c.47 0 .959-.147 1.416-.426a.78.78 0 1 0-.812-1.332c-.214.13-.423.198-.608.198a1.212 1.212 0 0 1-1.174-1.207V2.737c0-.43.224-.813.6-1.023.376-.21.82-.2 1.185.025L16.52 9.02c.355.219.558.583.557 1 0 .417-.205.78-.562.999l-8.54 5.229a.78.78 0 1 0 .814 1.33l8.54-5.228a2.712 2.712 0 0 0 1.308-2.327 2.712 2.712 0 0 0-1.299-2.33Z" />
-							</g>
-							<defs>
-								<clipPath id="a">
-									<path fill="#fff" d="M0 0h20v20H0z" />
-								</clipPath>
-							</defs>
-						</svg>
-						<span>Play Video</span>
-					</button>
-				</div>
-			</div>
+		<div class="date">
+			<?php echo get_the_date() ?>
 		</div>
-
+		<div class="content-title">
+			<?php echo get_the_title() ?>
+		</div>
+		<div class="content"><?php echo the_content() ?></div>
 	</div>
 </section>
 
-
-<!-- Modals -->
 
 <div class="modal fade" id="consulting-modal" tabindex="-1" aria-labelledby="Book consulting modal with"
 	aria-hidden="true">
@@ -534,3 +476,5 @@ if (!empty($bg)) {
 
 	</div>
 </div>
+
+<?php get_template_part('template'); ?>
