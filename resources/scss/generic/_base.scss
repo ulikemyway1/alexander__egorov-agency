@@ -465,3 +465,12 @@ tbody.collapse.show {
 		}
 	}
 }
+
+.vs-hidden {
+	opacity: 0 !important;
+	transition: opacity 0.2s;
+}
+
+.vs-removed {
+	display: none;
+}

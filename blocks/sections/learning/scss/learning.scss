@@ -1,0 +1,150 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Offers
+\* ------------------------------------------------------------ */
+.section-learning {
+    color: $title;
+    padding-bottom: 100px;
+
+    .learning__title {
+        font-weight: 900;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .learning__subtitle {
+        margin: 20px auto;
+        font-size: 24px;
+        line-height: 24px;
+        font-family: BankGothic;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .learning-huge-slider {
+		position: relative;
+	}
+
+    .swiper {
+        position: relative;
+    }
+
+    .swiper-slide.learning-huge {
+        max-height: 510px;
+        width: 907px;
+    }
+
+    .swiper-slide.learning-small {
+        max-height: 429px;
+        width: 668px;
+    }
+
+    .swiper-slide {
+        position: relative;
+    }
+
+   video {
+        filter: drop-shadow(0 0 3px #000000);
+    }
+
+    .swiper.learning-huge {
+        width: 907px;
+    }
+
+    .swiper.learning-small {
+        width: 720px;
+
+        .swiper-wrapper {
+            gap: 25px;
+        }
+    }
+
+    .learning__sliders-wrapper {
+        display: flex;
+        gap: 25px;
+    }
+
+    .learning-huge-slider-navigation-wrapper {
+        right: 0;
+        transform: translateX(105%);
+    }
+
+    .slide-overlay {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        color: $white;
+        z-index: 10;
+        padding: 30px;
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2399553571428571) 100%);
+        backdrop-filter: blur(3px);
+
+        &__title {
+            font-weight: 500;
+            font-size: 36px;
+            font-family: Bank Gothic;
+        }
+
+        &__subtitle {
+            font-weight: 400;
+            font-size: 18px;
+        }
+    }
+
+    
+   .learning-small .slide-overlay {
+        padding: 10px;
+        &__title {
+            font-size: 24px;
+        }
+
+    }
+
+    .play-video-btn,
+    .stop-video-btn   {
+        position: absolute;
+        padding: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 100;
+        cursor: pointer;
+        transition: all 0.6s;
+    }
+
+    .stop-video-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        background: #00000043;
+        width: 60px;
+        height: 60px;
+        color: $white;
+        font-size: 18px;
+        font-weight: 900;
+        border-radius: 100%;
+        transition: opacity 0.3s;
+    }
+    .stop-video-btn.vs-removed {
+        display: none;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .play-video-btn:hover {
+        transform: translateX(-50%) translateY(-50%) scale(1.1);
+    }
+
+    .swiper.learning-huge:hover .stop-video-btn {
+        opacity: 1;
+    }
+}

@@ -89,7 +89,8 @@
   }
   
 .section-slider-kerr,
-.section-before-after {
+.section-before-after,
+.section-learning {
 	margin: 0 auto;
 	padding-top: 110px;
 	.section-slider-kerr-wrapper {
@@ -102,7 +103,10 @@
 	.swiper-button-next.kerr,
 	.swiper-pagination.before-after-description,
 	.swiper-button-prev.before-after-description,
-	.swiper-button-next.before-after-description {
+	.swiper-button-next.before-after-description,
+	.swiper-pagination.learning-huge,
+	.swiper-button-prev.learning-huge,
+	.swiper-button-next.learning-huge {
 		position: static;
 		width: auto;
 		color: rgba(19, 89, 120, 0.5);
@@ -112,7 +116,9 @@
 	.swiper-button-prev.kerr,
 	.swiper-button-next.kerr,
 	.swiper-button-prev.before-after-description,
-	.swiper-button-next.before-after-description {
+	.swiper-button-next.before-after-description,
+	.swiper-button-prev.learning-huge,
+	.swiper-button-next.learning-huge  {
 		width: 25px;
 		margin: 0;
 		background: $white;
@@ -122,7 +128,8 @@
 	}
 
 	.swiper-kerr-navigation-wrapper,
-	.before-after-slider-navigation-wrapper {
+	.before-after-slider-navigation-wrapper,
+	.learning-huge-slider-navigation-wrapper {
 		display: flex;
 		align-items: center;
 		position: absolute;
