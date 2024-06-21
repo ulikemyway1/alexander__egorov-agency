@@ -12,13 +12,21 @@ const init = function () {
 
 document.addEventListener("DOMContentLoaded", () => {
 	const learningSmallSlider = new Swiper(".swiper.learning-small", {
+		initialSlide: 1,
 		direction: "horizontal",
 		loop: true,
+		spaceBetween: 35,
 		allowTouchMove: false,
-		slidesPerView: "2",
+		slidesPerView: "1",
+		breakpoints: {
+			740: {
+				slidesPerView: 2,
+			},
+		},
 	});
 
 	const learningHugeSlider = new Swiper(".swiper.learning-huge", {
+		inintialSlide: 0,
 		direction: "horizontal",
 		loop: true,
 		allowTouchMove: true,
@@ -33,10 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		navigation: {
 			nextEl: ".swiper-button-next.learning-huge",
 			prevEl: ".swiper-button-prev.learning-huge",
-		},
-
-		controller: {
-			control: learningSmallSlider,
 		},
 	});
 
@@ -117,8 +121,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	learningHugeSlider.on("activeIndexChange", () => {
 		const currentIndex = learningHugeSlider.activeIndex;
+
 		const targetPlayer = document.querySelector(
 			`.learning-huge .video-learning-${currentIndex}`
+		);
+
+		const targetOverlay = document.querySelector(
+			`.learning-huge .video-learning-${currentIndex} + .slide-overlay`
 		);
 
 		if (targetPlayer instanceof HTMLVideoElement) {
@@ -131,5 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 	});
+
+	learningHugeSlider.on("slideNextTransitionStart", () =>
+		learningSmallSlider.slideNext()
+	);
+	learningHugeSlider.on("slidePrevTransitionStart", () =>
+		learningSmallSlider.slidePrev()
+	);
 });
 initScript(".section-learning", "learning", init);

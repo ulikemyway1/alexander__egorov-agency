@@ -110,6 +110,14 @@ if (isset($block['data']['block_preview_images'])) {
 						<!-- Slides -->
 						<article class="swiper-slide learning-small ">
 							<div class="slide-overlay">
+								<div class="slide-overlay__title">Michael Martin</div>
+								<div class="slide-overlay__subtitle">Nutritionist</div>
+							</div>
+							<video playsinline="true" class="learning-video video-learning-1" src=""></video>
+						</article>
+						
+						<article class="swiper-slide learning-small ">
+							<div class="slide-overlay">
 								<div class="slide-overlay__title">Rebecca Henderson</div>
 								<div class="slide-overlay__subtitle">Fitness trainer</div>
 							</div>
@@ -122,14 +130,6 @@ if (isset($block['data']['block_preview_images'])) {
 								<div class="slide-overlay__subtitle">Yoga trainer</div>
 							</div>
 							<video playsinline="true" class="learning-video video-learning-3" src=""></video>
-						</article>
-
-						<article class="swiper-slide learning-small ">
-							<div class="slide-overlay">
-								<div class="slide-overlay__title">Michael Martin</div>
-								<div class="slide-overlay__subtitle">Nutritionist</div>
-							</div>
-							<video playsinline="true" class="learning-video video-learning-1" src=""></video>
 						</article>
 
 					</div>

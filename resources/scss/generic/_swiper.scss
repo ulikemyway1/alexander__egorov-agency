@@ -234,7 +234,7 @@
 		width: 70px;
 		position: absolute;
 		left: -26px;
-		z-index: 1000;
+		z-index: 2;
 	}
 
 	&::after {
@@ -247,7 +247,7 @@
 		right: -49px;
 		top: 0;
 		width: 70px;
-		z-index: 1000;
+		z-index: 2;
 	}
 }
 
